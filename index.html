@@ -1,1084 +1,495 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MycoDx | TB Diagnostics</title>
-  <meta name="description" content="결핵 분자진단 기반 바이오 스타트업 — 회사 소개, 기술, 검증, 협력 문의." />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B1220" />
+    <title>MycoDx | TB/NTM Diagnostics</title>
+    <meta
+      name="description"
+      content="MycoDx는 결핵/비결핵항산균 진단을 위한 샘플 전처리 및 분자진단 솔루션을 개발합니다."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-  <style>
-    :root{
-      /* Brand (requested vibe) */
-      --navy:#0f172a;            /* C100 M80 Y40 K50 느낌 */
-      --red:#a11a2f;             /* C0 M100 Y100 K10 느낌 */
-      --bg:#ffffff;
-      --muted:#e5e7eb;           /* Soft gray */
-      --text:#0b1220;
-      --sub:#334155;
-      --card:#ffffff;
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
 
-      --radius:14px;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-      --shadow2: 0 4px 18px rgba(2,6,23,.06);
-      --max: 1120px;
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
-    }
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; height:auto; }
-    .container{ width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
-
-    /* ---------- Header ---------- */
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(255,255,255,.86);
-      backdrop-filter:saturate(180%) blur(10px);
-      border-bottom:1px solid rgba(15,23,42,.08);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      height:72px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width: 180px;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:999px;
-      background:
-        radial-gradient(circle at 50% 50%, var(--red) 0 18%, transparent 19%),
-        radial-gradient(circle at 50% 50%, rgba(161,26,47,.18) 0 42%, transparent 43%),
-        radial-gradient(circle at 50% 50%, rgba(15,23,42,.10) 0 75%, transparent 76%);
-      border:1px solid rgba(15,23,42,.12);
-    }
-    .brand b{ letter-spacing:.2px; font-size:15px; color:var(--navy); }
-    .brand small{ display:block; font-size:12px; color:var(--sub); margin-top:-2px; }
-
-    nav ul{
-      display:flex; align-items:center; gap:18px;
-      list-style:none; padding:0; margin:0;
-    }
-    nav a{
-      font-size:14px; color:var(--navy);
-      padding:10px 6px;
-      border-bottom:2px solid transparent;
-    }
-    nav a:hover{ border-bottom-color: rgba(161,26,47,.55); }
-
-    .actions{ display:flex; align-items:center; gap:10px; }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
-      padding:10px 12px;
-      font-size:13px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.14);
-      background:#fff;
-      box-shadow: 0 2px 10px rgba(2,6,23,.04);
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn:focus{ outline:3px solid rgba(161,26,47,.25); outline-offset:2px; }
-    .btn.primary{
-      background:var(--navy);
-      color:#fff;
-      border-color: rgba(15,23,42,.3);
-    }
-    .btn.primary:hover{ filter:brightness(1.06); }
-    .btn.ghost{
-      background:transparent;
-      box-shadow:none;
-    }
-    .lang{
-      min-width:110px;
-    }
-    .burger{
-      display:none;
-      width:42px; height:42px;
-      border-radius:12px;
-      border:1px solid rgba(15,23,42,.14);
-      background:#fff;
-      cursor:pointer;
-    }
-    .burger span{
-      display:block;
-      width:18px; height:2px;
-      background:var(--navy);
-      margin:0 auto;
-      position:relative;
-    }
-    .burger span::before,
-    .burger span::after{
-      content:"";
-      position:absolute; left:0;
-      width:18px; height:2px;
-      background:var(--navy);
-    }
-    .burger span::before{ top:-6px; }
-    .burger span::after{ top:6px; }
-
-    /* Mobile nav drawer */
-    .drawer{
-      display:none;
-      border-top:1px solid rgba(15,23,42,.08);
-      background:#fff;
-    }
-    .drawer.open{ display:block; }
-    .drawer ul{
-      list-style:none; margin:0; padding:14px 0;
-      display:flex; flex-direction:column; gap:4px;
-    }
-    .drawer a{
-      display:block;
-      padding:10px 12px;
-      font-size:14px; color:var(--navy);
-      border-radius:10px;
-    }
-    .drawer a:hover{ background: rgba(15,23,42,.04); }
-
-    /* ---------- Sections ---------- */
-    section{ padding:78px 0; }
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:18px;
-      margin-bottom:24px;
-    }
-    h1,h2,h3{ margin:0; color:var(--navy); letter-spacing:-.2px; }
-    h2{ font-size:28px; }
-    p{ margin:0; color:var(--sub); }
-    .kicker{
-      font-size:12px;
-      color:rgba(15,23,42,.72);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-    .divider{
-      height:1px; background: rgba(15,23,42,.10);
-      width:100%;
-      margin-top:10px;
-    }
-
-    /* Hero */
-    .hero{
-      padding:72px 0 56px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-20%;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(161,26,47,.12), transparent 48%),
-        radial-gradient(circle at 80% 30%, rgba(15,23,42,.10), transparent 55%),
-        radial-gradient(circle at 50% 90%, rgba(161,26,47,.08), transparent 55%);
-      z-index:-1;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:36px;
-      align-items:center;
-    }
-    .hero h1{
-      font-size:52px;
-      line-height:1.12;
-      letter-spacing:-.6px;
-    }
-    .hero .lead{
-      font-size:18px;
-      margin-top:14px;
-      max-width: 52ch;
-    }
-    .hero .bullets{
-      margin-top:18px;
-      display:grid; gap:10px;
-    }
-    .bullet{
-      display:flex; gap:10px; align-items:flex-start;
-      color:var(--sub); font-size:14px;
-    }
-    .dot{
-      margin-top:6px;
-      width:8px; height:8px;
-      border-radius:999px;
-      background:var(--red);
-      box-shadow: 0 0 0 4px rgba(161,26,47,.12);
-      flex:none;
-    }
-    .hero-ctas{
-      margin-top:22px;
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-
-    .hero-card{
-      background: rgba(255,255,255,.8);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding:18px;
-      position:relative;
-      min-height: 320px;
-    }
-    .viz{
-      position:absolute; inset:18px;
-      border-radius: 20px;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(161,26,47,.14) 0 16%, transparent 17%),
-        radial-gradient(circle at 50% 50%, rgba(15,23,42,.10) 0 40%, transparent 41%),
-        radial-gradient(circle at 30% 35%, rgba(15,23,42,.06) 0 12%, transparent 13%),
-        radial-gradient(circle at 70% 65%, rgba(161,26,47,.08) 0 10%, transparent 11%),
-        linear-gradient(135deg, rgba(15,23,42,.03), rgba(15,23,42,.00));
-      border:1px solid rgba(15,23,42,.06);
-      overflow:hidden;
-    }
-    .viz::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        repeating-linear-gradient( to right, rgba(15,23,42,.05) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient( to bottom, rgba(15,23,42,.04) 0 1px, transparent 1px 22px);
-      opacity:.35;
-      mix-blend-mode:multiply;
-    }
-    .viz-label{
-      position:absolute; left:18px; bottom:18px;
-      font-size:12px;
-      color:rgba(15,23,42,.72);
-      background:rgba(255,255,255,.7);
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      backdrop-filter: blur(8px);
-    }
-
-    /* Two column blocks */
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:28px;
-      align-items:start;
-    }
-    .panel{
-      background: var(--card);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      padding:22px;
-    }
-    .panel.muted{
-      background: rgba(229,231,235,.35);
-      border-color: rgba(15,23,42,.08);
-      box-shadow:none;
-    }
-    .panel h3{ font-size:18px; margin-bottom:10px; }
-    .panel p{ font-size:14px; }
-
-    /* Cards grid */
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      margin-top:14px;
-    }
-    .card{
-      padding:18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(15,23,42,.10);
-      background:#fff;
-      box-shadow: var(--shadow2);
-    }
-    .card h3{ font-size:16px; margin:6px 0 8px; }
-    .icon{
-      width:34px; height:34px;
-      border-radius:12px;
-      border:1px solid rgba(15,23,42,.12);
-      background: rgba(15,23,42,.04);
-      position:relative;
-    }
-    .icon::before{
-      content:"";
-      position:absolute; inset:9px;
-      border-radius:10px;
-      border:2px solid rgba(15,23,42,.55);
-    }
-    .icon.red::after{
-      content:"";
-      position:absolute; left:50%; top:50%;
-      width:6px; height:6px;
-      transform:translate(-50%,-50%);
-      border-radius:999px;
-      background:var(--red);
-    }
-    .small{ font-size:13px; color:var(--sub); }
-
-    /* Pipeline timeline */
-    .timeline{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-      margin-top:14px;
-    }
-    .step{
-      display:flex; align-items:flex-start; gap:12px;
-      padding:16px;
-      border-radius: var(--radius);
-      border:1px solid rgba(15,23,42,.10);
-      background:#fff;
-      box-shadow: var(--shadow2);
-    }
-    .step .mark{
-      width:12px; height:12px; border-radius:999px;
-      background:var(--red);
-      box-shadow: 0 0 0 6px rgba(161,26,47,.12);
-      margin-top:6px;
-      flex:none;
-    }
-    .step h3{ font-size:16px; margin:0 0 4px; }
-    .step p{ font-size:13px; margin:0; }
-
-    /* Validation mock chart */
-    .chart{
-      height:220px;
-      border-radius: var(--radius);
-      border:1px solid rgba(15,23,42,.10);
-      background:
-        linear-gradient(to top, rgba(15,23,42,.04), transparent 55%),
-        repeating-linear-gradient(to right, rgba(15,23,42,.06) 0 1px, transparent 1px 28px),
-        repeating-linear-gradient(to bottom, rgba(15,23,42,.05) 0 1px, transparent 1px 28px);
-      position:relative;
-      overflow:hidden;
-    }
-    .bar{
-      position:absolute; bottom:18px;
-      width:22px;
-      background: rgba(15,23,42,.65);
-      border-radius: 999px 999px 8px 8px;
-    }
-    .bar.red{ background: rgba(161,26,47,.85); }
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      font-size:12px;
-      color:rgba(15,23,42,.80);
-      background: rgba(255,255,255,.7);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:999px;
-      padding:8px 10px;
-      backdrop-filter: blur(8px);
-    }
-
-    /* Collaboration CTA */
-    .cta{
-      text-align:center;
-      padding:26px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(15,23,42,.92), rgba(15,23,42,.82));
-      color:#fff;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-    }
-    .cta h2{ color:#fff; }
-    .cta p{ color: rgba(255,255,255,.78); margin-top:10px; }
-    .cta .cta-actions{ margin-top:18px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
-    .btn.light{
-      background:#fff;
-      color:var(--navy);
-      border-color: rgba(255,255,255,.35);
-    }
-    .btn.light:hover{ filter:brightness(0.98); }
-    .btn.outline{
-      background:transparent;
-      color:#fff;
-      border-color: rgba(255,255,255,.34);
-      box-shadow:none;
-    }
-    .btn.outline:hover{ background: rgba(255,255,255,.08); }
-
-    /* Footer */
-    footer{
-      padding:36px 0;
-      background: var(--navy);
-      color: rgba(255,255,255,.82);
-    }
-    footer .foot{
-      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
-      align-items:flex-start;
-    }
-    footer b{ color:#fff; }
-    footer a{ color:#fff; text-decoration:underline; text-underline-offset:3px; }
-    .foot small{ display:block; margin-top:8px; color: rgba(255,255,255,.70); }
-
-    /* Language toggle */
-    [data-lang] { display:none; }
-    html[data-lang="ko"] [data-lang="ko"],
-    html[data-lang="en"] [data-lang="en"] { display:initial; }
-    html[data-lang="ko"] [data-lang="ko"].block,
-    html[data-lang="en"] [data-lang="en"].block { display:block; }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .hero-card{ min-height: 280px; }
-      .two-col{ grid-template-columns: 1fr; }
-      .cards{ grid-template-columns: 1fr; }
-      nav ul{ display:none; }
-      .burger{ display:inline-flex; align-items:center; justify-content:center; }
-      .brand{ min-width: unset; }
-      section{ padding:64px 0; }
-      .hero h1{ font-size:40px; }
-    }
-    @media (max-width: 520px){
-      .container{ width: calc(100% - 32px); }
-      .hero h1{ font-size:34px; }
-      .btn{ padding:10px 12px; }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <div class="container">
-      <div class="nav" role="navigation" aria-label="Primary">
-        <a class="brand" href="#home" aria-label="MycoDx Home">
-          <span class="logo" aria-hidden="true"></span>
-          <span>
-            <b>MycoDx</b>
-            <small data-lang="ko">TB & Mycobacteria Diagnostics</small>
-            <small data-lang="en">TB & Mycobacteria Diagnostics</small>
-          </span>
+    <!-- Header -->
+    <header class="site-header" data-elevate>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="MycoDx 홈">
+          <!-- 로고가 있으면 아래 SVG 대신 이미지로 교체:
+          <img src="./assets/logo.svg" alt="MycoDx" height="28" />
+          -->
+          <svg
+            class="brand-mark"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M14 2.5c3.7 3.1 5.6 5.4 5.6 8.1 0 3-2.5 5.4-5.6 5.4S8.4 13.6 8.4 10.6C8.4 7.9 10.3 5.6 14 2.5Z"
+              class="mark-a"
+            />
+            <path
+              d="M6.2 14.3c3.9-.6 6.9-.4 9.1.7 2.6 1.2 3.7 4.1 2.5 6.7-1.2 2.6-4.2 3.7-6.7 2.5-2.3-1.1-3.8-3.7-4.9-9.9Z"
+              class="mark-b"
+            />
+          </svg>
+          <span class="brand-name">MycoDx</span>
+          <span class="brand-tag">Diagnostics</span>
         </a>
 
-        <nav aria-label="Top menu">
-          <ul>
-            <li><a href="#about"><span data-lang="ko">회사 소개</span><span data-lang="en">About</span></a></li>
-            <li><a href="#technology"><span data-lang="ko">기술</span><span data-lang="en">Technology</span></a></li>
-            <li><a href="#pipeline"><span data-lang="ko">파이프라인</span><span data-lang="en">Pipeline</span></a></li>
-            <li><a href="#validation"><span data-lang="ko">검증</span><span data-lang="en">Validation</span></a></li>
-            <li><a href="#collaboration"><span data-lang="ko">협력</span><span data-lang="en">Collaboration</span></a></li>
-            <li><a href="#contact"><span data-lang="ko">문의</span><span data-lang="en">Contact</span></a></li>
-          </ul>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="#solutions">Solutions</a>
+          <a href="#technology">Technology</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn btn-sm btn-primary">Contact</a>
         </nav>
 
-        <div class="actions">
-          <button class="btn lang" id="langBtn" type="button" aria-label="Toggle language">
-            <span aria-hidden="true">🌐</span>
-            <span data-lang="ko">한국어</span>
-            <span data-lang="en">English</span>
-          </button>
-          <a class="btn primary" href="#contact">
-            <span data-lang="ko">협력 문의</span><span data-lang="en">Contact</span>
-          </a>
-          <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-            <span aria-hidden="true"></span>
-          </button>
+        <button class="nav-toggle" aria-label="모바일 메뉴 열기" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <!-- Mobile drawer -->
+      <div class="mobile-drawer" hidden>
+        <div class="container mobile-links">
+          <a href="#solutions">Solutions</a>
+          <a href="#technology">Technology</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn btn-primary">Contact</a>
         </div>
       </div>
+    </header>
 
-      <div class="drawer" id="drawer" hidden>
-        <ul>
-          <li><a href="#about"><span data-lang="ko">회사 소개</span><span data-lang="en">About</span></a></li>
-          <li><a href="#technology"><span data-lang="ko">기술</span><span data-lang="en">Technology</span></a></li>
-          <li><a href="#pipeline"><span data-lang="ko">파이프라인</span><span data-lang="en">Pipeline</span></a></li>
-          <li><a href="#validation"><span data-lang="ko">검증</span><span data-lang="en">Validation</span></a></li>
-          <li><a href="#collaboration"><span data-lang="ko">협력</span><span data-lang="en">Collaboration</span></a></li>
-          <li><a href="#contact"><span data-lang="ko">문의</span><span data-lang="en">Contact</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <main id="home">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="kicker" data-lang="ko">TB Diagnostics • Evidence-based</div>
-            <div class="kicker" data-lang="en">TB Diagnostics • Evidence-based</div>
-
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Medical / Bio Diagnostics</p>
             <h1>
-              <span data-lang="ko">보이지 않는 결핵을,<br/>가장 정확하게 드러내다.</span>
-              <span data-lang="en">Revealing Tuberculosis,<br/>with Uncompromising Precision.</span>
+              더 빠르고 신뢰도 높은<br />
+              <span class="grad">결핵·NTM 진단</span>을 위한 샘플 전처리 & 분석
             </h1>
-
-            <p class="lead block" data-lang="ko">
-              혹독한 조건에서도 피어나는 동백꽃처럼, MycoDx는 가장 어려운 질환을
-              정밀하게 진단하기 위한 기술을 개발합니다.
-            </p>
-            <p class="lead block" data-lang="en">
-              Like the camellia that blooms through winter, MycoDx develops technologies
-              to diagnose the most challenging disease with precision.
+            <p class="lead">
+              MycoDx는 임상 현장에서 사용 가능한 워크플로우를 목표로, 샘플 준비부터
+              분자진단/시퀀싱 기반 내성 해석까지 이어지는 통합 솔루션을 설계합니다.
             </p>
 
-            <div class="bullets">
-              <div class="bullet">
-                <span class="dot" aria-hidden="true"></span>
-                <span data-lang="ko">정밀 분자진단 기반 결핵 분석 기술</span>
-                <span data-lang="en">Precision molecular diagnostics for tuberculosis</span>
-              </div>
-              <div class="bullet">
-                <span class="dot" aria-hidden="true"></span>
-                <span data-lang="ko">임상·공중보건 환경을 고려한 설계</span>
-                <span data-lang="en">Designed for clinical and public health settings</span>
-              </div>
-              <div class="bullet">
-                <span class="dot" aria-hidden="true"></span>
-                <span data-lang="ko">검증과 재현성을 중심에 둔 개발</span>
-                <span data-lang="en">Built around validation and reproducibility</span>
-              </div>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#contact">데모/미팅 요청</a>
+              <a class="btn btn-ghost" href="#solutions">솔루션 보기</a>
             </div>
 
-            <div class="hero-ctas">
-              <a class="btn primary" href="#technology">
-                <span data-lang="ko">기술 보기</span><span data-lang="en">Explore Technology</span>
-              </a>
-              <a class="btn" href="#validation">
-                <span data-lang="ko">검증 보기</span><span data-lang="en">View Validation</span>
-              </a>
-              <a class="btn ghost" href="#collaboration">
-                <span data-lang="ko">협력 영역</span><span data-lang="en">Collaboration</span>
-              </a>
-            </div>
+            <dl class="stats" aria-label="핵심 지표">
+              <div>
+                <dt>Workflow</dt>
+                <dd>현장 적용 중심</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>TB · NTM</dd>
+              </div>
+              <div>
+                <dt>Output</dt>
+                <dd>Diagnosis · Resistance</dd>
+              </div>
+            </dl>
           </div>
 
-          <div class="hero-card" aria-label="Visual motif">
-            <div class="viz" aria-hidden="true"></div>
-            <div class="viz-label">
-              <span data-lang="ko">Camellia × Microscopy Motif</span>
-              <span data-lang="en">Camellia × Microscopy Motif</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <div class="kicker" data-lang="ko">About Us</div>
-            <div class="kicker" data-lang="en">About Us</div>
-            <h2>
-              <span data-lang="ko">회사 소개</span>
-              <span data-lang="en">About MycoDx</span>
-            </h2>
-            <div class="divider"></div>
-          </div>
-          <span class="badge" aria-label="Brand story">
-            <span class="dot" style="margin-top:0"></span>
-            <span data-lang="ko">동백 스토리 기반</span><span data-lang="en">Camellia-led story</span>
-          </span>
-        </div>
-
-        <div class="two-col">
-          <div class="panel">
-            <h3>
-              <span data-lang="ko">개요</span><span data-lang="en">Overview</span>
-            </h3>
-            <p class="block" data-lang="ko">
-              MycoDx는 결핵 및 마이코박테리아 진단 기술을 연구·개발하는 바이오 진단 기업입니다.
-              우리는 조기 진단이 환자의 삶과 공중보건을 바꿀 수 있다고 믿습니다.
-            </p>
-            <p class="block" data-lang="en">
-              MycoDx is a biotechnology company dedicated to diagnostic technologies for tuberculosis and mycobacterial diseases.
-              We believe early and accurate diagnosis can transform individual lives and public health outcomes.
-            </p>
-
-            <div style="height:14px"></div>
-
-            <h3>
-              <span data-lang="ko">비전 & 미션</span><span data-lang="en">Vision & Mission</span>
-            </h3>
-            <p class="block" data-lang="ko">
-              <b style="color:var(--navy)">Vision</b> — 결핵 진단의 새로운 기준을 제시하다.<br/>
-              <b style="color:var(--navy)">Mission</b> — 과학적 근거에 기반한 정밀 진단으로 보이지 않는 질병을 명확히 드러낸다.
-            </p>
-            <p class="block" data-lang="en">
-              <b style="color:var(--navy)">Vision</b> — Setting a new standard in tuberculosis diagnostics.<br/>
-              <b style="color:var(--navy)">Mission</b> — To reveal hidden disease through scientifically validated precision diagnostics.
-            </p>
-          </div>
-
-          <div class="panel muted">
-            <h3>
-              <span data-lang="ko">동백꽃의 의미</span><span data-lang="en">The Camellia Meaning</span>
-            </h3>
-            <p class="block" data-lang="ko">
-              동백꽃은 혹독한 겨울에도 피어나는 꽃입니다. 긴 치료 기간과 높은 사회적 부담을 동반하는 결핵과 닮아 있습니다.
-              MycoDx의 동백은 <b style="color:var(--navy)">인내, 절개, 강인함</b>과 함께, “보이지 않는 병을 정확히 드러낸다”는
-              정밀 진단의 태도를 상징합니다.
-            </p>
-            <p class="block" data-lang="en">
-              The camellia blooms through the harshest winter. It reflects the resilience required to confront tuberculosis—a disease
-              marked by long treatment and persistent burden. At MycoDx, the camellia symbolizes <b style="color:var(--navy)">resilience,
-              integrity, and endurance</b>, and our commitment to reveal hidden disease with precision.
-            </p>
-
-            <div style="height:14px"></div>
-
-            <div class="cards" style="grid-template-columns:1fr; gap:10px;">
-              <div class="card" style="box-shadow:none;">
-                <div class="small">
-                  <b style="color:var(--navy)" data-lang="ko">브랜드 메시지</b>
-                  <b style="color:var(--navy)" data-lang="en">Brand Message</b>
+          <div class="hero-visual" aria-label="시각 요소">
+            <!-- Figma에서 내려받은 이미지를 여기에 넣어도 됩니다.
+                 예) <img src="./assets/hero.png" alt="제품/워크플로우 이미지" />
+            -->
+            <div class="glass-card">
+              <div class="glass-top">
+                <span class="pill">Sample</span>
+                <span class="pill">Prep</span>
+                <span class="pill">PCR/NGS</span>
+                <span class="pill">Interpretation</span>
+              </div>
+              <div class="glass-body">
+                <div class="mini-grid">
+                  <div class="mini">
+                    <p class="mini-k">Capture</p>
+                    <p class="mini-v">Matrix-resistant</p>
+                  </div>
+                  <div class="mini">
+                    <p class="mini-k">Safety</p>
+                    <p class="mini-v">Workflow-ready</p>
+                  </div>
+                  <div class="mini">
+                    <p class="mini-k">Signal</p>
+                    <p class="mini-v">Low-burden</p>
+                  </div>
+                  <div class="mini">
+                    <p class="mini-k">DR</p>
+                    <p class="mini-v">Actionable</p>
+                  </div>
                 </div>
-                <div style="height:6px"></div>
-                <div class="small" data-lang="ko" style="color:var(--navy)">
-                  “보이지 않는 결핵을, 가장 정확하게 드러내다.”
-                </div>
-                <div class="small" data-lang="en" style="color:var(--navy)">
-                  “Precision that reveals resilience.”
+
+                <div class="spark-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 300 110" class="spark">
+                    <path
+                      d="M5,70 C35,20 65,90 95,45 C125,5 155,85 185,52 C215,22 245,80 295,35"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <div class="spark-caption">Consistent signal across conditions</div>
                 </div>
               </div>
             </div>
+
+            <div class="hero-badge">
+              <span class="dot"></span>
+              Clinical-minded engineering for mycobacteria
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- TECHNOLOGY -->
-    <section id="technology">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <div class="kicker" data-lang="ko">Technology</div>
-            <div class="kicker" data-lang="en">Technology</div>
-            <h2>
-              <span data-lang="ko">기술</span><span data-lang="en">Technology</span>
-            </h2>
-            <div class="divider"></div>
+      <!-- Solutions -->
+      <section class="section" id="solutions">
+        <div class="container">
+          <div class="section-head">
+            <h2>Solutions</h2>
+            <p>진단을 “현장에서 돌아가게” 만드는 구성요소에 집중합니다.</p>
           </div>
-        </div>
-
-        <div class="panel">
-          <p class="block" data-lang="ko">
-            MycoDx의 기술은 결핵균의 분자적 특성을 정밀하게 포착하도록 설계되었습니다.
-            PCR, NGS 및 차세대 분석 기술을 기반으로, 임상적 신뢰성과 확장성을 동시에 확보합니다.
-          </p>
-          <p class="block" data-lang="en">
-            MycoDx technologies are designed to precisely capture the molecular signatures of Mycobacterium tuberculosis.
-            Built upon PCR, NGS, and next-generation analytical platforms, our solutions balance clinical reliability and scalability.
-          </p>
 
           <div class="cards">
-            <div class="card">
-              <div class="icon red" aria-hidden="true"></div>
-              <h3><span data-lang="ko">분자 표적 검출</span><span data-lang="en">Molecular Target Detection</span></h3>
-              <p class="small block" data-lang="ko">병원체·바이오마커 신호를 정밀하게 포착하도록 설계합니다.</p>
-              <p class="small block" data-lang="en">Engineered to detect pathogen and biomarker signals with precision.</p>
-            </div>
-            <div class="card">
-              <div class="icon" aria-hidden="true"></div>
-              <h3><span data-lang="ko">약제내성 분석</span><span data-lang="en">Drug Resistance Profiling</span></h3>
-              <p class="small block" data-lang="ko">내성 변이를 빠르고 재현성 있게 해석하는 워크플로우를 지향합니다.</p>
-              <p class="small block" data-lang="en">Workflows for rapid and reproducible interpretation of resistance variants.</p>
-            </div>
-            <div class="card">
-              <div class="icon" aria-hidden="true"></div>
-              <h3><span data-lang="ko">플랫폼 확장성</span><span data-lang="en">Platform Scalability</span></h3>
-              <p class="small block" data-lang="ko">임상·공중보건 환경에서 확장 가능한 형태로 구현합니다.</p>
-              <p class="small block" data-lang="en">Designed to scale across clinical and public health deployments.</p>
-            </div>
+            <article class="card">
+              <div class="icon" aria-hidden="true">🧪</div>
+              <h3>Sample Preparation</h3>
+              <p>
+                점도가 높은 임상 검체에서도 일관된 처리/회수 흐름을 목표로 전처리
+                프로세스를 설계합니다.
+              </p>
+              <ul class="bullets">
+                <li>matrix 영향 최소화</li>
+                <li>간단한 단계 수</li>
+                <li>자동화/키트화 고려</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">🧬</div>
+              <h3>Molecular Readout</h3>
+              <p>
+                qPCR/amplicon 기반 분석에 적합한 출력 품질을 지향합니다.
+              </p>
+              <ul class="bullets">
+                <li>low-burden 대응</li>
+                <li>오염·억제 요인 관리</li>
+                <li>패널 확장성</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">📊</div>
+              <h3>Drug Resistance Insight</h3>
+              <p>
+                변이 결과를 임상 의사결정에 연결하기 위한 해석/리포팅 레이어를 구축합니다.
+              </p>
+              <ul class="bullets">
+                <li>표준화된 변이 표기</li>
+                <li>패널/약제 매핑</li>
+                <li>리포트 자동화</li>
+              </ul>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PIPELINE -->
-    <section id="pipeline">
-      <div class="container">
-        <div class="section-title">
+      <!-- Technology -->
+      <section class="section section-alt" id="technology">
+        <div class="container two-col">
           <div>
-            <div class="kicker" data-lang="ko">Pipeline & Applications</div>
-            <div class="kicker" data-lang="en">Pipeline & Applications</div>
-            <h2>
-              <span data-lang="ko">파이프라인 & 적용 분야</span><span data-lang="en">Pipeline & Applications</span>
-            </h2>
-            <div class="divider"></div>
-          </div>
-        </div>
+            <h2>Technology</h2>
+            <p class="muted">
+              아래는 Figma 기반 랜딩페이지용 “구조” 예시입니다. 실제 기술 요소/도식은
+              내려받은 에셋(이미지/SVG)로 교체해 넣으면 바로 완성됩니다.
+            </p>
 
-        <div class="two-col">
+            <div class="feature-list">
+              <div class="feature">
+                <h3>Workflow-first Design</h3>
+                <p>임상 현장 제약(시간·안전·장비)을 전제로 설계합니다.</p>
+              </div>
+              <div class="feature">
+                <h3>Robust to Sample Variability</h3>
+                <p>검체 편차를 흡수하는 안정적인 처리 흐름을 지향합니다.</p>
+              </div>
+              <div class="feature">
+                <h3>Integration Ready</h3>
+                <p>키트/카트리지/자동화 장비로 이어질 수 있게 모듈화합니다.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <strong>Tip</strong>
+              <span>
+                Figma에서 내보낸 SVG 아이콘/도식은 <code>assets/</code>에 넣고,
+                <code>&lt;img src="./assets/xxx.svg"&gt;</code>로 연결하세요.
+              </span>
+            </div>
+          </div>
+
           <div class="panel">
-            <h3><span data-lang="ko">개요</span><span data-lang="en">Overview</span></h3>
-            <p class="block" data-lang="ko">
-              MycoDx는 연구 단계부터 임상 적용까지 고려한 진단 파이프라인을 구축하고 있습니다.
-              기술 개발–검증–현장 적용으로 이어지는 흐름을 명확히 설계합니다.
-            </p>
-            <p class="block" data-lang="en">
-              MycoDx builds diagnostic pipelines designed for translation from research to clinical application.
-              We architect a clear path from development to validation and deployment.
-            </p>
-
-            <div class="timeline" aria-label="Pipeline">
-              <div class="step">
-                <div class="mark" aria-hidden="true"></div>
-                <div>
-                  <h3><span data-lang="ko">Research</span><span data-lang="en">Research</span></h3>
-                  <p data-lang="ko">기술 개념 검증, 표적 선정, 분석 설계</p>
-                  <p data-lang="en">Concept validation, target selection, assay design</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="mark" aria-hidden="true"></div>
-                <div>
-                  <h3><span data-lang="ko">Clinical Validation</span><span data-lang="en">Clinical Validation</span></h3>
-                  <p data-lang="ko">임상 샘플 기반 성능 평가 및 비교 분석</p>
-                  <p data-lang="en">Performance evaluation using clinical samples and comparator studies</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="mark" aria-hidden="true"></div>
-                <div>
-                  <h3><span data-lang="ko">Deployment</span><span data-lang="en">Deployment</span></h3>
-                  <p data-lang="ko">현장 적용성, 운영·확장성 고려한 구현</p>
-                  <p data-lang="en">Implementation for field readiness, operations, and scale</p>
-                </div>
-              </div>
+            <div class="panel-header">
+              <span class="panel-title">End-to-end Pipeline</span>
+              <span class="panel-sub">Sample → Signal → Report</span>
             </div>
-          </div>
 
-          <div class="panel muted">
-            <h3><span data-lang="ko">적용 분야</span><span data-lang="en">Applications</span></h3>
-            <div class="cards" style="grid-template-columns:1fr; gap:10px;">
-              <div class="card" style="box-shadow:none;">
-                <b style="color:var(--navy)" data-lang="ko">결핵 분자진단</b>
-                <b style="color:var(--navy)" data-lang="en">Molecular TB Diagnostics</b>
-                <div class="small block" data-lang="ko">조기 진단을 통해 치료 성공률을 높이는 방향을 지향합니다.</div>
-                <div class="small block" data-lang="en">Aiming to improve outcomes through early detection.</div>
-              </div>
-              <div class="card" style="box-shadow:none;">
-                <b style="color:var(--navy)" data-lang="ko">약제내성 판별</b>
-                <b style="color:var(--navy)" data-lang="en">Drug Resistance Profiling</b>
-                <div class="small block" data-lang="ko">빠른 치료 전략 수립을 돕기 위한 분석을 제공합니다.</div>
-                <div class="small block" data-lang="en">Supporting timely treatment decisions with robust profiling.</div>
-              </div>
-              <div class="card" style="box-shadow:none;">
-                <b style="color:var(--navy)" data-lang="ko">NTM 확장 진단</b>
-                <b style="color:var(--navy)" data-lang="en">Expanded NTM Diagnostics</b>
-                <div class="small block" data-lang="ko">마이코박테리아 스펙트럼 확장 가능성을 고려합니다.</div>
-                <div class="small block" data-lang="en">Designed with extensibility across mycobacterial spectrum.</div>
-              </div>
+            <ol class="steps" aria-label="파이프라인 단계">
+              <li><span class="step-n">1</span><span>Collection & Inactivation</span></li>
+              <li><span class="step-n">2</span><span>Pre-treatment / Liquefaction</span></li>
+              <li><span class="step-n">3</span><span>Target Enrichment / Capture</span></li>
+              <li><span class="step-n">4</span><span>Amplification / Sequencing</span></li>
+              <li><span class="step-n">5</span><span>Variant Interpretation</span></li>
+              <li><span class="step-n">6</span><span>Clinical Report</span></li>
+            </ol>
+
+            <div class="panel-foot">
+              <span class="tag">TB</span>
+              <span class="tag">NTM</span>
+              <span class="tag">DR</span>
+              <span class="tag">Automation</span>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- Evidence / Trust -->
+      <section class="section" id="evidence">
+        <div class="container">
+          <div class="section-head">
+            <h2>Evidence & Trust</h2>
+            <p>
+              규제/임상 적용을 위해 문서화와 검증 가능한 형태의 결과 제시를 중요하게 봅니다.
+            </p>
+          </div>
 
-    <!-- VALIDATION -->
-    <section id="validation">
-      <div class="container">
-        <div class="section-title">
+          <div class="grid-3">
+            <div class="tile">
+              <h3>Documentation</h3>
+              <p class="muted">SOP · QC · Traceability 중심의 운영체계</p>
+            </div>
+            <div class="tile">
+              <h3>Clinical Collaboration</h3>
+              <p class="muted">현장 요구사항 기반의 반복 개선</p>
+            </div>
+            <div class="tile">
+              <h3>Data Integrity</h3>
+              <p class="muted">일관된 결과 재현성과 리포트 자동화</p>
+            </div>
+          </div>
+
+          <div class="disclaimer" role="note">
+            <p>
+              ※ 본 페이지는 소개 목적의 예시 텍스트를 포함합니다. 실제 성능 수치/주장(민감한
+              임상적 효능, 민감도/특이도 등)을 넣을 경우, 반드시 근거자료(논문/보고서/시험성적서)를
+              연결해 주세요.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section section-alt" id="about">
+        <div class="container two-col">
           <div>
-            <div class="kicker" data-lang="ko">Scientific Validation</div>
-            <div class="kicker" data-lang="en">Scientific Validation</div>
-            <h2>
-              <span data-lang="ko">과학적 검증</span><span data-lang="en">Scientific Validation</span>
-            </h2>
-            <div class="divider"></div>
+            <h2>About MycoDx</h2>
+            <p class="muted">
+              마이코박테리아 진단의 병목은 단일 기술이 아니라 “전체 워크플로우”에 걸쳐
+              존재합니다. MycoDx는 공학적 관점으로 이 병목을 줄이는 제품화 가능한 해법을
+              만듭니다.
+            </p>
+
+            <div class="quote">
+              <p>
+                “From sample to actionable report — designed for real clinical workflows.”
+              </p>
+              <span>— MycoDx</span>
+            </div>
           </div>
-        </div>
 
-        <div class="two-col">
-          <div class="panel">
-            <h3><span data-lang="ko">근거 기반 개발</span><span data-lang="en">Evidence-based Development</span></h3>
-            <p class="block" data-lang="ko">
-              MycoDx의 모든 기술은 과학적 근거와 검증을 기반으로 개발됩니다.
-              임상 연구, 비교 분석, 재현성을 핵심 가치로 삼고 있습니다.
-            </p>
-            <p class="block" data-lang="en">
-              Every MycoDx technology is developed through an evidence-based approach.
-              Clinical studies, comparative analysis, and reproducibility are central to our philosophy.
-            </p>
-
-            <div style="height:12px"></div>
-
-            <div class="cards" style="grid-template-columns:1fr; gap:10px;">
-              <div class="card" style="box-shadow:none;">
-                <div class="small">
-                  <b style="color:var(--navy)" data-lang="ko">검증 프레임</b>
-                  <b style="color:var(--navy)" data-lang="en">Validation Framework</b>
-                </div>
-                <ul class="small" style="margin:10px 0 0; padding-left:18px; color:var(--sub);">
-                  <li><span data-lang="ko">임상 샘플 기반 성능 검증</span><span data-lang="en">Clinical sample-based performance validation</span></li>
-                  <li><span data-lang="ko">표준법 대비 비교 연구</span><span data-lang="en">Comparator studies against reference standards</span></li>
-                  <li><span data-lang="ko">가이드라인 정합성 고려</span><span data-lang="en">Consideration of guideline alignment</span></li>
-                </ul>
+          <div class="team card">
+            <h3>Contact Points</h3>
+            <div class="team-row">
+              <div class="avatar" aria-hidden="true">MD</div>
+              <div>
+                <p class="t-name">Business / Partnership</p>
+                <p class="t-meta muted">Email · Meetings · Collaboration</p>
+              </div>
+            </div>
+            <div class="team-row">
+              <div class="avatar" aria-hidden="true">RD</div>
+              <div>
+                <p class="t-name">R&amp;D / Clinical Study</p>
+                <p class="t-meta muted">Protocol · Validation · Data</p>
+              </div>
+            </div>
+            <div class="team-row">
+              <div class="avatar" aria-hidden="true">EN</div>
+              <div>
+                <p class="t-name">Engineering / Automation</p>
+                <p class="t-meta muted">Device · Workflow · Integration</p>
               </div>
             </div>
           </div>
-
-          <div class="panel muted">
-            <h3><span data-lang="ko">데이터 시각화 (예시)</span><span data-lang="en">Data Visualization (Mock)</span></h3>
-            <div class="chart" role="img" aria-label="Mock chart: performance highlights">
-              <!-- simple decorative bars -->
-              <div class="bar" style="left:22px; height:110px;"></div>
-              <div class="bar" style="left:62px; height:140px;"></div>
-              <div class="bar red" style="left:102px; height:170px;"></div>
-              <div class="bar" style="left:142px; height:120px;"></div>
-              <div class="bar" style="left:182px; height:150px;"></div>
-              <div class="bar red" style="left:222px; height:190px;"></div>
-              <div class="bar" style="left:262px; height:130px;"></div>
-            </div>
-            <div style="height:10px"></div>
-            <span class="small" data-lang="ko">* 실제 수치/지표는 향후 검증 결과로 업데이트됩니다.</span>
-            <span class="small" data-lang="en">* Metrics will be updated with validated results.</span>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- COLLABORATION -->
-    <section id="collaboration">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <div class="kicker" data-lang="ko">Collaboration</div>
-            <div class="kicker" data-lang="en">Collaboration</div>
-            <h2>
-              <span data-lang="ko">협력</span><span data-lang="en">Collaboration</span>
-            </h2>
-            <div class="divider"></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <p class="block" data-lang="ko">
-            MycoDx는 연구기관, 병원, 공공보건 기관과의 협력을 환영합니다.
-            공동 연구, 임상 평가, 공중보건 프로젝트 등 다양한 형태의 협업을 추진합니다.
-          </p>
-          <p class="block" data-lang="en">
-            MycoDx welcomes collaboration with research institutes, hospitals, and public health organizations.
-            We pursue joint research, clinical evaluation, and public health initiatives.
-          </p>
-
-          <div class="cards">
-            <div class="card">
-              <div class="icon" aria-hidden="true"></div>
-              <h3><span data-lang="ko">공동 연구</span><span data-lang="en">Joint Research</span></h3>
-              <p class="small block" data-lang="ko">기술 검증 및 연구 설계를 함께합니다.</p>
-              <p class="small block" data-lang="en">Co-develop study designs and validation plans.</p>
-            </div>
-            <div class="card">
-              <div class="icon" aria-hidden="true"></div>
-              <h3><span data-lang="ko">임상 평가</span><span data-lang="en">Clinical Evaluation</span></h3>
-              <p class="small block" data-lang="ko">임상 현장 기반의 비교 평가를 수행합니다.</p>
-              <p class="small block" data-lang="en">Conduct comparator evaluations in clinical settings.</p>
-            </div>
-            <div class="card">
-              <div class="icon red" aria-hidden="true"></div>
-              <h3><span data-lang="ko">공중보건 협업</span><span data-lang="en">Public Health</span></h3>
-              <p class="small block" data-lang="ko">글로벌 확장성과 접근성을 함께 고려합니다.</p>
-              <p class="small block" data-lang="en">Built with global scale and accessibility in mind.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="height:18px"></div>
-
-        <div class="cta" id="contact">
-          <h2>
-            <span data-lang="ko">협력·연구·투자 문의</span>
-            <span data-lang="en">Collaboration • Research • Investment</span>
-          </h2>
-          <p class="block" data-lang="ko">
-            정확한 진단이 필요한 곳에 MycoDx가 함께합니다. 아래 폼 또는 이메일로 연락 주세요.
-          </p>
-          <p class="block" data-lang="en">
-            MycoDx stands where precise diagnosis matters most. Reach out via the form or email below.
-          </p>
-
-          <div class="cta-actions">
-            <a class="btn light" href="mailto:contact@mycodx.example">
-              <span data-lang="ko">이메일 보내기</span><span data-lang="en">Email Us</span>
-            </a>
-            <a class="btn outline" href="#contact-form">
-              <span data-lang="ko">문의 폼</span><span data-lang="en">Contact Form</span>
-            </a>
-          </div>
-
-          <div style="height:18px"></div>
-
-          <div class="panel" id="contact-form" style="max-width:720px; margin:0 auto; text-align:left;">
-            <h3 style="margin-bottom:10px;">
-              <span data-lang="ko">문의 폼 (정적)</span><span data-lang="en">Contact Form (Static)</span>
-            </h3>
-            <p class="small block" data-lang="ko">
-              * GitHub Pages는 서버가 없어 폼 전송을 바로 처리하지 못합니다.
-              현재는 이메일 링크 기반이며, 필요 시 Formspree 같은 외부 폼 서비스로 연결할 수 있습니다.
-            </p>
-            <p class="small block" data-lang="en">
-              * GitHub Pages is static and cannot process form submissions without a backend.
-              This demo uses email-based contact; you may connect Formspree (or similar) if needed.
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <div class="container contact">
+          <div class="contact-card">
+            <h2>Let’s talk</h2>
+            <p class="muted">
+              GitHub Pages 정적 사이트에서는 서버가 없으므로, 아래 폼은 기본적으로 메일 앱을
+              여는 방식(<code>mailto:</code>)으로 동작합니다.
             </p>
 
-            <div style="height:10px"></div>
-
-            <form onsubmit="return openMailto(event)">
-              <div style="display:grid; gap:10px; grid-template-columns:1fr 1fr;">
+            <form class="form" id="contactForm">
+              <div class="row">
                 <label>
-                  <span class="small" data-lang="ko">이름</span><span class="small" data-lang="en">Name</span><br/>
-                  <input required name="name" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.18);" />
+                  <span>이름</span>
+                  <input name="name" type="text" autocomplete="name" required />
                 </label>
                 <label>
-                  <span class="small" data-lang="ko">이메일</span><span class="small" data-lang="en">Email</span><br/>
-                  <input required type="email" name="email" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.18);" />
+                  <span>이메일</span>
+                  <input name="email" type="email" autocomplete="email" required />
                 </label>
               </div>
-
-              <div style="height:10px"></div>
-
               <label>
-                <span class="small" data-lang="ko">문의 내용</span><span class="small" data-lang="en">Message</span><br/>
-                <textarea required name="message" rows="5" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.18);"></textarea>
+                <span>메시지</span>
+                <textarea name="message" rows="5" required></textarea>
               </label>
 
-              <div style="height:12px"></div>
-              <button class="btn primary" type="submit">
-                <span data-lang="ko">메일 작성</span><span data-lang="en">Compose Email</span>
-              </button>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">메일로 보내기</button>
+                <a class="btn btn-ghost" href="mailto:contact@mycodx.com">직접 메일</a>
+              </div>
+
+              <p class="muted small">
+                * 수신 이메일 주소는 아래 스크립트에서 <code>contact@mycodx.com</code>을
+                원하는 주소로 바꾸세요.
+              </p>
             </form>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- NEWS / RESOURCES (simple placeholder) -->
-    <section id="resources">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <div class="kicker" data-lang="ko">News & Resources</div>
-            <div class="kicker" data-lang="en">News & Resources</div>
-            <h2>
-              <span data-lang="ko">뉴스 & 자료</span><span data-lang="en">News & Resources</span>
-            </h2>
-            <div class="divider"></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <p class="block" data-lang="ko">
-            연구 성과, 학회 발표, 기술 업데이트를 이곳에 게시합니다.
-          </p>
-          <p class="block" data-lang="en">
-            We share research milestones, conference presentations, and technology updates here.
-          </p>
-
-          <div class="cards" style="grid-template-columns:1fr 1fr; margin-top:16px;">
-            <div class="card">
-              <h3><span data-lang="ko">업데이트 예시</span><span data-lang="en">Sample Update</span></h3>
-              <p class="small block" data-lang="ko">2026.01 — 홈페이지 오픈, 협력 문의 채널 운영 시작</p>
-              <p class="small block" data-lang="en">Jan 2026 — Website launch and collaboration channel opened</p>
+          <div class="contact-side">
+            <div class="contact-box">
+              <h3>Company</h3>
+              <p class="muted">
+                주식회사 마이코디엑스<br />
+                (MycoDx Inc.)
+              </p>
             </div>
-            <div class="card">
-              <h3><span data-lang="ko">자료 예시</span><span data-lang="en">Sample Resource</span></h3>
-              <p class="small block" data-lang="ko">Whitepaper / 포스터 / 발표자료 링크</p>
-              <p class="small block" data-lang="en">Whitepaper / posters / presentation links</p>
+
+            <div class="contact-box">
+              <h3>Domains</h3>
+              <p class="muted">
+                mycodx.com<br />
+                GitHub Pages compatible
+              </p>
+            </div>
+
+            <div class="contact-box">
+              <h3>Materials</h3>
+              <p class="muted">
+                One-pager · Deck · Validation plan<br />
+                (PDF 링크로 교체 가능)
+              </p>
+              <a class="link" href="#" aria-disabled="true">자료 다운로드(예시)</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="foot">
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
         <div>
-          <b>MycoDx</b>
-          <small data-lang="ko" class="block">
-            경남 기반 결핵·마이코박테리아 진단 기술 기업<br/>
-            Email: <a href="mailto:contact@mycodx.example">contact@mycodx.example</a>
-          </small>
-          <small data-lang="en" class="block">
-            Tuberculosis & Mycobacteria Diagnostics Company (Korea-based)<br/>
-            Email: <a href="mailto:contact@mycodx.example">contact@mycodx.example</a>
-          </small>
-        </div>
-        <div>
-          <small>
+          <div class="brand footer-brand">
+            <span class="brand-name">MycoDx</span>
+            <span class="brand-tag">Diagnostics</span>
+          </div>
+          <p class="muted small">
             © <span id="year"></span> MycoDx. All rights reserved.
-          </small>
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#solutions">Solutions</a>
+          <a href="#technology">Technology</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // ---------- Language ----------
-    const langBtn = document.getElementById('langBtn');
-    const root = document.documentElement;
+    <script>
+      // Mobile nav
+      const toggle = document.querySelector(".nav-toggle");
+      const drawer = document.querySelector(".mobile-drawer");
+      const header = document.querySelector("[data-elevate]");
+      const navLinks = drawer?.querySelectorAll("a") || [];
 
-    function setLang(lang){
-      root.setAttribute('data-lang', lang);
-      root.lang = lang === 'ko' ? 'ko' : 'en';
-      localStorage.setItem('lang', lang);
+      function setDrawer(open) {
+        toggle.setAttribute("aria-expanded", String(open));
+        drawer.hidden = !open;
+        document.body.classList.toggle("no-scroll", open);
+      }
 
-      // Update button label: show current language text
-      // (Our CSS displays the active one automatically.)
-    }
+      toggle?.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        setDrawer(!open);
+      });
 
-    const savedLang = localStorage.getItem('lang');
-    setLang(savedLang || 'ko');
-
-    langBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-lang') || 'ko';
-      setLang(current === 'ko' ? 'en' : 'ko');
-    });
-
-    // ---------- Mobile drawer ----------
-    const burger = document.getElementById('burger');
-    const drawer = document.getElementById('drawer');
-
-    function setDrawer(open){
-      drawer.hidden = !open;
-      drawer.classList.toggle('open', open);
-      burger.setAttribute('aria-expanded', String(open));
-    }
-
-    burger.addEventListener('click', () => {
-      const isOpen = drawer.classList.contains('open');
-      setDrawer(!isOpen);
-    });
-
-    // Close drawer on link click (mobile)
-    drawer.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => setDrawer(false));
-    });
-
-    // ---------- Footer year ----------
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ---------- Static contact form -> mailto ----------
-    function openMailto(e){
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-
-      const subject = encodeURIComponent(`[MycoDx] Inquiry from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`
+      navLinks.forEach((a) =>
+        a.addEventListener("click", () => {
+          setDrawer(false);
+        })
       );
 
-      // Change to your real email:
-      window.location.href = `mailto:contact@mycodx.example?subject=${subject}&body=${body}`;
-      return false;
-    }
-    window.openMailto = openMailto;
-  </script>
-</body>
+      // Header elevate on scroll
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 8);
+      });
+
+      // Contact: mailto submit (works on GitHub Pages)
+      const form = document.getElementById("contactForm");
+      form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const name = (fd.get("name") || "").toString().trim();
+        const email = (fd.get("email") || "").toString().trim();
+        const message = (fd.get("message") || "").toString().trim();
+
+        const to = "contact@mycodx.com"; // <- 여기만 바꾸면 됩니다
+        const subject = encodeURIComponent(`[MycoDx 문의] ${name}`);
+        const body = encodeURIComponent(
+          `이름: ${name}\n이메일: ${email}\n\n메시지:\n${message}\n`
+        );
+
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      });
+
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
