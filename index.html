@@ -1,15 +1,572 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MycoDx | Tuberculosis & NTM Diagnostics</title>
+    <meta
+      name="description"
+      content="MycoDx는 분자 진단 기술로 결핵균을 정밀하게 검출하고, 약제 내성을 신속하게 분석합니다."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Figma 기본 세팅 및 구조</title>
-    </head>
+  <body>
+    <a class="skip" href="#main">본문으로 바로가기</a>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <!-- Header -->
+    <header class="header" id="top">
+      <div class="wrap header__inner">
+        <a class="brand" href="#top" aria-label="MycoDx 홈">
+          <!-- 로고(한글 포함) -->
+          <img
+            class="brand__lockup"
+            src="./assets/%EB%A1%9C%EA%B3%A0%20%EC%B6%94%EC%B6%9C%28%EC%9D%B4%EB%A6%84%29_%EB%B0%B0%EA%B2%BD%EC%A0%9C%EA%B1%B0.png"
+            alt="MycoDx 마이코디엑스"
+          />
+        </a>
+
+        <nav class="nav" aria-label="메인 메뉴">
+          <a href="#about">About</a>
+          <a href="#technology">Technology</a>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#validation">Validation</a>
+          <a href="#collaboration">Collaboration</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menuBtn" type="button" aria-label="모바일 메뉴" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mnav" hidden>
+        <div class="wrap mnav__inner">
+          <a href="#about">About</a>
+          <a href="#technology">Technology</a>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#validation">Validation</a>
+          <a href="#collaboration">Collaboration</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" aria-label="Hero">
+        <div class="wrap hero__grid">
+          <div class="hero__left">
+            <h1 class="hero__title">
+              보이지 않는 결핵을,<br />
+              가장 정확하게 드러내다.
+            </h1>
+
+            <p class="hero__sub">
+              MycoDx는 분자 진단 기술로 결핵균을 정밀하게 검출하고, 약제 내성을 신속하게 분석합니다.
+            </p>
+
+            <ul class="hero__bullets" aria-label="핵심 bullet">
+              <li>분자 기반 결핵균 검출 기술</li>
+              <li>약제 내성 정밀 분석</li>
+              <li>임상 검증된 진단 플랫폼</li>
+            </ul>
+          </div>
+
+          <div class="hero__right" aria-label="원형 데이터 그래픽">
+            <div class="radial">
+              <svg viewBox="0 0 520 520" class="radial__svg" aria-hidden="true">
+                <!-- rings -->
+                <circle cx="260" cy="260" r="230" class="ring ring--outer" />
+                <circle cx="260" cy="260" r="190" class="ring ring--mid" />
+                <circle cx="260" cy="260" r="150" class="ring ring--inner" />
+
+                <!-- inner circle -->
+                <circle cx="260" cy="260" r="122" class="innerCircle" />
+
+                <!-- hex frame -->
+                <polygon
+                  points="260,128 370,192 370,328 260,392 150,328 150,192"
+                  class="hex"
+                />
+
+                <!-- dots -->
+                <circle cx="260" cy="220" r="8" class="dot dot--g" />
+                <circle cx="230" cy="248" r="8" class="dot dot--g" />
+                <circle cx="290" cy="248" r="8" class="dot dot--g" />
+                <circle cx="260" cy="302" r="8" class="dot dot--g" />
+                <circle cx="230" cy="324" r="8" class="dot dot--g" />
+                <circle cx="290" cy="324" r="8" class="dot dot--g" />
+
+                <circle cx="260" cy="270" r="12" class="dot dot--r" />
+                <circle cx="210" cy="270" r="10" class="dot dot--r2" />
+                <circle cx="310" cy="270" r="10" class="dot dot--r2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="sectionDivider" aria-hidden="true"></div>
+
+      <!-- ABOUT -->
+      <section class="section section--gray" id="about">
+        <div class="wrap about__grid">
+          <div class="about__left">
+            <h2 class="h2">The Camellia Story</h2>
+
+            <p class="p">
+              동백꽃(Camellia)은 추운 겨울에도 선명한 붉은 꽃을 피우는 강인함의 상징입니다.
+            </p>
+
+            <p class="p">
+              MycoDx는 이 철학을 담아, 보이지 않는 병원체를 정밀하게 검출하고<br />
+              가장 어려운 진단 문제를 해결하는 기술 기업입니다.
+            </p>
+
+            <p class="p">
+              우리는 결핵균(Mycobacterium tuberculosis)의 분자 진단에 특화된 플랫폼을 개발하며,
+              임상 현장에서 신뢰할 수 있는 검증된 솔루션을 제공합니다.
+            </p>
+
+            <div class="about__line" aria-hidden="true"></div>
+
+            <p class="quote">
+              "정확성과 신뢰성을 통해 환자의 생명을 지킵니다"
+            </p>
+          </div>
+
+          <div class="about__right" aria-label="로고 배치">
+            <!-- 로고(영문 워드마크) -->
+            <img
+              class="about__mark"
+              src="./assets/%EB%A1%9C%EA%B3%A0%204_%EB%B0%B0%EA%B2%BD%EC%A0%9C%EA%B1%B0.png"
+              alt="MycoDx"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGY -->
+      <section class="section" id="technology">
+        <div class="wrap">
+          <div class="center">
+            <h2 class="h2 h2--center">Core Technology</h2>
+            <p class="sub">분자 진단 기술의 정확성과 신뢰성</p>
+          </div>
+
+          <div class="techCards">
+            <article class="tCard">
+              <div class="tIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="ico">
+                  <path
+                    d="M4 13h3l2-6 4 12 3-8h4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="h3">Molecular Detection</h3>
+              <p class="p muted">
+                분자 기반 검출 기술로 결핵균의 DNA/RNA를 정밀하게 탐지합니다. 민감도와 특이도를 극대화한 진단 방법론을 제공합니다.
+              </p>
+            </article>
+
+            <article class="tCard">
+              <div class="tIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="ico">
+                  <path
+                    d="M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 12l2 2 4-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="h3">Drug Resistance Analysis</h3>
+              <p class="p muted">
+                약제 내성 유전자를 신속하게 분석하여 최적의 치료 방향을 제시합니다. 다제내성 결핵(MDR-TB) 진단에 특화되어 있습니다.
+              </p>
+            </article>
+
+            <article class="tCard">
+              <div class="tIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="ico">
+                  <path
+                    d="M4 7h16M4 12h16M4 17h16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 7v10M16 7v10"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="h3">Platform Scalability</h3>
+              <p class="p muted">
+                연구실부터 임상 현장까지 확장 가능한 플랫폼을 구축했습니다. 다양한 병원체로 확장 가능한 기술 기반을 갖추고 있습니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PIPELINE -->
+      <section class="section section--gray" id="pipeline">
+        <div class="wrap">
+          <div class="center">
+            <h2 class="h2 h2--center">Development Pipeline</h2>
+            <p class="sub">연구부터 상용화까지의 명확한 로드맵</p>
+          </div>
+
+          <div class="timeline">
+            <div class="tRow tRow--left">
+              <div class="tCard2">
+                <span class="pill pill--dark">Completed</span>
+                <h3 class="h3">Research</h3>
+                <div class="kred">기초 연구</div>
+                <p class="p muted">분자 진단 기술 개발 및 최적화</p>
+              </div>
+              <div class="tRail" aria-hidden="true">
+                <div class="tDot tDot--dark"></div>
+              </div>
+              <div></div>
+            </div>
+
+            <div class="tRow tRow--right">
+              <div></div>
+              <div class="tRail" aria-hidden="true">
+                <div class="tDot tDot--red"></div>
+              </div>
+              <div class="tCard2 tCard2--wide">
+                <span class="pill pill--red">In Progress</span>
+                <h3 class="h3 center">Clinical Validation</h3>
+                <div class="kred center">임상 검증</div>
+                <p class="p muted center">의료기관 협력 임상 시험 진행</p>
+              </div>
+            </div>
+
+            <div class="tRow tRow--left">
+              <div class="tCard2">
+                <span class="pill pill--light">Planned</span>
+                <h3 class="h3">Application &amp; Deployment</h3>
+                <div class="kred">상용화</div>
+                <p class="p muted">진단 플랫폼 확장 및 글로벌 전개</p>
+              </div>
+              <div class="tRail" aria-hidden="true">
+                <div class="tDot tDot--dark"></div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALIDATION -->
+      <section class="section" id="validation">
+        <div class="wrap">
+          <div class="center">
+            <h2 class="h2 h2--center">Scientific Validation</h2>
+            <p class="sub">임상 데이터로 검증된 진단 성능</p>
+          </div>
+
+          <div class="valGrid">
+            <div class="valLeft">
+              <div class="vItem">
+                <span class="vBullet" aria-hidden="true"></span>
+                <div>
+                  <div class="vTitle">임상 시험 결과</div>
+                  <div class="vDesc muted">
+                    다기관 임상 연구를 통해 95% 이상의 민감도와 98% 이상의 특이도를 입증했습니다.
+                  </div>
+                </div>
+              </div>
+
+              <div class="vItem">
+                <span class="vBullet" aria-hidden="true"></span>
+                <div>
+                  <div class="vTitle">약제 내성 분석 정확도</div>
+                  <div class="vDesc muted">
+                    주요 항결핵제에 대한 내성 검출 정확도 96% 이상을 달성했습니다.
+                  </div>
+                </div>
+              </div>
+
+              <div class="vItem">
+                <span class="vBullet" aria-hidden="true"></span>
+                <div>
+                  <div class="vTitle">신속 진단 시간</div>
+                  <div class="vDesc muted">
+                    기존 배양 검사 대비 90% 이상 단축된 진단 시간을 제공합니다.
+                  </div>
+                </div>
+              </div>
+
+              <div class="noteBox muted">
+                * 모든 데이터는 IRB 승인을 받은 임상 시험 프로토콜에 따라 수집되었습니다.
+              </div>
+            </div>
+
+            <div class="valRight">
+              <div class="chartCard">
+                <div class="chartTitle">진단 성능 지표 (%)</div>
+
+                <!-- CSS bar chart (no library) -->
+                <div class="chart">
+                  <div class="barCol">
+                    <div class="bar bar--navy" style="height: 95%"></div>
+                    <div class="barLabel">Sensitivity</div>
+                  </div>
+
+                  <div class="barCol">
+                    <div class="bar bar--navy" style="height: 98%"></div>
+                    <div class="barLabel">Specificity</div>
+                  </div>
+
+                  <div class="barCol">
+                    <div class="bar bar--red" style="height: 96%"></div>
+                    <div class="barLabel">Accuracy</div>
+                  </div>
+
+                  <div class="barCol">
+                    <div class="bar bar--navy" style="height: 94%"></div>
+                    <div class="barLabel">Detection Rate</div>
+                  </div>
+                </div>
+
+                <div class="yAxis" aria-hidden="true">
+                  <span>100</span><span>75</span><span>50</span><span>25</span><span>0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLLABORATION -->
+      <section class="section section--gray" id="collaboration">
+        <div class="wrap">
+          <div class="center">
+            <h2 class="h2 h2--center">Collaboration</h2>
+            <p class="sub">함께 만들어가는 진단 기술의 미래</p>
+          </div>
+
+          <div class="collabCards">
+            <article class="cCard">
+              <div class="cBadge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icoW">
+                  <path
+                    d="M8 21h8M10 21V8a2 2 0 0 1 4 0v13M7 10h10"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M12 10v4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="h3 center">의료기관</h3>
+              <p class="p muted center">임상 시험 및 진단 플랫폼 검증</p>
+            </article>
+
+            <article class="cCard">
+              <div class="cBadge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icoW">
+                  <path
+                    d="M4 10l8-4 8 4-8 4-8-4Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M6 12v4c0 2 3 4 6 4s6-2 6-4v-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="h3 center">연구기관</h3>
+              <p class="p muted center">공동 연구 개발 및 기술 협력</p>
+            </article>
+
+            <article class="cCard">
+              <div class="cBadge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icoW">
+                  <path
+                    d="M8 3h8v6H8zM6 9h12v12H6z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 14h6M9 17h6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="h3 center">산업 파트너</h3>
+              <p class="p muted center">상용화 및 글로벌 시장 진출</p>
+            </article>
+          </div>
+
+          <div class="ctaPanel" id="contact">
+            <h3 class="ctaTitle">파트너십 문의</h3>
+            <p class="p muted center ctaText">
+              MycoDx와 함께 결핵 진단의 미래를 만들어갈 파트너를 찾습니다.
+              연구 협력, 임상 시험, 투자 관련 문의를 환영합니다.
+            </p>
+            <a class="btn btn--navy" href="#contactFormWrap">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact form -->
+      <section class="section" id="contactFormWrap">
+        <div class="wrap">
+          <h2 class="h2">Contact</h2>
+
+          <div class="contactWrap">
+            <div class="contactLeft">
+              <img
+                class="contactLogo"
+                src="./assets/%EB%A1%9C%EA%B3%A0%204_%EB%B0%B0%EA%B2%BD%EC%A0%9C%EA%B1%B0.png"
+                alt="MycoDx"
+              />
+              <p class="p muted">
+                정적 사이트(GitHub Pages)에서는 서버 전송이 불가하므로, 아래 폼은 메일 앱을 여는 방식으로 동작합니다.
+              </p>
+            </div>
+
+            <form class="form" id="contactForm">
+              <label>
+                <span>이름</span>
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                <span>이메일</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                <span>메시지</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+
+              <div class="form__actions">
+                <button class="btn btn--navy" type="submit">메일로 보내기</button>
+                <a class="btn btn--ghost" href="mailto:info@mycodx.com">직접 메일</a>
+              </div>
+
+              <p class="small muted">
+                * 수신 주소는 스크립트의 <code>info@mycodx.com</code>만 바꾸면 됩니다.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="wrap footer__top">
+        <div class="fcol">
+          <img
+            class="footer__lockup"
+            src="./assets/%EB%A1%9C%EA%B3%A0%20%EC%B6%94%EC%B6%9C%28%EC%9D%B4%EB%A6%84%29_%EB%B0%B0%EA%B2%BD%EC%A0%9C%EA%B1%B0.png"
+            alt="MycoDx 마이코디엑스"
+          />
+          <p class="p fmuted">분자 진단 기술로 결핵 진단의 새로운 기준을 제시합니다.</p>
+        </div>
+
+        <div class="fcol">
+          <h4 class="fh">Contact</h4>
+          <div class="fmuted">Email: info@mycodx.com</div>
+          <div class="fmuted">Tel: +82-70-8657-1848</div>
+          <div class="fmuted">Fax: +82-07-7543-3407</div>
+        </div>
+
+        <div class="fcol">
+          <h4 class="fh">Address</h4>
+          <div class="fmuted">51139 경상남도 창원시 의창구</div>
+          <div class="fmuted">용돈로83번안길 7</div>
+          <div class="fmuted">미래빌딩 202호</div>
+        </div>
+      </div>
+
+      <div class="wrap footer__bottom">
+        <div class="fmuted">© <span id="year"></span> MycoDx. All rights reserved.</div>
+        <div class="fLinks">
+          <a href="#top">Privacy Policy</a>
+          <a href="#top">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // mobile menu
+      const btn = document.querySelector(".menuBtn");
+      const mnav = document.querySelector(".mnav");
+      const links = mnav ? mnav.querySelectorAll("a") : [];
+
+      function setOpen(open) {
+        btn.setAttribute("aria-expanded", String(open));
+        mnav.hidden = !open;
+        document.body.classList.toggle("noScroll", open);
+      }
+
+      btn?.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        setOpen(!open);
+      });
+
+      links.forEach((a) => a.addEventListener("click", () => setOpen(false)));
+
+      // mailto form
+      document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const name = String(fd.get("name") || "").trim();
+        const email = String(fd.get("email") || "").trim();
+        const message = String(fd.get("message") || "").trim();
+
+        const to = "info@mycodx.com"; // <- 여기만 변경
+        const subject = encodeURIComponent(`[MycoDx 문의] ${name}`);
+        const body = encodeURIComponent(`이름: ${name}\n이메일: ${email}\n\n메시지:\n${message}\n`);
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
