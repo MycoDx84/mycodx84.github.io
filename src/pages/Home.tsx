@@ -3,6 +3,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type FormEvent,
   type ReactNode,
   type TouchEvent,
 } from 'react'
@@ -12,7 +13,6 @@ import collaborationImage from '../assets/mycodx-collaboration.jpg'
 import heroAssayImage from '../assets/mycodx-hero-assay.jpg'
 import heroCollaborationImage from '../assets/mycodx-hero-collaboration.jpg'
 import heroCultureImage from '../assets/mycodx-hero-culture.jpg'
-import petriCultureImage from '../assets/mycodx-petri-culture.jpg'
 
 interface RevealProps {
   children: ReactNode
@@ -21,6 +21,7 @@ interface RevealProps {
 }
 
 const SLIDE_DURATION = 6000
+const CONTACT_ENDPOINT = 'https://formsubmit.co/dltmdwls122789@gmail.com'
 
 function Reveal({ children, className = '', delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -72,6 +73,9 @@ export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [heroPaused, setHeroPaused] = useState(false)
   const [reduceMotion, setReduceMotion] = useState(false)
+  const [contactStatus, setContactStatus] = useState<
+    'idle' | 'sending' | 'sent' | 'failed'
+  >('idle')
 
   const capabilityKeys = ['detection', 'resistance', 'platform'] as const
   const heroSlides = [
@@ -191,6 +195,28 @@ export default function Home() {
       showPreviousSlide()
     } else {
       showNextSlide()
+    }
+  }
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = event.currentTarget
+
+    setContactStatus('sending')
+
+    try {
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      })
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+
+      form.reset()
+      setContactStatus('sent')
+    } catch {
+      setContactStatus('failed')
     }
   }
 
@@ -325,22 +351,95 @@ export default function Home() {
         </section>
 
         <section id="contact" className="home-contact">
-          <div className="home-contact__visual">
-            <img
-              src={petriCultureImage}
-              alt={t('home.visuals.petriCulture')}
-              data-parallax
-            />
+          <div className="home-contact__background" aria-hidden="true">
+            <img src={heroCultureImage} alt="" data-parallax />
           </div>
-          <Reveal className="home-contact__content" delay={140}>
-            <p className="section-kicker">{t('home.contact.kicker')}</p>
-            <h2>{t('home.contact.title')}</h2>
-            <p>{t('home.contact.description')}</p>
-            <a className="contact-link" href="mailto:info@mycodx.com" lang="en">
-              info@mycodx.com
-              <span aria-hidden="true">↗</span>
-            </a>
-          </Reveal>
+          <div className="home-contact__veil" aria-hidden="true" />
+
+          <div className="home-contact__inner">
+            <Reveal className="home-contact__heading">
+              <p className="section-kicker">{t('home.contact.kicker')}</p>
+              <h2 lang="en">{t('home.contact.title')}</h2>
+              <p>{t('home.contact.description')}</p>
+            </Reveal>
+
+            <div className="home-contact__panels">
+              <Reveal className="home-contact__location">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.343231176825!2d128.7001853310215!3d35.239174296577445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568cc7be42df32b%3A0x58106966d3b18ece!2z6rK97IOB64Ko64-EIOywveybkOyLnCDsnZjssL3qtawg7Jqp64-Z66GcODPrsojslYjquLggNw!5e0!3m2!1sko!2skr!4v1780626606710!5m2!1sko!2skr"
+                  title={t('home.contact.mapTitle')}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+                <address className="home-contact__address">
+                  <strong lang="en">MYCODX</strong>
+                  <span>{t('home.contact.address')}</span>
+                  <span className="home-contact__details" lang="en">
+                    <a href="mailto:info@mycodx.com">info@mycodx.com</a>
+                    <a href="tel:+827086571848">+82-70-8657-1848</a>
+                  </span>
+                </address>
+              </Reveal>
+
+              <Reveal className="home-contact__form-wrap" delay={140}>
+                <form className="home-contact__form" onSubmit={handleContactSubmit}>
+                  <label>
+                    <span>{t('home.contact.form.name')}</span>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder={t('home.contact.form.namePlaceholder')}
+                      autoComplete="name"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>{t('home.contact.form.email')}</span>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="email@example.com"
+                      autoComplete="email"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>{t('home.contact.form.message')}</span>
+                    <textarea
+                      name="message"
+                      rows={5}
+                      placeholder={t('home.contact.form.messagePlaceholder')}
+                      required
+                    />
+                  </label>
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="[MycoDx] Website inquiry"
+                  />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <div className="home-contact__form-footer">
+                    <button type="submit" disabled={contactStatus === 'sending'}>
+                      {contactStatus === 'sending'
+                        ? t('home.contact.form.sending')
+                        : t('home.contact.form.submit')}
+                    </button>
+                    <p
+                      className={`home-contact__status ${
+                        contactStatus === 'failed' ? 'is-error' : ''
+                      }`}
+                      aria-live="polite"
+                    >
+                      {contactStatus === 'sent' && t('home.contact.form.sent')}
+                      {contactStatus === 'failed' && t('home.contact.form.failed')}
+                    </p>
+                  </div>
+                </form>
+              </Reveal>
+            </div>
+          </div>
         </section>
       </main>
     </div>

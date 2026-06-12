@@ -196,9 +196,22 @@
       "link": "About MycoDx"
     },
     "contact": {
-      "kicker": "Work with us",
-      "title": "Let’s make diagnosis clearer.",
-      "description": "For research collaboration, platform integration, or partnership discussions, contact the MycoDx team."
+      "kicker": "Work with MycoDx",
+      "title": "Contact",
+      "description": "We welcome conversations about research, clinical validation, platform integration, and business partnerships.",
+      "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139, Republic of Korea",
+      "mapTitle": "Google map showing the MycoDx office",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "message": "Message",
+        "messagePlaceholder": "Tell us how we can work together.",
+        "submit": "Send inquiry",
+        "sending": "Sending...",
+        "sent": "Your inquiry has been sent.",
+        "failed": "We could not send your inquiry. Please contact us by email."
+      }
     }
   },
   "hero": {

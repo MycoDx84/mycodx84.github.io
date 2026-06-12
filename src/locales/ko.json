@@ -196,9 +196,22 @@
       "link": "MycoDx 소개"
     },
     "contact": {
-      "kicker": "Work with us",
-      "title": "진단을 더 명확하게.",
-      "description": "공동 연구, 플랫폼 연동, 사업 파트너십에 관한 논의는 MycoDx에 문의해 주세요."
+      "kicker": "Work with MycoDx",
+      "title": "Contact",
+      "description": "공동 연구, 임상 검증, 플랫폼 연동과 사업 파트너십에 관한 이야기를 기다립니다.",
+      "address": "51139 경상남도 창원시 의창구 용동로83번안길 7 미래빌딩 202호",
+      "mapTitle": "MycoDx 위치 Google 지도",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "성함",
+        "email": "Email",
+        "message": "Message",
+        "messagePlaceholder": "문의 내용을 입력해 주세요.",
+        "submit": "Send inquiry",
+        "sending": "Sending...",
+        "sent": "문의가 전송되었습니다.",
+        "failed": "전송에 실패했습니다. 이메일로 문의해 주세요."
+      }
     }
   },
   "hero": {
