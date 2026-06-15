@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import mycoDxLogo from '../../assets/logo/mycodx-wordmark.png';
+import mycoDxLogo from '../../assets/logo/로고2_마이코디엑스_2_투명.png';
+import mycoDxLogoKo from '../../assets/logo/로고2_마이코디엑스_2_한글_Pretendard.png';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const isKorean = i18n.language.startsWith('ko');
 
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
@@ -12,10 +14,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <Link to="/" className="footer-logo" aria-label="MycoDx home">
-              <img src={mycoDxLogo} alt="MycoDx" />
+              <img
+                src={isKorean ? mycoDxLogoKo : mycoDxLogo}
+                alt={isKorean ? 'MycoDx, 주식회사 마이코디엑스' : 'MycoDx'}
+              />
             </Link>
             <p className="footer-slogan">
-              <strong>{t('slogan.main')}</strong>
               <span>{t('slogan.sub')}</span>
             </p>
           </div>

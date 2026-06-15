@@ -13,10 +13,6 @@ export const homeNavigation: HomeNavigationItem[] = [
     path: '/product',
   },
   {
-    titleKey: 'header.navigation.gallery',
-    path: '/gallery',
-  },
-  {
     titleKey: 'header.navigation.news',
     path: '/news',
   },
