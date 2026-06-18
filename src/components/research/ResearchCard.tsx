@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import type { ResearchProject } from '../../data/researchProjects'
+import { formatScientificNames } from '../common/ScientificName'
 
 interface ResearchCardProps {
   project: ResearchProject
@@ -27,11 +28,13 @@ export default function ResearchCard({ project, index }: ResearchCardProps) {
 
         <div className="research-project-card__title">
           <span aria-hidden="true">—</span>
-          <h3>{title}</h3>
+          <h3>{formatScientificNames(title)}</h3>
         </div>
 
         {!isEnglish && project.summary && (
-          <p className="research-project-card__summary">{project.summary}</p>
+          <p className="research-project-card__summary">
+            {formatScientificNames(project.summary)}
+          </p>
         )}
 
         <dl>

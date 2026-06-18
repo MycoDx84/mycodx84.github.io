@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
+import { formatScientificNames } from '../components/common/ScientificName'
 import { papers, patents, type LocalizedText } from '../data/publications'
 
 function PublicationEmpty({ children }: { children: string }) {
@@ -63,7 +64,7 @@ export default function Publication() {
                     {paper.year ?? t('publication.yearUnknown')}
                   </span>
                   <h3>
-                    {localize(paper.title)}
+                    {formatScientificNames(localize(paper.title))}
                     {paper.journal && <em>{paper.journal}</em>}
                     {paper.publicationType && (
                       <strong className="paper-type">{paper.publicationType}</strong>
@@ -130,7 +131,7 @@ export default function Publication() {
                     <span aria-hidden="true">▣</span>
                     {patent.inventors.join(', ')}
                   </div>
-                  <h3>{localize(patent.title)}</h3>
+                  <h3>{formatScientificNames(localize(patent.title))}</h3>
                   <dl>
                     <div>
                       <dt>{t('publication.country')}</dt>

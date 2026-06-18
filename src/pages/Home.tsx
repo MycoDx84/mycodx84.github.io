@@ -21,7 +21,7 @@ interface RevealProps {
 }
 
 const SLIDE_DURATION = 6000
-const CONTACT_ENDPOINT = 'https://formsubmit.co/dltmdwls122789@gmail.com'
+const CONTACT_ENDPOINT = 'https://formsubmit.co/info@mycodx.com'
 
 function Reveal({ children, className = '', delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)

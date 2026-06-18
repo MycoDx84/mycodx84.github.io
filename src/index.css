@@ -56,6 +56,10 @@ a {
   text-decoration: none;
 }
 
+.scientific-name {
+  font-style: italic;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
