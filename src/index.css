@@ -57,7 +57,9 @@ a {
 }
 
 .scientific-name {
+  font-family: var(--font-display-en);
   font-style: italic;
+  font-synthesis: style;
 }
 
 button,

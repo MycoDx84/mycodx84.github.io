@@ -1,0 +1,194 @@
+media:
+  - name: product-images
+    label: Product images
+    input: public/uploads/products
+    output: /uploads/products
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: news-images
+    label: News images
+    input: public/uploads/news
+    output: /uploads/news
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: gallery-images
+    label: Gallery images
+    input: public/uploads/gallery
+    output: /uploads/gallery
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+content:
+  - name: managed-content
+    label: Website content
+    type: group
+    items:
+      - name: products
+        label: Products
+        type: file
+        path: src/content/products.json
+        format: json
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+          - name: visible
+            label: Show on site
+            type: boolean
+          - name: featured
+            label: Featured
+            type: boolean
+          - name: order
+            label: Display order
+            type: number
+          - name: category
+            label: Category
+            type: string
+          - name: image
+            label: Product image
+            type: image
+            options:
+              media: product-images
+          - name: title
+            label: Title
+            type: object
+            required: true
+            fields:
+              - name: ko
+                label: Korean
+                type: string
+                required: true
+              - name: en
+                label: English
+                type: string
+                required: true
+          - name: summary
+            label: Summary
+            type: object
+            required: true
+            fields:
+              - name: ko
+                label: Korean
+                type: text
+                required: true
+              - name: en
+                label: English
+                type: text
+                required: true
+          - name: tags
+            label: Tags
+            type: string
+            list: true
+
+      - name: news
+        label: News
+        type: file
+        path: src/content/news.json
+        format: json
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+          - name: visible
+            label: Show on site
+            type: boolean
+          - name: date
+            label: Date
+            type: date
+            required: true
+          - name: category
+            label: Category
+            type: select
+            options:
+              values:
+                - name: News
+                  label: News
+                - name: Notice
+                  label: Notice
+                - name: Press
+                  label: Press
+          - name: image
+            label: Featured image
+            type: image
+            options:
+              media: news-images
+          - name: title
+            label: Title
+            type: object
+            required: true
+            fields:
+              - name: ko
+                label: Korean
+                type: string
+                required: true
+              - name: en
+                label: English
+                type: string
+                required: true
+          - name: summary
+            label: Summary
+            type: object
+            required: true
+            fields:
+              - name: ko
+                label: Korean
+                type: text
+                required: true
+              - name: en
+                label: English
+                type: text
+                required: true
+          - name: url
+            label: Link URL
+            type: string
+
+      - name: gallery
+        label: Gallery
+        type: file
+        path: src/content/gallery.json
+        format: json
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+          - name: visible
+            label: Show on site
+            type: boolean
+          - name: order
+            label: Display order
+            type: number
+          - name: image
+            label: Gallery image
+            type: image
+            required: true
+            options:
+              media: gallery-images
+          - name: alt
+            label: Alt text
+            type: object
+            required: true
+            fields:
+              - name: ko
+                label: Korean
+                type: string
+                required: true
+              - name: en
+                label: English
+                type: string
+                required: true
+          - name: caption
+            label: Caption
+            type: object
+            fields:
+              - name: ko
+                label: Korean
+                type: string
+              - name: en
+                label: English
+                type: string

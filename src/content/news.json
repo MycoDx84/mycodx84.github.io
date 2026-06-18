@@ -1,0 +1,17 @@
+[
+  {
+    "id": "website-launch",
+    "visible": true,
+    "date": "2026-06-01",
+    "category": "News",
+    "title": {
+      "ko": "MycoDx 공식 홈페이지를 개설했습니다.",
+      "en": "The official MycoDx website is now open."
+    },
+    "summary": {
+      "ko": "MycoDx의 연구 방향, 연구진, 연구 성과와 회사 소식을 보다 명확하게 전달하기 위해 공식 홈페이지를 개설했습니다.",
+      "en": "We launched the official MycoDx website to share our research direction, team, research output, and company news more clearly."
+    },
+    "url": ""
+  }
+]

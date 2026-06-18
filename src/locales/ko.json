@@ -43,7 +43,8 @@
   "gallery": {
     "kicker": "Gallery",
     "title": "연구 현장",
-    "description": "MycoDx의 실험 환경과 연구 활동을 소개합니다."
+    "description": "MycoDx의 실험 환경과 연구 활동을 소개합니다.",
+    "empty": "등록된 갤러리 이미지가 없습니다."
   },
   "about": {
     "kicker": "About MycoDx",
@@ -134,6 +135,7 @@
     "kicker": "News",
     "title": "MycoDx 소식",
     "description": "MycoDx의 공식 소식과 공지사항을 전합니다.",
+    "empty": "등록된 소식이 없습니다.",
     "websiteLaunch": {
       "date": "2026.06",
       "title": "MycoDx 공식 홈페이지를 개설했습니다.",

@@ -1,16 +1,14 @@
 import { useTranslation } from 'react-i18next'
-import assayImage from '../assets/mycodx-96well-assay.jpg'
-import collaborationImage from '../assets/mycodx-collaboration.jpg'
-import petriCultureImage from '../assets/mycodx-petri-culture.jpg'
+import galleryData from '../content/gallery.json'
+import { localize, sortByOrder, type GalleryContent } from '../content/types'
 
-const galleryImages = [
-  { src: assayImage, altKey: 'home.visuals.assay' },
-  { src: petriCultureImage, altKey: 'home.visuals.petriCulture' },
-  { src: collaborationImage, altKey: 'home.visuals.collaboration' },
-] as const
+const galleryItems = galleryData as GalleryContent[]
 
 export default function Gallery() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const visibleImages = sortByOrder(
+    galleryItems.filter((image) => image.visible !== false),
+  )
 
   return (
     <div className="gallery-page">
@@ -20,14 +18,23 @@ export default function Gallery() {
         <span>{t('gallery.description')}</span>
       </header>
 
-      <div className="gallery-grid">
-        {galleryImages.map((image, index) => (
-          <figure key={image.src}>
-            <img src={image.src} alt={t(image.altKey)} />
-            <figcaption>{String(index + 1).padStart(2, '0')} / MycoDx R&amp;D</figcaption>
-          </figure>
-        ))}
-      </div>
+      {visibleImages.length > 0 ? (
+        <div className="gallery-grid">
+          {visibleImages.map((image, index) => (
+            <figure key={image.id}>
+              <img src={image.image} alt={localize(image.alt, i18n.language)} />
+              <figcaption>
+                {String(index + 1).padStart(2, '0')}
+                {image.caption ? ` / ${localize(image.caption, i18n.language)}` : ' / MycoDx R&D'}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : (
+        <div className="editorial-empty">
+          <p>{t('gallery.empty')}</p>
+        </div>
+      )}
     </div>
   )
 }

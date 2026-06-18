@@ -43,7 +43,8 @@
   "gallery": {
     "kicker": "Gallery",
     "title": "Inside Our Research",
-    "description": "A closer look at the MycoDx laboratory environment and research activities."
+    "description": "A closer look at the MycoDx laboratory environment and research activities.",
+    "empty": "No gallery images are currently available."
   },
   "about": {
     "kicker": "About MycoDx",
@@ -134,6 +135,7 @@
     "kicker": "News",
     "title": "MycoDx News",
     "description": "Official news and announcements from MycoDx.",
+    "empty": "No news items are currently available.",
     "websiteLaunch": {
       "date": "Jun 2026",
       "title": "The official MycoDx website is now open.",

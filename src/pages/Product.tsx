@@ -1,7 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import productData from '../content/products.json'
+import { localize, sortByOrder, type ProductContent } from '../content/types'
+
+const productItems = productData as ProductContent[]
 
 export default function Product() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const visibleProducts = sortByOrder(
+    productItems.filter((product) => product.visible !== false),
+  )
 
   return (
     <div className="editorial-page product-page">
@@ -11,16 +18,45 @@ export default function Product() {
         <span>{t('product.description')}</span>
       </header>
 
-      <section className="product-placeholder" aria-labelledby="product-status-title">
-        <span className="product-placeholder__index">01 / PRODUCT</span>
-        <div className="product-placeholder__copy">
-          <p>{t('product.status')}</p>
-          <div>
-            <h2 id="product-status-title">{t('product.placeholderTitle')}</h2>
-            <p>{t('product.placeholderDescription')}</p>
-          </div>
+      {visibleProducts.length > 0 ? (
+        <div className="editorial-list editorial-list--three product-list">
+          {visibleProducts.map((product) => (
+            <article
+              className={`editorial-card product-card ${
+                product.featured ? 'is-featured' : ''
+              }`}
+              key={product.id}
+            >
+              {product.image && (
+                <img src={product.image} alt={localize(product.title, i18n.language)} />
+              )}
+              <div>
+                {product.category && <span>{product.category}</span>}
+                <h3>{localize(product.title, i18n.language)}</h3>
+                <p>{localize(product.summary, i18n.language)}</p>
+              </div>
+              {product.tags && product.tags.length > 0 && (
+                <div className="editorial-card__tags">
+                  {product.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
         </div>
-      </section>
+      ) : (
+        <section className="product-placeholder" aria-labelledby="product-status-title">
+          <span className="product-placeholder__index">01 / PRODUCT</span>
+          <div className="product-placeholder__copy">
+            <p>{t('product.status')}</p>
+            <div>
+              <h2 id="product-status-title">{t('product.placeholderTitle')}</h2>
+              <p>{t('product.placeholderDescription')}</p>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   )
 }
