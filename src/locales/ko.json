@@ -199,7 +199,7 @@
       "kicker": "Work with MycoDx",
       "title": "Contact",
       "description": "공동 연구, 임상 검증, 플랫폼 연동과 사업 파트너십에 관한 이야기를 기다립니다.",
-      "address": "51139 경상남도 창원시 의창구 용동로83번안길 7 미래빌딩 202호",
+      "address": "51139 경상남도 창원시 의창구 용동로83번안길 7 미래드림빌딩 202호 206호",
       "mapTitle": "MycoDx 위치 Google 지도",
       "form": {
         "name": "Name",
@@ -268,7 +268,7 @@
   },
   "footer": {
     "rights": "© 2026 MycoDx. All rights reserved.",
-    "address": "경상남도 창원시 의창구 용동로83번안길 7 미래빌딩 202호 206호",
+    "address": "경상남도 창원시 의창구 용동로83번안길 7 미래드림빌딩 202호 206호",
     "email": "info@mycodx.com",
     "phone": "+82-70-8657-1848"
   }

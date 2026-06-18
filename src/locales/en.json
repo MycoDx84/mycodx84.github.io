@@ -199,7 +199,7 @@
       "kicker": "Work with MycoDx",
       "title": "Contact",
       "description": "We welcome conversations about research, clinical validation, platform integration, and business partnerships.",
-      "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139, Republic of Korea",
+      "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139 Republic of Korea",
       "mapTitle": "Google map showing the MycoDx office",
       "form": {
         "name": "Name",
@@ -268,7 +268,7 @@
   },
   "footer": {
     "rights": "© 2026 MycoDx. All rights reserved.",
-    "address": "7, Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do, Republic of Korea",
+    "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139 Republic of Korea",
     "email": "info@mycodx.com",
     "phone": "+82-70-8657-1848"
   }
