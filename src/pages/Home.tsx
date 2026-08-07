@@ -77,7 +77,8 @@ export default function Home() {
     'idle' | 'sending' | 'sent' | 'failed'
   >('idle')
 
-  const capabilityKeys = ['detection', 'resistance', 'platform'] as const
+  const heroKeywordKeys = ['culture', 'integrated', 'intelligent'] as const
+  const capabilityKeys = ['culture', 'detection', 'resistance', 'imaging'] as const
   const heroSlides = [
     {
       src: heroAssayImage,
@@ -254,6 +255,11 @@ export default function Home() {
               <span>{t('home.titleLine2')}</span>
             </h1>
             <p className="home-visual__description">{t('home.description')}</p>
+            <ul className="home-hero-keywords" aria-label={t('home.keywords.label')}>
+              {heroKeywordKeys.map((key) => (
+                <li key={key}>{t(`home.keywords.${key}`)}</li>
+              ))}
+            </ul>
           </div>
 
           <div className="home-visual__scroll" aria-hidden="true">
@@ -325,10 +331,19 @@ export default function Home() {
               >
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3 lang="en">{t(`home.capabilities.${key}.title`)}</h3>
+                <strong>{t(`home.capabilities.${key}.label`)}</strong>
                 <p>{t(`home.capabilities.${key}.description`)}</p>
               </Reveal>
             ))}
           </div>
+
+          <Reveal
+            className="home-capabilities__note"
+            delay={capabilityKeys.length * 120}
+          >
+            <strong lang="en">{t('home.capabilities.chain')}</strong>
+            <p>{t('home.capabilities.platformMessage')}</p>
+          </Reveal>
         </section>
 
         <section className="home-story">

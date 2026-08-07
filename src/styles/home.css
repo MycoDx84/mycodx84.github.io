@@ -270,6 +270,35 @@
   font-size: clamp(0.92rem, 1.15vw, 1.12rem);
   line-height: 1.72;
   color: rgba(255, 255, 255, 0.76);
+  white-space: pre-line;
+}
+
+.home-hero-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.25rem;
+  padding: 0;
+  margin: 1.7rem 0 0;
+  list-style: none;
+}
+
+.home-hero-keywords li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.74rem;
+  font-weight: 720;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+}
+
+.home-hero-keywords li::before {
+  width: 0.38rem;
+  height: 0.38rem;
+  content: '';
+  background: #d96c73;
+  border-radius: 50%;
 }
 
 .home-visual__scroll {
@@ -435,6 +464,16 @@ html[lang='ko'] .home-contact h2 {
   overflow-wrap: normal;
 }
 
+html[lang='ko'] .home-page {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+html[lang='ko'] .home-visual h1 {
+  max-width: 14ch;
+}
+
 .home-focus h2 {
   max-width: 15ch;
   font-size: clamp(2.6rem, 5.1vw, 6.2rem);
@@ -489,12 +528,12 @@ html[lang='ko'] .home-contact h2 {
 .home-capabilities h2 {
   max-width: 17ch;
   font-size: clamp(2.6rem, 4.6vw, 5.5rem);
-  line-height: 1.04;
+  line-height: 1.12;
 }
 
 .home-capabilities__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -544,11 +583,24 @@ html[lang='ko'] .home-contact h2 {
 }
 
 .capability-card h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-display-en);
-  font-size: clamp(1.6rem, 2.3vw, 2.65rem);
+  font-size: clamp(1.45rem, 2vw, 2.35rem);
   font-weight: 400;
   letter-spacing: -0.035em;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.capability-card strong {
+  display: block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.96rem;
+  font-weight: 720;
+  line-height: 1.55;
+  word-break: keep-all;
 }
 
 .capability-card p {
@@ -557,6 +609,33 @@ html[lang='ko'] .home-contact h2 {
   font-size: 0.88rem;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.58);
+}
+
+.home-capabilities__note {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+  margin-top: clamp(3rem, 5vw, 5rem);
+  padding-top: clamp(1.7rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-capabilities__note strong {
+  color: #d36871;
+  font-family: var(--font-display-en);
+  font-size: clamp(1.25rem, 2vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.home-capabilities__note p {
+  max-width: 44rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.85;
+  word-break: keep-all;
 }
 
 .home-story {
@@ -935,6 +1014,31 @@ html[lang='ko'] .home-contact h2 {
   }
 }
 
+@media (max-width: 1180px) {
+  .home-capabilities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .capability-card,
+  .capability-card:first-child,
+  .capability-card:last-child {
+    padding: 2rem clamp(1.5rem, 4vw, 2.6rem) 3rem;
+  }
+
+  .capability-card:nth-child(2n + 1) {
+    padding-left: 0;
+  }
+
+  .capability-card:nth-child(2n) {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .capability-card:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
 @media (max-width: 960px) {
   .site-header--home,
   .site-header--inner {
@@ -1137,6 +1241,10 @@ html[lang='ko'] .home-contact h2 {
     grid-template-columns: 1fr;
   }
 
+  .home-capabilities__note {
+    grid-template-columns: 1fr;
+  }
+
   .capability-card,
   .capability-card:first-child,
   .capability-card:last-child {
@@ -1144,6 +1252,12 @@ html[lang='ko'] .home-contact h2 {
     padding: 2rem 0 3rem;
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .capability-card:nth-child(2n + 1),
+  .capability-card:nth-child(2n) {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .capability-card:last-child {

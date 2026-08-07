@@ -31,7 +31,7 @@
   "research": {
     "kicker": "Research Areas",
     "title": "Precision research for mycobacterial diagnostics",
-    "description": "MycoDx researches diagnostic technologies for the precise detection of tuberculosis and NTM, antimicrobial resistance analysis, and clinical application.",
+    "description": "MycoDx researches integrated TB and non-tuberculous mycobacteria (NTM) diagnostic platform technologies that connect culture, detection, drug resistance analysis, and image interpretation.",
     "initiativesTitle": "Research Projects",
     "initiativesDescription": "An overview of research and development projects conducted or supported by members of the MycoDx research team, with annual duplicate records consolidated.",
     "total": "Total.",
@@ -55,28 +55,32 @@
     "intro": {
       "kicker": "Who we are",
       "title": "A biotechnology company setting a new standard in precision diagnostics",
-      "paragraph1": "Built on proprietary molecular diagnostic technology, MycoDx precisely detects mycobacteria, including Mycobacterium tuberculosis and non-tuberculous mycobacteria (NTM), while rapidly analyzing antimicrobial resistance.",
-      "paragraph2": "Beyond individual diagnostic kits, we are building a high-precision, rapid diagnostic platform designed to respond proactively to emerging global pandemic threats.",
-      "paragraph3": "From the research laboratory to real clinical settings, we continuously advance validated diagnostic solutions that healthcare professionals and patients can trust."
+      "paragraph1": "MycoDx develops an integrated platform that connects culture, detection, drug resistance analysis, and image interpretation technologies for Mycobacterium tuberculosis and non-tuberculous mycobacteria (NTM), supporting the full diagnostic process.",
+      "paragraph2": "Rather than stopping at individual testing technologies, we aim to build a faster and more reliable diagnostic environment through standardized and automated testing workflows.",
+      "paragraph3": "From the research laboratory to real clinical settings, we continuously advance diagnostic technologies that healthcare professionals and patients can trust."
     },
     "focus": {
-      "tuberculosis": {
-        "title": "Precision TB Detection",
-        "description": "Mycobacterium tuberculosis"
+      "culture": {
+        "title": "Culture-based Diagnostics",
+        "description": "Culture-based diagnostics"
       },
       "ntm": {
-        "title": "NTM Analysis",
-        "description": "Non-tuberculous mycobacteria"
+        "title": "Integrated TB & NTM Analysis",
+        "description": "TB & NTM analysis"
       },
       "resistance": {
-        "title": "Rapid Resistance Analysis",
-        "description": "Drug resistance profiling"
+        "title": "Drug Resistance Analysis",
+        "description": "Drug resistance analysis"
+      },
+      "imaging": {
+        "title": "Intelligent Imaging",
+        "description": "Intelligent imaging"
       }
     },
     "camellia": {
       "kicker": "The Camellia Philosophy",
       "title": "Like the camellia, blooming vividly and resiliently through winter.",
-      "description": "We detect microscopic pathogens that are difficult to diagnose and impossible to see, applying precision technology to the most challenging problems faced by healthcare professionals and patients."
+      "description": "To accurately detect microscopic pathogens that are difficult to diagnose and impossible to see, we connect culture, detection, analysis, and image-interpretation technologies for the challenging diagnostic problems faced by healthcare professionals and patients."
     },
     "mission": {
       "label": "Why we exist",
@@ -86,16 +90,16 @@
     "vision": {
       "kicker": "Mission & Vision",
       "title": "A healthier future that begins with accurate diagnosis",
-      "statement": "Beyond a new standard for tuberculosis diagnosis, toward leadership in global diagnostic platforms.",
-      "description": "With validated technology and a scalable platform, we deliver faster and clearer answers wherever reliable diagnosis is needed.",
+      "statement": "Toward global leadership in integrated TB and NTM diagnostic platforms.",
+      "description": "By connecting culture-based diagnostics, molecular detection, drug resistance analysis, and intelligent imaging, we deliver faster and clearer answers wherever reliable diagnosis is needed.",
       "pillars": {
         "validation": {
           "title": "Technology Advancement & Validation",
           "description": "We continuously improve the quality and reliability of our diagnostic technology through close joint research and clinical collaboration with leading medical and research institutions."
         },
         "scalability": {
-          "title": "Platform Scalability",
-          "description": "Building on our expertise in tuberculosis and multidrug-resistant tuberculosis, we will expand our diagnostic capabilities to a broader range of infectious diseases and pathogens."
+          "title": "Integrated Platform Expansion",
+          "description": "We continue to advance a platform that connects the full TB and NTM diagnostic process and can adapt to diverse laboratory and clinical diagnostic workflows."
         },
         "global": {
           "title": "Global Market Expansion",
@@ -107,7 +111,7 @@
   "people": {
     "kicker": "People",
     "title": "Meet the MycoDx Team",
-    "description": "Our team advances a new standard for tuberculosis diagnosis through molecular diagnostics and focused research and development.",
+    "description": "Our team builds an integrated TB and NTM diagnostic platform that connects culture, molecular detection, drug resistance analysis, and image interpretation.",
     "representative": "Representative Director",
     "researchers": "Research Team"
   },
@@ -144,8 +148,14 @@
   },
   "home": {
     "titleLine1": "Making the",
-    "titleLine2": "invisible visible.",
-    "description": "MycoDx develops precise molecular diagnostic and image-analysis solutions that reveal tuberculosis and non-tuberculous mycobacteria faster and more clearly.",
+    "titleLine2": "invisible visible",
+    "description": "MycoDx develops an integrated diagnostic platform spanning detection, culture, and analysis for TB and non-tuberculous mycobacteria (NTM).\nBuilt on microbial culture technology, we combine molecular detection, drug resistance analysis, and intelligent imaging for faster, more accurate TB/NTM diagnosis.",
+    "keywords": {
+      "label": "MycoDx core keywords",
+      "culture": "Culture-based diagnostics",
+      "integrated": "Integrated TB/NTM analysis",
+      "intelligent": "Intelligent diagnostic platform"
+    },
     "indexLabel": "Explore MycoDx",
     "indexIntro": "Research-led diagnostics, designed to move from the laboratory into real clinical workflows.",
     "indexAria": "MycoDx main menu",
@@ -156,10 +166,10 @@
       "next": "Next visual"
     },
     "navigation": {
-      "research": "Molecular detection · Drug resistance",
+      "research": "Culture diagnostics · Integrated analysis",
       "people": "Researchers · Clinical collaborators",
       "publication": "Research output · Validation",
-      "equipment": "Product information · Coming soon",
+      "equipment": "Platform information · Coming soon",
       "gallery": "Laboratory · Research moments",
       "news": "Updates · Announcements",
       "contact": "Partnership · General inquiry"
@@ -171,30 +181,40 @@
     },
     "focus": {
       "kicker": "Our focus",
-      "title": "Precision diagnostics for the pathogens that are hardest to see.",
-      "description": "We combine molecular detection, antimicrobial resistance analysis, and intelligent imaging to map mycobacteria with greater speed and confidence. Every system is developed with the realities of laboratory and clinical use in mind.",
+      "title": "Precision diagnostics for hard-to-see pathogens",
+      "description": "Built on microbial culture technology, MycoDx connects molecular detection, drug resistance analysis, and intelligent imaging to make TB and NTM diagnostic workflows faster and clearer.",
       "link": "About MycoDx"
     },
     "capabilities": {
-      "kicker": "Core capabilities",
-      "title": "Science translated into practical diagnostic systems.",
+      "kicker": "Core Technology",
+      "title": "Culture to interpretation in one workflow",
+      "culture": {
+        "title": "Culture-based Diagnostics",
+        "label": "Culture-based diagnostic technology",
+        "description": "We improve and automate TB and NTM culture and detection workflows for a standardized microbiological diagnostic environment."
+      },
       "detection": {
         "title": "Molecular Detection",
-        "description": "Automated detection workflows identify tuberculosis and NTM signals with precise, repeatable analysis."
+        "label": "Molecular detection",
+        "description": "We develop molecular detection technologies to identify TB and NTM rapidly and accurately."
       },
       "resistance": {
-        "title": "Drug Resistance",
-        "description": "Custom algorithms analyze resistance patterns to support faster and more informed treatment decisions."
+        "title": "Drug Resistance Analysis",
+        "label": "Drug resistance analysis",
+        "description": "We develop analytical technologies that identify TB drug resistance and support treatment decisions."
       },
-      "platform": {
-        "title": "Scalable Platform",
-        "description": "A modular architecture connects instruments, image data, and laboratory workflows without unnecessary complexity."
-      }
+      "imaging": {
+        "title": "Intelligent Imaging",
+        "label": "Intelligent imaging technology",
+        "description": "We analyze growth and morphological features during culture, developing AI-based interpretation and quantification."
+      },
+      "chain": "Culture · Molecular Detection · Drug Resistance · Intelligent Imaging",
+      "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated TB and NTM platform from specimen to result interpretation."
     },
     "story": {
-      "kicker": "MycoDx R&D Center",
-      "title": "Rigorous research, quietly sustained.",
-      "description": "Like the camellia that endures through winter, MycoDx continues the patient work of turning difficult biological signals into clear diagnostic evidence.",
+      "kicker": "The Camellia Story",
+      "title": "Turning hidden signals into diagnostic evidence",
+      "description": "MycoDx connects TB and NTM culture, detection, drug resistance analysis, and image interpretation in one diagnostic workflow. Through standardization and automation, we build a faster and more reliable testing environment.",
       "link": "About MycoDx"
     },
     "contact": {
@@ -217,26 +237,29 @@
     }
   },
   "hero": {
-    "title": "Revealing the Invisible Tuberculosis, Most Accurately.",
-    "subtitle": "MycoDx designs customized algorithms to accurately map tuberculosis, an increasingly sophisticated threat, using microbiology image analysis solutions.",
-    "point1": "Molecular-based Automated Tuberculosis Diagnosis",
-    "point2": "Precision Drug Resistance Analysis",
-    "point3": "High Scalability and Interoperability of the Platform"
+    "title": "Making the Invisible Visible",
+    "subtitle": "MycoDx develops an integrated diagnostic platform spanning detection, culture, and analysis for TB and non-tuberculous mycobacteria (NTM). Built on microbial culture technology, we combine molecular detection, drug resistance analysis, and intelligent imaging for faster, more accurate TB/NTM diagnosis.",
+    "point1": "Culture-based diagnostic technology",
+    "point2": "Integrated TB/NTM analysis",
+    "point3": "Intelligent diagnostic platform"
   },
   "story": {
     "title": "The Camellia Story",
     "subtitle": "The Integrity and Patience of Camellia, MycoDx's Research Shining Invisibly",
-    "description": "Like the resilient camellia, MycoDx silently dedicates itself to research for innovation in microbiology diagnosis and image analysis, building technologies that clearly reveal invisible diseases to the world."
+    "description": "MycoDx connects TB and non-tuberculous mycobacteria (NTM) culture, detection, drug resistance analysis, and image interpretation in one diagnostic workflow. Through standardization and automation, we build a faster and more reliable testing environment."
   },
   "tech": {
     "title": "Core Technology",
-    "subtitle": "Proprietary Customized Algorithms & Image Analysis Solutions",
-    "card1_title": "Molecular Detection",
-    "card1_desc": "Automated tuberculosis diagnosis and detection technology through precise molecular-based image analysis.",
-    "card2_title": "Drug Resistance Analysis",
-    "card2_desc": "Rapidly and accurately analyzes tuberculosis drug resistance patterns using proprietary customized algorithms.",
-    "card3_title": "Platform Scalability",
-    "card3_desc": "A high-performance platform that flexibly integrates with various medical data and microbiology analysis systems."
+    "subtitle": "Culture · Molecular Detection · Drug Resistance · Intelligent Imaging",
+    "card1_title": "Culture-based Diagnostics",
+    "card1_desc": "We improve and automate TB and non-tuberculous mycobacteria (NTM) culture and detection workflows for a standardized diagnostic environment.",
+    "card2_title": "Molecular Detection",
+    "card2_desc": "We develop molecular detection technologies to identify TB and NTM rapidly and accurately.",
+    "card3_title": "Drug Resistance Analysis",
+    "card3_desc": "We develop analytical technologies that identify TB drug resistance and support treatment decisions.",
+    "card4_title": "Intelligent Imaging",
+    "card4_desc": "We analyze growth and morphological features during culture, developing AI-based interpretation and quantification.",
+    "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated TB and NTM platform from specimen to result interpretation."
   },
   "rd": {
     "title": "R&D Center",
@@ -247,12 +270,15 @@
   },
   "pipeline": {
     "title": "Development Pipeline",
-    "subtitle": "Step-by-step Milestones Toward Global Commercialization",
-    "step1": "BCG Formulation",
-    "step1_status": "Completed",
-    "step2": "Clinical Validation",
+    "subtitle": "Development stages for an integrated diagnostic platform from specimen to result interpretation",
+    "step1": "Research",
+    "step1_description": "Development and optimization of core culture, molecular detection, and image-analysis technologies",
+    "step1_status": "In Progress",
+    "step2": "Validation",
+    "step2_description": "Performance validation and integration of TB and NTM diagnostic technologies",
     "step2_status": "In Progress",
     "step3": "Application & Deployment",
+    "step3_description": "Advancement of the integrated diagnostic platform and expansion of field application",
     "step3_status": "Upcoming"
   },
   "validation": {
@@ -266,7 +292,7 @@
   },
   "slogan": {
     "main": "MycoDx",
-    "sub": "Setting a new standard for tuberculosis diagnosis through molecular diagnostic technology and R&D expertise."
+    "sub": "Developing an integrated diagnostic platform that connects the full TB and NTM diagnostic process."
   },
   "footer": {
     "rights": "© 2026 MycoDx. All rights reserved.",

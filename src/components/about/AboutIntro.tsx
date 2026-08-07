@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import camelliaMark from '../../assets/logo/mycodx-camellia-mark.png'
 import { formatScientificNames } from '../common/ScientificName'
 
-const diagnosticFocus = ['tuberculosis', 'ntm', 'resistance'] as const
+const diagnosticFocus = ['culture', 'ntm', 'resistance', 'imaging'] as const
 
 export default function AboutIntro() {
   const { t } = useTranslation()
