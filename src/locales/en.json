@@ -30,8 +30,8 @@
   },
   "research": {
     "kicker": "Research Areas",
-    "title": "Precision research for mycobacterial diagnostics",
-    "description": "MycoDx researches integrated TB and non-tuberculous mycobacteria (NTM) diagnostic platform technologies that connect culture, detection, drug resistance analysis, and image interpretation.",
+    "title": "Precision research for infectious disease diagnostics",
+    "description": "MycoDx researches integrated infectious disease diagnostic platform technologies that connect culture, detection, drug resistance analysis, and image interpretation.",
     "initiativesTitle": "Research Projects",
     "initiativesDescription": "An overview of research and development projects conducted or supported by members of the MycoDx research team, with annual duplicate records consolidated.",
     "total": "Total.",
@@ -48,14 +48,14 @@
   },
   "about": {
     "kicker": "About MycoDx",
-    "title": "Revealing invisible tuberculosis\nwith uncompromising precision.",
+    "title": "Revealing invisible infectious diseases\nwith uncompromising precision.",
     "lead": "MycoDx is an infectious-disease diagnostics startup founded by experts with extensive experience at the forefront of the biotechnology industry.",
-    "heroImageAlt": "A researcher examining a Petri dish containing a mycobacterial culture sample",
+    "heroImageAlt": "A researcher examining a Petri dish containing a microbial culture sample",
     "focusLabel": "MycoDx core diagnostic areas",
     "intro": {
       "kicker": "Who we are",
       "title": "A biotechnology company setting a new standard in precision diagnostics",
-      "paragraph1": "MycoDx develops an integrated platform that connects culture, detection, drug resistance analysis, and image interpretation technologies for Mycobacterium tuberculosis and non-tuberculous mycobacteria (NTM), supporting the full diagnostic process.",
+      "paragraph1": "MycoDx develops an integrated platform that connects culture, detection, drug resistance analysis, and image interpretation technologies for infectious disease diagnostics, supporting the full diagnostic process.",
       "paragraph2": "Rather than stopping at individual testing technologies, we aim to build a faster and more reliable diagnostic environment through standardized and automated testing workflows.",
       "paragraph3": "From the research laboratory to real clinical settings, we continuously advance diagnostic technologies that healthcare professionals and patients can trust."
     },
@@ -65,8 +65,8 @@
         "description": "Culture-based diagnostics"
       },
       "ntm": {
-        "title": "Integrated TB & NTM Analysis",
-        "description": "TB & NTM analysis"
+        "title": "Integrated Infectious Disease Analysis",
+        "description": "Infectious disease analysis"
       },
       "resistance": {
         "title": "Drug Resistance Analysis",
@@ -82,6 +82,31 @@
       "title": "Like the camellia, blooming vividly and resiliently through winter.",
       "description": "To accurately detect microscopic pathogens that are difficult to diagnose and impossible to see, we connect culture, detection, analysis, and image-interpretation technologies for the challenging diagnostic problems faced by healthcare professionals and patients."
     },
+    "history": {
+      "kicker": "History",
+      "title": "Company History",
+      "label": "MycoDx Timeline",
+      "since": "To be updated",
+      "description": "MycoDx milestones in foundation, research and development, certification, and collaboration will be updated as they are finalized.",
+      "aria": "MycoDx company history",
+      "items": {
+        "foundation": {
+          "year": "TBD",
+          "title": "Foundation & Infrastructure",
+          "description": "Key milestones related to company foundation and research infrastructure will be organized here."
+        },
+        "research": {
+          "year": "TBD",
+          "title": "R&D Advancement",
+          "description": "Milestones in infectious disease diagnostic platform development and technology validation will be organized here."
+        },
+        "partnership": {
+          "year": "TBD",
+          "title": "Certification & Collaboration",
+          "description": "Certification, joint research, clinical collaboration, and business partnership milestones will be organized here."
+        }
+      }
+    },
     "mission": {
       "label": "Why we exist",
       "title": "Protecting patients through accuracy and trust.",
@@ -90,7 +115,7 @@
     "vision": {
       "kicker": "Mission & Vision",
       "title": "A healthier future that begins with accurate diagnosis",
-      "statement": "Toward global leadership in integrated TB and NTM diagnostic platforms.",
+      "statement": "Toward global leadership in integrated infectious disease diagnostic platforms.",
       "description": "By connecting culture-based diagnostics, molecular detection, drug resistance analysis, and intelligent imaging, we deliver faster and clearer answers wherever reliable diagnosis is needed.",
       "pillars": {
         "validation": {
@@ -99,7 +124,7 @@
         },
         "scalability": {
           "title": "Integrated Platform Expansion",
-          "description": "We continue to advance a platform that connects the full TB and NTM diagnostic process and can adapt to diverse laboratory and clinical diagnostic workflows."
+          "description": "We continue to advance a platform that connects the full infectious disease diagnostic process and can adapt to diverse laboratory and clinical diagnostic workflows."
         },
         "global": {
           "title": "Global Market Expansion",
@@ -111,7 +136,7 @@
   "people": {
     "kicker": "People",
     "title": "Meet the MycoDx Team",
-    "description": "Our team builds an integrated TB and NTM diagnostic platform that connects culture, molecular detection, drug resistance analysis, and image interpretation.",
+    "description": "Our team builds an integrated infectious disease diagnostic platform that connects culture, molecular detection, drug resistance analysis, and image interpretation.",
     "representative": "Representative Director",
     "researchers": "Research Team"
   },
@@ -149,11 +174,11 @@
   "home": {
     "titleLine1": "Making the",
     "titleLine2": "invisible visible",
-    "description": "MycoDx develops an integrated diagnostic platform spanning detection, culture, and analysis for TB and non-tuberculous mycobacteria (NTM).\nBuilt on microbial culture technology, we combine molecular detection, drug resistance analysis, and intelligent imaging for faster, more accurate TB/NTM diagnosis.",
+    "description": "MycoDx develops an integrated diagnostic platform spanning detection, culture, and analysis for infectious diseases.\nBuilt on microbial culture technology, we combine molecular detection, drug resistance analysis, and intelligent imaging for faster, more accurate infectious disease diagnosis.",
     "keywords": {
       "label": "MycoDx core keywords",
       "culture": "Culture-based diagnostics",
-      "integrated": "Integrated TB/NTM analysis",
+      "integrated": "Integrated infectious disease analysis",
       "intelligent": "Intelligent diagnostic platform"
     },
     "indexLabel": "Explore MycoDx",
@@ -176,13 +201,13 @@
     },
     "visuals": {
       "assay": "A researcher performing an assay with a standard single-channel micropipette and a 96-well plate",
-      "petriCulture": "A researcher examining a Petri dish containing a mycobacterial culture sample",
+      "petriCulture": "A researcher examining a Petri dish containing a microbial culture sample",
       "collaboration": "Researchers reviewing diagnostic data together"
     },
     "focus": {
       "kicker": "Our focus",
       "title": "Precision diagnostics for hard-to-see pathogens",
-      "description": "Built on microbial culture technology, MycoDx connects molecular detection, drug resistance analysis, and intelligent imaging to make TB and NTM diagnostic workflows faster and clearer.",
+      "description": "Built on microbial culture technology, MycoDx connects molecular detection, drug resistance analysis, and intelligent imaging to make infectious disease diagnostic workflows faster and clearer.",
       "link": "About MycoDx"
     },
     "capabilities": {
@@ -191,17 +216,17 @@
       "culture": {
         "title": "Culture-based Diagnostics",
         "label": "Culture-based diagnostic technology",
-        "description": "We improve and automate TB and NTM culture and detection workflows for a standardized microbiological diagnostic environment."
+        "description": "We improve and automate infectious pathogen culture and detection workflows for a standardized microbiological diagnostic environment."
       },
       "detection": {
         "title": "Molecular Detection",
         "label": "Molecular detection",
-        "description": "We develop molecular detection technologies to identify TB and NTM rapidly and accurately."
+        "description": "We develop molecular detection technologies to identify infectious pathogens rapidly and accurately."
       },
       "resistance": {
         "title": "Drug Resistance Analysis",
         "label": "Drug resistance analysis",
-        "description": "We develop analytical technologies that identify TB drug resistance and support treatment decisions."
+        "description": "We develop analytical technologies that identify antimicrobial resistance and support treatment decisions."
       },
       "imaging": {
         "title": "Intelligent Imaging",
@@ -209,12 +234,12 @@
         "description": "We analyze growth and morphological features during culture, developing AI-based interpretation and quantification."
       },
       "chain": "Culture · Molecular Detection · Drug Resistance · Intelligent Imaging",
-      "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated TB and NTM platform from specimen to result interpretation."
+      "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated infectious disease platform from specimen to result interpretation."
     },
     "story": {
       "kicker": "The Camellia Story",
       "title": "Turning hidden signals into diagnostic evidence",
-      "description": "MycoDx connects TB and NTM culture, detection, drug resistance analysis, and image interpretation in one diagnostic workflow. Through standardization and automation, we build a faster and more reliable testing environment.",
+      "description": "MycoDx connects infectious pathogen culture, detection, drug resistance analysis, and image interpretation in one diagnostic workflow. Through standardization and automation, we build a faster and more reliable testing environment.",
       "link": "About MycoDx"
     },
     "contact": {
@@ -238,28 +263,28 @@
   },
   "hero": {
     "title": "Making the Invisible Visible",
-    "subtitle": "MycoDx develops an integrated diagnostic platform spanning detection, culture, and analysis for TB and non-tuberculous mycobacteria (NTM). Built on microbial culture technology, we combine molecular detection, drug resistance analysis, and intelligent imaging for faster, more accurate TB/NTM diagnosis.",
+    "subtitle": "MycoDx develops an integrated diagnostic platform spanning detection, culture, and analysis for infectious diseases. Built on microbial culture technology, we combine molecular detection, drug resistance analysis, and intelligent imaging for faster, more accurate infectious disease diagnosis.",
     "point1": "Culture-based diagnostic technology",
-    "point2": "Integrated TB/NTM analysis",
+    "point2": "Integrated infectious disease analysis",
     "point3": "Intelligent diagnostic platform"
   },
   "story": {
     "title": "The Camellia Story",
     "subtitle": "The Integrity and Patience of Camellia, MycoDx's Research Shining Invisibly",
-    "description": "MycoDx connects TB and non-tuberculous mycobacteria (NTM) culture, detection, drug resistance analysis, and image interpretation in one diagnostic workflow. Through standardization and automation, we build a faster and more reliable testing environment."
+    "description": "MycoDx connects infectious pathogen culture, detection, drug resistance analysis, and image interpretation in one diagnostic workflow. Through standardization and automation, we build a faster and more reliable testing environment."
   },
   "tech": {
     "title": "Core Technology",
     "subtitle": "Culture · Molecular Detection · Drug Resistance · Intelligent Imaging",
     "card1_title": "Culture-based Diagnostics",
-    "card1_desc": "We improve and automate TB and non-tuberculous mycobacteria (NTM) culture and detection workflows for a standardized diagnostic environment.",
+    "card1_desc": "We improve and automate infectious pathogen culture and detection workflows for a standardized diagnostic environment.",
     "card2_title": "Molecular Detection",
-    "card2_desc": "We develop molecular detection technologies to identify TB and NTM rapidly and accurately.",
+    "card2_desc": "We develop molecular detection technologies to identify infectious pathogens rapidly and accurately.",
     "card3_title": "Drug Resistance Analysis",
-    "card3_desc": "We develop analytical technologies that identify TB drug resistance and support treatment decisions.",
+    "card3_desc": "We develop analytical technologies that identify antimicrobial resistance and support treatment decisions.",
     "card4_title": "Intelligent Imaging",
     "card4_desc": "We analyze growth and morphological features during culture, developing AI-based interpretation and quantification.",
-    "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated TB and NTM platform from specimen to result interpretation."
+    "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated infectious disease platform from specimen to result interpretation."
   },
   "rd": {
     "title": "R&D Center",
@@ -275,7 +300,7 @@
     "step1_description": "Development and optimization of core culture, molecular detection, and image-analysis technologies",
     "step1_status": "In Progress",
     "step2": "Validation",
-    "step2_description": "Performance validation and integration of TB and NTM diagnostic technologies",
+    "step2_description": "Performance validation and integration of infectious disease diagnostic technologies",
     "step2_status": "In Progress",
     "step3": "Application & Deployment",
     "step3_description": "Advancement of the integrated diagnostic platform and expansion of field application",
@@ -292,7 +317,7 @@
   },
   "slogan": {
     "main": "MycoDx",
-    "sub": "Developing an integrated diagnostic platform that connects the full TB and NTM diagnostic process."
+    "sub": "Developing an integrated diagnostic platform that connects the full infectious disease diagnostic process."
   },
   "footer": {
     "rights": "© 2026 MycoDx. All rights reserved.",

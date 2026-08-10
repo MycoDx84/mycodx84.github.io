@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import camelliaMark from '../../assets/logo/mycodx-camellia-mark.png'
-import { formatScientificNames } from '../common/ScientificName'
 
 const diagnosticFocus = ['culture', 'ntm', 'resistance', 'imaging'] as const
 
@@ -19,7 +18,7 @@ export default function AboutIntro() {
 
       <div className="about-intro__grid">
         <div className="about-intro__content">
-          <p>{formatScientificNames(t('about.intro.paragraph1'))}</p>
+          <p>{t('about.intro.paragraph1')}</p>
           <p>{t('about.intro.paragraph2')}</p>
           <p>{t('about.intro.paragraph3')}</p>
 
@@ -27,8 +26,10 @@ export default function AboutIntro() {
             {diagnosticFocus.map((item, index) => (
               <li key={item}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{t(`about.focus.${item}.title`)}</strong>
-                <small>{formatScientificNames(t(`about.focus.${item}.description`))}</small>
+                <div>
+                  <strong>{t(`about.focus.${item}.title`)}</strong>
+                  <small>{t(`about.focus.${item}.description`)}</small>
+                </div>
               </li>
             ))}
           </ul>

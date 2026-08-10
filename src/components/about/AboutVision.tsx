@@ -8,7 +8,7 @@ export default function AboutVision() {
   return (
     <section className="about-vision" aria-labelledby="about-vision-title">
       <div className="about-section-heading">
-        <span>02</span>
+        <span>03</span>
         <div>
           <p className="about-kicker">{t('about.vision.kicker')}</p>
           <h2 id="about-vision-title">{t('about.vision.title')}</h2>
