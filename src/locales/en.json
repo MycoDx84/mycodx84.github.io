@@ -86,26 +86,51 @@
       "kicker": "History",
       "title": "Company History",
       "label": "MycoDx Timeline",
-      "since": "To be updated",
-      "description": "MycoDx milestones in foundation, research and development, certification, and collaboration will be updated as they are finalized.",
+      "since": "Apr. 2025 ~ Jun. 2026",
+      "description": "Key milestones in MycoDx's establishment, research infrastructure, certification, and collaboration.",
       "aria": "MycoDx company history",
-      "items": {
-        "foundation": {
-          "year": "TBD",
-          "title": "Foundation & Infrastructure",
-          "description": "Key milestones related to company foundation and research infrastructure will be organized here."
+      "metricsAria": "MycoDx key achievements",
+      "metrics": [
+        {
+          "value": "10",
+          "label": "Registered patents"
         },
-        "research": {
-          "year": "TBD",
-          "title": "R&D Advancement",
-          "description": "Milestones in infectious disease diagnostic platform development and technology validation will be organized here."
+        {
+          "value": "76",
+          "label": "International journal papers"
         },
-        "partnership": {
-          "year": "TBD",
-          "title": "Certification & Collaboration",
-          "description": "Certification, joint research, clinical collaboration, and business partnership milestones will be organized here."
+        {
+          "value": "1,155+",
+          "label": "Citation record"
         }
-      }
+      ],
+      "items": [
+        {
+          "year": "2025.04~",
+          "title": "Policy Funding Secured",
+          "description": "Secured an infectious disease prevention and treatment technology development project and transferred the project to the Industry-Academic Cooperation Foundation at Changwon National University. (2026.01)"
+        },
+        {
+          "year": "2026.01",
+          "title": "Corporate Establishment",
+          "description": "Established MycoDx Co., Ltd. and completed SME confirmation."
+        },
+        {
+          "year": "2026.02",
+          "title": "Corporate R&D Center",
+          "description": "Received recognition for the establishment of a corporate R&D center."
+        },
+        {
+          "year": "2026.05",
+          "title": "Startup Certification",
+          "description": "Completed startup company confirmation, recognition as a faculty/researcher-founded startup, and medical device sales business registration. (2026.04)"
+        },
+        {
+          "year": "2026.06",
+          "title": "RISE Participating Company Agreement",
+          "description": "Signed a participating company agreement for Changwon National University's Regional Innovation System & Education (RISE) program."
+        }
+      ]
     },
     "mission": {
       "label": "Why we exist",

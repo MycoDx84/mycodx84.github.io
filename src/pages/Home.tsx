@@ -81,12 +81,12 @@ export default function Home() {
   const capabilityKeys = ['culture', 'detection', 'resistance', 'imaging'] as const
   const heroSlides = [
     {
-      src: heroAssayImage,
-      altKey: 'home.visuals.assay',
-    },
-    {
       src: heroCultureImage,
       altKey: 'home.visuals.petriCulture',
+    },
+    {
+      src: heroAssayImage,
+      altKey: 'home.visuals.assay',
     },
     {
       src: heroCollaborationImage,
