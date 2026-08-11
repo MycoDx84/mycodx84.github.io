@@ -86,27 +86,11 @@
       "kicker": "History",
       "title": "회사 연혁",
       "label": "MycoDx Timeline",
-      "since": "2025.04 ~ 2026.06",
       "description": "마이코디엑스의 설립, 연구 기반 구축, 인증 및 협력 이력을 정리했습니다.",
       "aria": "마이코디엑스 회사 연혁",
-      "metricsAria": "마이코디엑스 주요 성과",
-      "metrics": [
-        {
-          "value": "10건",
-          "label": "등록특허"
-        },
-        {
-          "value": "76편",
-          "label": "국제 학술논문 발표"
-        },
-        {
-          "value": "1,155+",
-          "label": "인용 실적"
-        }
-      ],
       "items": [
         {
-          "year": "2025.04~",
+          "year": "2025.04",
           "title": "정책자금 확보",
           "description": "감염병 예방치료 기술개발사업 과제를 확보하고, 국립창원대학교 산학협력단으로 과제를 이전했습니다. (2026.01)"
         },
@@ -133,7 +117,6 @@
       ]
     },
     "mission": {
-      "label": "우리가 존재하는 이유",
       "title": "정확성과 신뢰성을 통해 환자의 생명을 지킵니다.",
       "description": "치료의 시작은 정확한 진단으로부터 출발합니다. MycoDx는 타협하지 않는 정확성과 객관적인 임상 데이터를 바탕으로 전 세계 의료 현장에 신뢰할 수 있는 진단 기준을 제시하고, 인류의 건강한 삶에 기여합니다."
     },
@@ -180,8 +163,13 @@
   "product": {
     "kicker": "Product",
     "title": "제품소개",
-    "description": "MycoDx의 제품 정보는 개발과 공개 준비가 완료된 이후 순차적으로 안내합니다.",
+    "description": "개발 중인 결핵 DST 통합 플랫폼의 구성과 핵심 사양을 간결하게 소개합니다.",
+    "bundleName": "TB-DST Integrated Platform",
+    "bundleBadge": "Integrated platform",
+    "bundleDescription": "세 가지 모듈을 하나의 결핵 약제내성 검사 플랫폼으로 결합해, 배지, 접종, 배양·판독 과정을 통합적으로 제공합니다.",
     "status": "현재 상태",
+    "backToList": "목록으로",
+    "specsTitle": "주요 사양",
     "placeholderTitle": "제품 정보를 준비하고 있습니다.",
     "placeholderDescription": "확인되지 않은 제품 정보를 임의로 표시하지 않습니다. 공개 가능한 제품 정보가 준비되면 이 페이지에서 정확하게 안내하겠습니다."
   },

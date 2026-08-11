@@ -9,9 +9,12 @@ export interface ProductContent {
   featured?: boolean
   order?: number
   category?: string
+  family?: LocalizedText
   image?: string
+  status?: LocalizedText
   title: LocalizedText
   summary: LocalizedText
+  specs?: LocalizedText[]
   tags?: string[]
 }
 

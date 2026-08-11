@@ -1,10 +1,5 @@
 import { useTranslation } from 'react-i18next'
 
-interface HistoryMetric {
-  value: string
-  label: string
-}
-
 interface HistoryItem {
   year: string
   title: string
@@ -17,9 +12,6 @@ function toList<T>(value: unknown): T[] {
 
 export default function AboutHistory() {
   const { t } = useTranslation()
-  const historyMetrics = toList<HistoryMetric>(
-    t('about.history.metrics', { returnObjects: true })
-  )
   const historyItems = toList<HistoryItem>(
     t('about.history.items', { returnObjects: true })
   )
@@ -37,17 +29,8 @@ export default function AboutHistory() {
       <div className="about-history__body">
         <div className="about-history__summary">
           <span>{t('about.history.label')}</span>
-          <strong>{t('about.history.since')}</strong>
-          <p>{t('about.history.description')}</p>
 
-          <ul className="about-history__metrics" aria-label={t('about.history.metricsAria')}>
-            {historyMetrics.map((metric) => (
-              <li key={`${metric.value}-${metric.label}`}>
-                <strong>{metric.value}</strong>
-                <span>{metric.label}</span>
-              </li>
-            ))}
-          </ul>
+          <p>{t('about.history.description')}</p>
         </div>
 
         <ol className="history-timeline" aria-label={t('about.history.aria')}>

@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "id": "tb-dst-6well-agar-plate",
+    "visible": true,
+    "featured": true,
+    "order": 1,
+    "category": "Module 01",
+    "status": {
+      "ko": "개발 사양",
+      "en": "Development specification"
+    },
+    "title": {
+      "ko": "6-well 항결핵 약제 배지",
+      "en": "6-well Anti-TB Drug Agar Plate"
+    },
+    "summary": {
+      "ko": "결핵균 약제감수성시험(pDST)을 위해 다양한 well 구조에 맞춰 약제와 성장 대조군을 배치할 수 있는 다중 well 한천 배지입니다.",
+      "en": "A multiwell agar plate for tuberculosis phenotypic drug susceptibility testing, designed to accommodate drug wells and a growth-control well across compatible plate formats."
+    },
+    "specs": [
+      {
+        "ko": "WHO 7H10 agar 기준 결정 농도 적용",
+        "en": "WHO 7H10 agar critical-concentration basis"
+      },
+      {
+        "ko": "7H10 agar와 OADC enrichment 기반 배지 조성",
+        "en": "7H10 agar with optimized OADC enrichment"
+      },
+      {
+        "ko": "약제 확산 간섭을 줄이는 다중 well 구조",
+        "en": "Multiwell layout designed to reduce drug-diffusion interference"
+      },
+      {
+        "ko": "배치별 무균도, 성장성, 외관 QC 검사 전제",
+        "en": "Batch-level sterility, growth, and visual QC checks"
+      }
+    ],
+    "tags": ["TB DST", "6-well", "WHO 7H10"]
+  },
+  {
+    "id": "tb-dst-auto-inoculation-module",
+    "visible": true,
+    "order": 2,
+    "category": "Module 02",
+    "status": {
+      "ko": "설계·개발 중",
+      "en": "In design and development"
+    },
+    "title": {
+      "ko": "다중 well 자동 접종 모듈",
+      "en": "Multiwell Auto-Inoculation Module"
+    },
+    "summary": {
+      "ko": "다양한 well 배지에 균액을 표준화된 조건으로 접종할 수 있도록 설계된 자동 접종 모듈입니다.",
+      "en": "An automated inoculation module designed to standardize sample loading across compatible multiwell plate formats."
+    },
+    "specs": [
+      {
+        "ko": "다양한 well 형식에 대응하는 MCU 제어 접종 구조",
+        "en": "MCU-controlled inoculation structure compatible with multiple well formats"
+      },
+      {
+        "ko": "BSL-2/3 작업 환경을 고려한 생물안전 설계",
+        "en": "Biosafety-oriented design for BSL-2/3 workflows"
+      },
+      {
+        "ko": "균체 뭉침 저감과 균액 분산 프로세스 적용",
+        "en": "Cell-clump reduction and suspension-dispersion process"
+      }
+    ],
+    "tags": ["Auto inoculation", "Multiwell", "MCU"]
+  },
+  {
+    "id": "tb-dst-ai-incubation-reader",
+    "visible": true,
+    "order": 3,
+    "category": "Module 03",
+    "status": {
+      "ko": "개발·검증 중",
+      "en": "In development and validation"
+    },
+    "title": {
+      "ko": "자동 배양·AI 판독 시스템",
+      "en": "Automated Incubation & AI Reading System"
+    },
+    "summary": {
+      "ko": "배양 조건을 유지하며 매시간 이미지를 촬영하고, 콜로니 성장 변화를 추적해 판독 결과를 자동화하는 장비입니다.",
+      "en": "A system that maintains incubation conditions, captures hourly images, and automates reading by tracking colony growth over time."
+    },
+    "specs": [
+      {
+        "ko": "37℃ ±0.5℃ 온도 균일도, +5℃~50℃ 온도 범위",
+        "en": "37℃ ±0.5℃ temperature uniformity, +5℃ to 50℃ range"
+      },
+      {
+        "ko": "±0.1℃ 온도 정밀도와 80% 습도 유지",
+        "en": "±0.1℃ temperature precision and 80% humidity control"
+      },
+      {
+        "ko": "매시간 온디바이스 촬영 및 시계열 성장 추적",
+        "en": "Hourly on-device imaging with time-series growth tracking"
+      },
+      {
+        "ko": "AI 판독 결과의 UI·LIMS 연동 구조",
+        "en": "UI and LIMS integration for AI reading results"
+      }
+    ],
+    "tags": ["Incubation", "Edge AI", "LIMS"]
+  }
+]

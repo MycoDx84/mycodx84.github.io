@@ -20,12 +20,18 @@ html {
 }
 
 html[lang='ko'] {
-  font-size: 15px;
+  font-size: 16px;
+}
+
+html[lang='ko'] body {
+  line-height: 1.75;
 }
 
 html[lang='ko'] h1,
 html[lang='ko'] h2,
 html[lang='ko'] h3 {
+  letter-spacing: 0;
+  line-height: 1.22;
   word-break: keep-all;
 }
 

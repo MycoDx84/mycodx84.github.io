@@ -18,7 +18,6 @@ export default function AboutVision() {
       <article className="mission-panel">
         <div>
           <span>Mission</span>
-          <p>{t('about.mission.label')}</p>
         </div>
         <div>
           <h3>{t('about.mission.title')}</h3>

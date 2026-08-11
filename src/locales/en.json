@@ -86,27 +86,11 @@
       "kicker": "History",
       "title": "Company History",
       "label": "MycoDx Timeline",
-      "since": "Apr. 2025 ~ Jun. 2026",
       "description": "Key milestones in MycoDx's establishment, research infrastructure, certification, and collaboration.",
       "aria": "MycoDx company history",
-      "metricsAria": "MycoDx key achievements",
-      "metrics": [
-        {
-          "value": "10",
-          "label": "Registered patents"
-        },
-        {
-          "value": "76",
-          "label": "International journal papers"
-        },
-        {
-          "value": "1,155+",
-          "label": "Citation record"
-        }
-      ],
       "items": [
         {
-          "year": "2025.04~",
+          "year": "2025.04",
           "title": "Policy Funding Secured",
           "description": "Secured an infectious disease prevention and treatment technology development project and transferred the project to the Industry-Academic Cooperation Foundation at Changwon National University. (2026.01)"
         },
@@ -133,7 +117,6 @@
       ]
     },
     "mission": {
-      "label": "Why we exist",
       "title": "Protecting patients through accuracy and trust.",
       "description": "Effective treatment begins with an accurate diagnosis. Through uncompromising precision and objective clinical evidence, MycoDx establishes dependable diagnostic standards for healthcare settings worldwide and contributes to healthier lives."
     },
@@ -180,8 +163,13 @@
   "product": {
     "kicker": "Product",
     "title": "Product Introduction",
-    "description": "MycoDx will publish product information after development and disclosure preparations are complete.",
+    "description": "A concise overview of the in-development TB DST integrated platform and its core specifications.",
+    "bundleName": "TB-DST Integrated Platform",
+    "bundleBadge": "Integrated platform",
+    "bundleDescription": "Three specialized modules are combined into a single platform for TB drug susceptibility testing, covering culture, inoculation, and incubation-readout workflows.",
     "status": "Current status",
+    "backToList": "Back to list",
+    "specsTitle": "Key specifications",
     "placeholderTitle": "Product information is being prepared.",
     "placeholderDescription": "We do not display unverified product information. Accurate product details will be added here when they are ready for publication."
   },

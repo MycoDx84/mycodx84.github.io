@@ -298,38 +298,6 @@
   line-height: 1.8;
 }
 
-.about-history__metrics {
-  display: grid;
-  gap: 0.85rem;
-  max-width: 19rem;
-  padding: 1.45rem 0 0;
-  margin: 1.5rem 0 0;
-  list-style: none;
-  border-top: 1px solid rgba(20, 35, 58, 0.16);
-}
-
-.about-history__metrics li {
-  display: grid;
-  grid-template-columns: minmax(4.6rem, 0.42fr) minmax(0, 1fr);
-  gap: 0.9rem;
-  align-items: baseline;
-}
-
-.about-history__metrics strong {
-  color: #a52d39;
-  font-size: clamp(1.3rem, 2vw, 1.75rem);
-  font-weight: 760;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.about-history__metrics span {
-  color: #4f5c6e;
-  font-size: 0.82rem;
-  font-weight: 620;
-  line-height: 1.45;
-}
-
 .history-timeline {
   position: relative;
   display: grid;
@@ -597,8 +565,7 @@
     position: static;
   }
 
-  .about-history__summary > p,
-  .about-history__metrics {
+  .about-history__summary > p {
     max-width: 36rem;
   }
 
