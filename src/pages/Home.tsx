@@ -13,6 +13,8 @@ import collaborationImage from '../assets/mycodx-collaboration.jpg'
 import heroAssayImage from '../assets/mycodx-hero-assay.jpg'
 import heroCollaborationImage from '../assets/mycodx-hero-collaboration.jpg'
 import heroCultureImage from '../assets/mycodx-hero-culture.jpg'
+import productData from '../content/products.json'
+import { localize, sortByOrder, type ProductContent } from '../content/types'
 
 interface RevealProps {
   children: ReactNode
@@ -22,6 +24,7 @@ interface RevealProps {
 
 const SLIDE_DURATION = 6000
 const CONTACT_ENDPOINT = 'https://formsubmit.co/info@mycodx.com'
+const productItems = productData as ProductContent[]
 
 function Reveal({ children, className = '', delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -67,7 +70,7 @@ function Reveal({ children, className = '', delay = 0 }: RevealProps) {
 }
 
 export default function Home() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const location = useLocation()
   const touchStartX = useRef<number | null>(null)
   const [activeSlide, setActiveSlide] = useState(0)
@@ -79,6 +82,7 @@ export default function Home() {
 
   const heroKeywordKeys = ['culture', 'integrated', 'intelligent'] as const
   const capabilityKeys = ['culture', 'detection', 'resistance', 'imaging'] as const
+  const inquiryTypeKeys = ['research', 'product', 'validation', 'partnership', 'other'] as const
   const heroSlides = [
     {
       src: heroCultureImage,
@@ -93,6 +97,9 @@ export default function Home() {
       altKey: 'home.visuals.collaboration',
     },
   ] as const
+  const previewProducts = sortByOrder(
+    productItems.filter((product) => product.visible !== false),
+  ).slice(0, 3)
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -260,6 +267,14 @@ export default function Home() {
                 <li key={key}>{t(`home.keywords.${key}`)}</li>
               ))}
             </ul>
+            <nav className="home-visual__actions" aria-label={t('home.cta.label')}>
+              <Link to="/product" className="home-hero-cta home-hero-cta--primary">
+                {t('home.cta.products')}
+              </Link>
+              <Link to="/#contact" className="home-hero-cta">
+                {t('home.cta.contact')}
+              </Link>
+            </nav>
           </div>
 
           <div className="home-visual__scroll" aria-hidden="true">
@@ -346,6 +361,47 @@ export default function Home() {
           </Reveal>
         </section>
 
+        <section className="home-product-preview" aria-labelledby="home-product-preview-title">
+          <Reveal className="home-product-preview__heading">
+            <div>
+              <p className="section-kicker">{t('home.pipeline.kicker')}</p>
+              <h2 id="home-product-preview-title">{t('home.pipeline.title')}</h2>
+            </div>
+            <p>{t('home.pipeline.description')}</p>
+          </Reveal>
+
+          <Reveal className="home-product-preview__flow" delay={120}>
+            {previewProducts.length > 0 && (
+              <ol className="home-pipeline-flow">
+                {previewProducts.map((product, index) => (
+                  <li key={product.id}>
+                    <Link to={`/product/${product.id}`}>
+                      <span className="home-pipeline-flow__index">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="home-pipeline-flow__category">
+                        {product.category ?? `Module ${String(index + 1).padStart(2, '0')}`}
+                      </span>
+                      <h3>{localize(product.title, i18n.language)}</h3>
+                      {product.status && (
+                        <strong>{localize(product.status, i18n.language)}</strong>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </Reveal>
+
+          <Reveal className="home-product-preview__footer" delay={240}>
+            <p>{t('home.pipeline.note')}</p>
+            <Link to="/product" className="text-link">
+              {t('home.pipeline.link')}
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </Reveal>
+        </section>
+
         <section className="home-story">
           <div className="home-story__image">
             <img
@@ -379,46 +435,84 @@ export default function Home() {
             </Reveal>
 
             <div className="home-contact__panels">
-              <Reveal className="home-contact__location">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.343231176825!2d128.7001853310215!3d35.239174296577445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568cc7be42df32b%3A0x58106966d3b18ece!2z6rK97IOB64Ko64-EIOywveybkOyLnCDsnZjssL3qtawg7Jqp64-Z66GcODPrsojslYjquLggNw!5e0!3m2!1sko!2skr!4v1780626606710!5m2!1sko!2skr"
-                  title={t('home.contact.mapTitle')}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-                <address className="home-contact__address">
-                  <strong lang="en">MYCODX</strong>
-                  <span>{t('home.contact.address')}</span>
-                  <span className="home-contact__details" lang="en">
-                    <a href="mailto:info@mycodx.com">info@mycodx.com</a>
-                    <a href="tel:+827086571848">+82-70-8657-1848</a>
-                  </span>
-                </address>
+              <Reveal className="home-contact__summary">
+                <p>{t('home.contact.prompt')}</p>
+                <div className="home-contact__methods">
+                  <a className="home-contact__method" href="mailto:info@mycodx.com">
+                    <span>{t('home.contact.direct.email')}</span>
+                    <strong lang="en">info@mycodx.com</strong>
+                  </a>
+                  <a className="home-contact__method" href="tel:+827086571848">
+                    <span>{t('home.contact.direct.phone')}</span>
+                    <strong lang="en">+82-70-8657-1848</strong>
+                  </a>
+                  <address className="home-contact__method home-contact__method--address">
+                    <span>{t('home.contact.direct.office')}</span>
+                    <strong>{t('home.contact.address')}</strong>
+                  </address>
+                </div>
+                <div className="home-contact__map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.343231176825!2d128.7001853310215!3d35.239174296577445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568cc7be42df32b%3A0x58106966d3b18ece!2z6rK97IOB64Ko64-EIOywveybkOyLnCDsnZjssL3qtawg7Jqp64-Z66GcODPrsojslYjquLggNw!5e0!3m2!1sko!2skr!4v1780626606710!5m2!1sko!2skr"
+                    title={t('home.contact.mapTitle')}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
               </Reveal>
 
               <Reveal className="home-contact__form-wrap" delay={140}>
                 <form className="home-contact__form" onSubmit={handleContactSubmit}>
-                  <label>
-                    <span>{t('home.contact.form.name')}</span>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder={t('home.contact.form.namePlaceholder')}
-                      autoComplete="name"
-                      required
-                    />
-                  </label>
-                  <label>
-                    <span>{t('home.contact.form.email')}</span>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="email@example.com"
-                      autoComplete="email"
-                      required
-                    />
-                  </label>
+                  <fieldset className="home-contact__topics">
+                    <legend>{t('home.contact.form.inquiryType')}</legend>
+                    <div>
+                      {inquiryTypeKeys.map((key, index) => (
+                        <label key={key}>
+                          <input
+                            type="radio"
+                            name="inquiry_type"
+                            value={t(`home.contact.form.inquiryTypes.${key}`)}
+                            defaultChecked={index === 0}
+                          />
+                          <span>{t(`home.contact.form.inquiryTypes.${key}`)}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  <div className="home-contact__fields">
+                    <label>
+                      <span>{t('home.contact.form.name')}</span>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder={t('home.contact.form.namePlaceholder')}
+                        autoComplete="name"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>{t('home.contact.form.email')}</span>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="email@example.com"
+                        autoComplete="email"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>{t('home.contact.form.organization')}</span>
+                      <input
+                        type="text"
+                        name="organization"
+                        placeholder={t('home.contact.form.organizationPlaceholder')}
+                        autoComplete="organization"
+                      />
+                    </label>
+                  </div>
+
                   <label>
                     <span>{t('home.contact.form.message')}</span>
                     <textarea

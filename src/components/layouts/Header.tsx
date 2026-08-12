@@ -4,12 +4,29 @@ import { Link, useLocation } from 'react-router-dom'
 import mycoDxLogo from '../../assets/logo/mycodx-wordmark.png'
 import { homeNavigation } from '../../data/homeNavigation'
 
+const languageOptions = [
+  { code: 'ko', shortLabel: 'KO', label: '한국어' },
+  { code: 'en', shortLabel: 'EN', label: 'English' },
+  { code: 'fr', shortLabel: 'FR', label: 'Français' },
+  { code: 'ja', shortLabel: 'JA', label: '日本語' },
+] as const
+
+const getLanguageCode = (language: string) => {
+  const languageCode = language.split('-')[0]
+  return languageOptions.some((option) => option.code === languageCode) ? languageCode : 'ko'
+}
+
 export default function Header() {
   const { i18n, t } = useTranslation()
   const location = useLocation()
   const [headerHidden, setHeaderHidden] = useState(false)
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false)
   const lastScrollY = useRef(0)
+  const languageSelectorRef = useRef<HTMLDivElement>(null)
   const isHome = location.pathname === '/'
+  const currentLanguageCode = getLanguageCode(i18n.resolvedLanguage ?? i18n.language)
+  const currentLanguage =
+    languageOptions.find((option) => option.code === currentLanguageCode) ?? languageOptions[0]
 
   useEffect(() => {
     if (!isHome) {
@@ -38,8 +55,40 @@ export default function Header() {
     return () => window.removeEventListener('scroll', updateHeaderVisibility)
   }, [isHome])
 
-  const toggleLanguage = () => {
-    void i18n.changeLanguage(i18n.language.startsWith('ko') ? 'en' : 'ko')
+  useEffect(() => {
+    if (!languageMenuOpen) {
+      return
+    }
+
+    const closeLanguageMenu = (event: PointerEvent) => {
+      const target = event.target
+
+      if (target instanceof Node && !languageSelectorRef.current?.contains(target)) {
+        setLanguageMenuOpen(false)
+      }
+    }
+
+    const closeLanguageMenuWithKeyboard = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setLanguageMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', closeLanguageMenu)
+    document.addEventListener('keydown', closeLanguageMenuWithKeyboard)
+
+    return () => {
+      document.removeEventListener('pointerdown', closeLanguageMenu)
+      document.removeEventListener('keydown', closeLanguageMenuWithKeyboard)
+    }
+  }, [languageMenuOpen])
+
+  const selectLanguage = (languageCode: string) => {
+    if (languageCode !== currentLanguageCode) {
+      void i18n.changeLanguage(languageCode)
+    }
+
+    setLanguageMenuOpen(false)
   }
 
   const returnHome = () => {
@@ -77,10 +126,41 @@ export default function Header() {
             })}
           </nav>
 
-          <button type="button" className="language-button" onClick={toggleLanguage}>
-            {i18n.language.startsWith('ko') ? 'EN' : 'KO'}
-            <span className="sr-only">{t('header.changeLanguage')}</span>
-          </button>
+          <div className="language-selector" ref={languageSelectorRef}>
+            <button
+              type="button"
+              className="language-button"
+              aria-label={t('header.changeLanguage')}
+              aria-haspopup="menu"
+              aria-expanded={languageMenuOpen}
+              onClick={() => setLanguageMenuOpen((open) => !open)}
+            >
+              <span>{currentLanguage.shortLabel}</span>
+              <span className="language-button__chevron" aria-hidden="true" />
+            </button>
+
+            {languageMenuOpen && (
+              <div className="language-menu" role="menu" aria-label={t('header.changeLanguage')}>
+                {languageOptions.map((language) => {
+                  const isSelected = language.code === currentLanguageCode
+
+                  return (
+                    <button
+                      type="button"
+                      key={language.code}
+                      className={`language-menu__item ${isSelected ? 'is-selected' : ''}`}
+                      role="menuitemradio"
+                      aria-checked={isSelected}
+                      onClick={() => selectLanguage(language.code)}
+                    >
+                      <span className="language-menu__short">{language.shortLabel}</span>
+                      <span className="language-menu__label">{language.label}</span>
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>

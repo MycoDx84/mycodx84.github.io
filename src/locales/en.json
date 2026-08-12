@@ -194,6 +194,11 @@
       "integrated": "Integrated infectious disease analysis",
       "intelligent": "Intelligent diagnostic platform"
     },
+    "cta": {
+      "label": "Primary actions",
+      "products": "View product pipeline",
+      "contact": "Contact us"
+    },
     "indexLabel": "Explore MycoDx",
     "indexIntro": "Research-led diagnostics, designed to move from the laboratory into real clinical workflows.",
     "indexAria": "MycoDx main menu",
@@ -249,6 +254,13 @@
       "chain": "Culture · Molecular Detection · Drug Resistance · Intelligent Imaging",
       "platformMessage": "MycoDx goes beyond individual diagnostic technologies to build an integrated infectious disease platform from specimen to result interpretation."
     },
+    "pipeline": {
+      "kicker": "Product Pipeline",
+      "title": "A compact view of the product flow",
+      "description": "MycoDx is developing a modular flow from media to automated inoculation, incubation, and AI interpretation.",
+      "note": "The homepage keeps the pipeline brief; detailed module specifications are available on the product page.",
+      "link": "View product details"
+    },
     "story": {
       "kicker": "The Camellia Story",
       "title": "Turning hidden signals into diagnostic evidence",
@@ -258,15 +270,31 @@
     "contact": {
       "kicker": "Work with MycoDx",
       "title": "Contact",
-      "description": "We welcome conversations about research, clinical validation, platform integration, and business partnerships.",
+      "description": "Leave a note about research, products, clinical validation, or partnership opportunities.",
+      "prompt": "Choose a topic and send a short message. The right MycoDx contact will follow up.",
       "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139 Republic of Korea",
+      "direct": {
+        "email": "Email",
+        "phone": "Phone",
+        "office": "Office"
+      },
       "mapTitle": "Google map showing the MycoDx office",
       "form": {
         "name": "Name",
         "namePlaceholder": "Your name",
+        "organization": "Organization (optional)",
+        "organizationPlaceholder": "Company or institution",
+        "inquiryType": "Inquiry type",
+        "inquiryTypes": {
+          "research": "Joint research",
+          "product": "Product inquiry",
+          "validation": "Clinical validation",
+          "partnership": "Business partnership",
+          "other": "Other"
+        },
         "email": "Email",
         "message": "Message",
-        "messagePlaceholder": "Tell us how we can work together.",
+        "messagePlaceholder": "Tell us what you would like to discuss.",
         "submit": "Send inquiry",
         "sending": "Sending...",
         "sent": "Your inquiry has been sent.",
