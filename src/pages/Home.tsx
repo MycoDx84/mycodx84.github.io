@@ -257,7 +257,7 @@ export default function Home() {
           <div className="home-visual__veil" />
 
           <div className="home-visual__copy">
-            <h1 id="home-hero-title">
+            <h1 id="home-hero-title" className="home-visual__title">
               {t('home.titleLine1')}
               <span>{t('home.titleLine2')}</span>
             </h1>

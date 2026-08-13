@@ -343,6 +343,10 @@
   letter-spacing: -0.065em;
 }
 
+.home-visual__title {
+  animation: home-title-focus 1.65s 260ms both cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .home-visual h1 span {
   display: block;
   color: #d96c73;
@@ -1310,6 +1314,23 @@ html[lang='ko'] .home-visual h1 {
   to {
     opacity: 1;
     transform: translateY(var(--copy-shift));
+  }
+}
+
+@keyframes home-title-focus {
+  from {
+    opacity: 0.34;
+    filter: blur(16px);
+    transform: translateY(0.22em) scale(1.015);
+  }
+  58% {
+    opacity: 0.82;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
   }
 }
 
