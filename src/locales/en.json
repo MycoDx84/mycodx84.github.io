@@ -163,13 +163,13 @@
   "product": {
     "kicker": "Product",
     "title": "Product Introduction",
-    "description": "A concise overview of the in-development TB DST integrated platform and its core specifications.",
+    "description": "A public overview of the in-development TB DST integrated platform and its modules.",
     "bundleName": "TB-DST Integrated Platform",
     "bundleBadge": "Integrated platform",
-    "bundleDescription": "Three specialized modules are combined into a single platform for TB drug susceptibility testing, covering culture, inoculation, and incubation-readout workflows.",
+    "bundleDescription": "Three specialized modules are being connected into a single TB drug susceptibility testing platform for more consistent culture-based workflows.",
     "status": "Current status",
     "backToList": "Back to list",
-    "specsTitle": "Key specifications",
+    "specsTitle": "Key features",
     "placeholderTitle": "Product information is being prepared.",
     "placeholderDescription": "We do not display unverified product information. Accurate product details will be added here when they are ready for publication."
   },
@@ -258,7 +258,7 @@
       "kicker": "Product Pipeline",
       "title": "A compact view of the product flow",
       "description": "MycoDx is developing a modular flow from media to automated inoculation, incubation, and AI interpretation.",
-      "note": "The homepage keeps the pipeline brief; detailed module specifications are available on the product page.",
+      "note": "The homepage keeps the pipeline brief; the product page provides only a public overview of each module.",
       "link": "View product details"
     },
     "story": {

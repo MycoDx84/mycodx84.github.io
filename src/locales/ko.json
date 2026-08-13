@@ -163,13 +163,13 @@
   "product": {
     "kicker": "Product",
     "title": "제품소개",
-    "description": "개발 중인 결핵 DST 통합 플랫폼의 구성과 핵심 사양을 간결하게 소개합니다.",
+    "description": "개발 중인 결핵 DST 통합 플랫폼의 구성과 공개 가능한 제품 개요를 소개합니다.",
     "bundleName": "TB-DST Integrated Platform",
     "bundleBadge": "Integrated platform",
-    "bundleDescription": "세 가지 모듈을 하나의 결핵 약제내성 검사 플랫폼으로 결합해, 배지, 접종, 배양·판독 과정을 통합적으로 제공합니다.",
+    "bundleDescription": "세 가지 모듈을 하나의 결핵 약제내성 검사 플랫폼으로 연결해, 배양 기반 검사 흐름을 더 일관되게 운영할 수 있도록 개발하고 있습니다.",
     "status": "현재 상태",
     "backToList": "목록으로",
-    "specsTitle": "주요 사양",
+    "specsTitle": "주요 특징",
     "placeholderTitle": "제품 정보를 준비하고 있습니다.",
     "placeholderDescription": "확인되지 않은 제품 정보를 임의로 표시하지 않습니다. 공개 가능한 제품 정보가 준비되면 이 페이지에서 정확하게 안내하겠습니다."
   },
@@ -258,7 +258,7 @@
       "kicker": "Product Pipeline",
       "title": "제품 개발 흐름만 간결하게",
       "description": "MycoDx의 제품은 배지, 자동 접종, 배양·AI 판독으로 이어지는 모듈형 흐름을 기준으로 개발되고 있습니다.",
-      "note": "홈에서는 방향만 짧게 보여주고, 각 모듈의 세부 사양은 제품 페이지에서 확인할 수 있습니다.",
+      "note": "홈에서는 방향만 짧게 보여주고, 제품 페이지에서는 공개 가능한 범위의 개요만 제공합니다.",
       "link": "제품 자세히 보기"
     },
     "story": {

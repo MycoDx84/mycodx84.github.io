@@ -14,6 +14,10 @@ export interface ProductContent {
   status?: LocalizedText
   title: LocalizedText
   summary: LocalizedText
+  listSummary?: LocalizedText
+  detailSummary?: LocalizedText
+  listFeatures?: LocalizedText[]
+  detailFeatures?: LocalizedText[]
   specs?: LocalizedText[]
   tags?: string[]
 }

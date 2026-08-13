@@ -45,20 +45,20 @@ export default function Product() {
                 {product.image && (
                   <img src={product.image} alt={localize(product.title, i18n.language)} />
                 )}
-                <div>
+                <div className="product-card__intro">
                   {product.category && (
                     <div className="product-card__meta">
                       <span>{product.category}</span>
                     </div>
                   )}
                   <h3>{localize(product.title, i18n.language)}</h3>
-                  <p>{localize(product.summary, i18n.language)}</p>
+                  <p>{localize(product.listSummary ?? product.summary, i18n.language)}</p>
                 </div>
-                {product.specs && product.specs.length > 0 && (
+                {product.listFeatures && product.listFeatures.length > 0 && (
                   <ul className="product-card__specs">
-                    {product.specs.map((spec) => (
-                      <li key={localize(spec, i18n.language)}>
-                        {localize(spec, i18n.language)}
+                    {product.listFeatures.map((feature) => (
+                      <li key={localize(feature, i18n.language)}>
+                        {localize(feature, i18n.language)}
                       </li>
                     ))}
                   </ul>

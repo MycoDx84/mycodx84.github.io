@@ -10,6 +10,7 @@ export default function ProductDetail() {
   const { t, i18n } = useTranslation()
 
   const product = productItems.find((item) => item.id === id)
+  const detailFeatures = product?.detailFeatures ?? product?.specs
 
   if (!product) {
     return (
@@ -30,7 +31,7 @@ export default function ProductDetail() {
       <header className="editorial-page__header product-detail__header">
         <p>{t('product.kicker')}</p>
         <h1>{localize(product.title, i18n.language)}</h1>
-        <span>{localize(product.summary, i18n.language)}</span>
+        <span>{localize(product.detailSummary ?? product.summary, i18n.language)}</span>
       </header>
 
       <div className="product-detail__body">
@@ -53,10 +54,12 @@ export default function ProductDetail() {
 
           <div className="product-detail__section">
             <h2>{t('product.specsTitle')}</h2>
-            {product.specs && product.specs.length > 0 ? (
+            {detailFeatures && detailFeatures.length > 0 ? (
               <ul className="product-detail__specs">
-                {product.specs.map((spec) => (
-                  <li key={localize(spec, i18n.language)}>{localize(spec, i18n.language)}</li>
+                {detailFeatures.map((feature) => (
+                  <li key={localize(feature, i18n.language)}>
+                    {localize(feature, i18n.language)}
+                  </li>
                 ))}
               </ul>
             ) : null}
