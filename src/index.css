@@ -8,6 +8,8 @@
   color-scheme: light;
   --font-primary: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-display-en: Georgia, 'Times New Roman', serif;
+  --font-ja-sans: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, Meiryo, 'Noto Sans JP', sans-serif;
+  --font-ja-display: 'Hiragino Mincho ProN', 'Yu Mincho', YuMincho, 'Noto Serif JP', 'MS PMincho', serif;
   font-family: var(--font-primary);
   color: #111c2d;
   background: #f4f2ec;
@@ -51,6 +53,14 @@ input,
 textarea,
 select {
   font-family: var(--font-primary);
+}
+
+html[lang='ja'] body,
+html[lang='ja'] button,
+html[lang='ja'] input,
+html[lang='ja'] textarea,
+html[lang='ja'] select {
+  font-family: var(--font-ja-sans);
 }
 
 * {
@@ -188,6 +198,14 @@ html[lang='fr'] .inner-page h3,
   font-family: var(--font-display-en);
   font-weight: 400;
   letter-spacing: -0.025em;
+}
+
+html[lang='ja'] .home-visual h1,
+html[lang='ja'] .home-story h2,
+html[lang='ja'] .about-hero h2,
+html[lang='ja'] .camellia-card h3 {
+  font-family: var(--font-ja-display);
+  font-weight: 500;
 }
 
 @media (max-width: 767px) {

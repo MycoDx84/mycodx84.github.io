@@ -1451,6 +1451,86 @@ html[lang='ko'] .home-visual h1 {
   }
 }
 
+@media (min-width: 961px) {
+  html[lang='ja'] .home-visual__veil {
+    background:
+      linear-gradient(180deg, rgba(5, 16, 30, 0.2) 0%, rgba(5, 16, 30, 0.08) 48%, rgba(5, 16, 30, 0.72) 100%),
+      linear-gradient(90deg, rgba(5, 16, 30, 0.78), rgba(5, 16, 30, 0.48) 42%, rgba(5, 16, 30, 0.08) 76%);
+  }
+
+  html[lang='ja'] .home-visual__copy {
+    --copy-shift: -48%;
+    right: auto;
+    left: clamp(2rem, 5.2vw, 6rem);
+    display: grid;
+    grid-template-columns: auto minmax(20rem, 34rem);
+    column-gap: clamp(1.8rem, 4vw, 3.8rem);
+    align-items: center;
+    max-width: min(68vw, 54rem);
+  }
+
+  html[lang='ja'] .home-visual h1 {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    align-self: center;
+    justify-self: start;
+    max-width: none;
+    max-height: min(72vh, 38rem);
+    font-size: clamp(2.75rem, 4.2vw, 5.3rem);
+    line-height: 1.05;
+    letter-spacing: 0.08em;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+  }
+
+  html[lang='ja'] .home-visual__description,
+  html[lang='ja'] .home-hero-keywords,
+  html[lang='ja'] .home-visual__actions {
+    grid-column: 2;
+  }
+
+  html[lang='ja'] .home-visual__description {
+    max-width: 33rem;
+    margin-top: 0;
+  }
+
+  html[lang='ja'] .home-hero-keywords {
+    max-width: 32rem;
+  }
+
+  html[lang='ja'] .home-story__content {
+    display: grid;
+    grid-template-columns: minmax(14rem, 1fr) auto;
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: end;
+  }
+
+  html[lang='ja'] .home-story h2 {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: center;
+    justify-self: end;
+    max-width: none;
+    max-height: 34rem;
+    font-size: clamp(2.05rem, 2.7vw, 3.35rem);
+    line-height: 1.08;
+    letter-spacing: 0.06em;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+  }
+
+  html[lang='ja'] .home-story .section-kicker,
+  html[lang='ja'] .home-story__content > p:not(.section-kicker),
+  html[lang='ja'] .home-story .text-link {
+    grid-column: 1;
+  }
+
+  html[lang='ja'] .home-story__content > p:not(.section-kicker) {
+    max-width: 28rem;
+    margin: 1.4rem 0 2.2rem;
+  }
+}
+
 @media (max-width: 720px) {
   .site-header {
     height: 108px;

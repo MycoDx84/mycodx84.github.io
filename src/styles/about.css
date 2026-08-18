@@ -586,6 +586,44 @@
   }
 }
 
+@media (min-width: 901px) {
+  html[lang='ja'] .about-hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(24rem, 1.05fr);
+  }
+
+  html[lang='ja'] .about-hero__copy {
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr) auto;
+    column-gap: clamp(1.5rem, 3.5vw, 3rem);
+    align-items: end;
+  }
+
+  html[lang='ja'] .about-hero .about-kicker,
+  html[lang='ja'] .about-hero__lead {
+    grid-column: 1;
+  }
+
+  html[lang='ja'] .about-hero h2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-self: end;
+    max-width: none;
+    max-height: 34rem;
+    margin: 0;
+    font-size: clamp(2.25rem, 3.7vw, 4.4rem);
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+  }
+
+  html[lang='ja'] .about-hero__lead {
+    max-width: 30rem;
+    margin-top: 1.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .about-page {
     gap: 5.5rem;
