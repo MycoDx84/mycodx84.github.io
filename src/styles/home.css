@@ -585,7 +585,13 @@ html[lang='en'] .home-focus h2,
 html[lang='en'] .home-capabilities h2,
 html[lang='en'] .home-product-preview h2,
 html[lang='en'] .home-story h2,
-html[lang='en'] .home-contact h2 {
+html[lang='en'] .home-contact h2,
+html[lang='fr'] .home-visual h1,
+html[lang='fr'] .home-focus h2,
+html[lang='fr'] .home-capabilities h2,
+html[lang='fr'] .home-product-preview h2,
+html[lang='fr'] .home-story h2,
+html[lang='fr'] .home-contact h2 {
   font-family: var(--font-display-en);
   font-weight: 400;
   letter-spacing: -0.05em;
