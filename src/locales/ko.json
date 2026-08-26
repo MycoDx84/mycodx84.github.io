@@ -19,6 +19,7 @@
       "product": "제품소개",
       "gallery": "갤러리",
       "news": "소식",
+      "publications": "논문",
       "contact": "문의"
     }
   },
@@ -149,9 +150,13 @@
     "researchers": "연구진"
   },
   "publication": {
-    "kicker": "Publication",
-    "title": "연구 성과",
-    "description": "MycoDx의 논문과 특허 성과를 소개합니다.",
+    "kicker": "논문",
+    "title": "연구 논문",
+    "description": "MycoDx 연구진과의 공동 연구로 수행된 과학 연구를 소개합니다.",
+    "yearNavigation": "논문 연도",
+    "mycodxAuthors": "MycoDx 저자",
+    "publicationInfo": "{{year}} · {{volume}}권 · Article {{article}}",
+    "viewPublication": "논문 보기",
     "sectionNavigation": "연구 성과 섹션",
     "total": "Total.",
     "yearUnknown": "연도 미기재",
@@ -260,6 +265,9 @@
       "description": "MycoDx의 제품은 배지, 자동 접종, 배양·AI 판독으로 이어지는 모듈형 흐름을 기준으로 개발되고 있습니다.",
       "note": "홈에서는 방향만 짧게 보여주고, 제품 페이지에서는 공개 가능한 범위의 개요만 제공합니다.",
       "link": "제품 자세히 보기"
+    },
+    "latestPublication": {
+      "kicker": "최신 논문"
     },
     "story": {
       "kicker": "The Camellia Story",

@@ -19,6 +19,7 @@
       "product": "製品紹介",
       "gallery": "ギャラリー",
       "news": "お知らせ",
+      "publications": "論文",
       "contact": "お問い合わせ"
     }
   },
@@ -149,9 +150,13 @@
     "researchers": "研究陣"
   },
   "publication": {
-    "kicker": "Publication",
-    "title": "研究成果",
-    "description": "MycoDxの論文および特許成果をご紹介します。",
+    "kicker": "論文",
+    "title": "研究論文",
+    "description": "MycoDx研究者との共同研究による科学研究をご紹介します。",
+    "yearNavigation": "論文の年",
+    "mycodxAuthors": "MycoDx 著者",
+    "publicationInfo": "{{year}} · {{volume}}巻 · Article {{article}}",
+    "viewPublication": "論文を見る",
     "sectionNavigation": "研究成果セクション",
     "total": "Total.",
     "yearUnknown": "年未記載",
@@ -260,6 +265,9 @@
       "description": "MycoDxは、培地から自動接種、培養、AI判定までをつなぐモジュール型フローを開発しています。",
       "note": "ホームではパイプラインの概要を簡潔に示し、製品ページでは各モジュールの公開可能な概要のみを掲載しています。",
       "link": "製品詳細を見る"
+    },
+    "latestPublication": {
+      "kicker": "最新論文"
     },
     "story": {
       "kicker": "The Camellia Story",

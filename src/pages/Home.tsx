@@ -15,6 +15,7 @@ import heroCollaborationImage from '../assets/mycodx-hero-collaboration.jpg'
 import heroCultureImage from '../assets/mycodx-hero-culture.jpg'
 import productData from '../content/products.json'
 import { localize, sortByOrder, type ProductContent } from '../content/types'
+import { latestPublication } from '../data/publications'
 
 interface RevealProps {
   children: ReactNode
@@ -401,6 +402,28 @@ export default function Home() {
             </Link>
           </Reveal>
         </section>
+
+        {latestPublication && (
+          <section
+            className="home-latest-publication"
+            aria-labelledby="home-latest-publication-title"
+          >
+            <Reveal className="home-latest-publication__label">
+              <p className="section-kicker">{t('home.latestPublication.kicker')}</p>
+            </Reveal>
+
+            <Reveal className="home-latest-publication__summary" delay={120}>
+              <h2 id="home-latest-publication-title">{latestPublication.title}</h2>
+              <p>
+                {latestPublication.journal} · {latestPublication.year}
+              </p>
+              <Link to="/publications" className="text-link">
+                {t('publication.viewPublication')}
+                <span aria-hidden="true">→</span>
+              </Link>
+            </Reveal>
+          </section>
+        )}
 
         <section className="home-story">
           <div className="home-story__image">

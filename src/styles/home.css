@@ -61,7 +61,7 @@
 
 .site-primary-nav {
   display: grid;
-  grid-template-columns: repeat(4, 88px);
+  grid-template-columns: repeat(5, 108px);
   align-items: center;
   height: 44px;
 }
@@ -551,6 +551,7 @@
 .home-focus,
 .home-capabilities,
 .home-product-preview,
+.home-latest-publication,
 .home-contact {
   padding-right: clamp(1.5rem, 7vw, 8rem);
   padding-left: clamp(1.5rem, 7vw, 8rem);
@@ -572,6 +573,7 @@
 .home-focus h2,
 .home-capabilities h2,
 .home-product-preview h2,
+.home-latest-publication h2,
 .home-story h2,
 .home-contact h2 {
   margin: 0;
@@ -584,12 +586,14 @@ html[lang='en'] .home-visual h1,
 html[lang='en'] .home-focus h2,
 html[lang='en'] .home-capabilities h2,
 html[lang='en'] .home-product-preview h2,
+html[lang='en'] .home-latest-publication h2,
 html[lang='en'] .home-story h2,
 html[lang='en'] .home-contact h2,
 html[lang='fr'] .home-visual h1,
 html[lang='fr'] .home-focus h2,
 html[lang='fr'] .home-capabilities h2,
 html[lang='fr'] .home-product-preview h2,
+html[lang='fr'] .home-latest-publication h2,
 html[lang='fr'] .home-story h2,
 html[lang='fr'] .home-contact h2 {
   font-family: var(--font-display-en);
@@ -601,6 +605,7 @@ html[lang='ko'] .home-visual h1,
 html[lang='ko'] .home-focus h2,
 html[lang='ko'] .home-capabilities h2,
 html[lang='ko'] .home-product-preview h2,
+html[lang='ko'] .home-latest-publication h2,
 html[lang='ko'] .home-story h2,
 html[lang='ko'] .home-contact h2 {
   word-break: keep-all;
@@ -902,6 +907,46 @@ html[lang='ko'] .home-visual h1 {
   font-size: 0.95rem;
   line-height: 1.75;
   word-break: keep-all;
+}
+
+.home-latest-publication {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+  color: #17243a;
+  background: #f7f6f2;
+}
+
+.home-latest-publication__label,
+.home-latest-publication__summary {
+  min-width: 0;
+}
+
+.home-latest-publication h2 {
+  max-width: 50rem;
+  font-size: clamp(1.75rem, 3vw, 3.2rem);
+  line-height: 1.16;
+}
+
+.home-latest-publication__summary {
+  display: grid;
+  justify-items: start;
+  gap: 1.8rem;
+  min-width: 0;
+  padding-top: clamp(1.6rem, 3vw, 2.4rem);
+  border-top: 1px solid rgba(20, 35, 58, 0.2);
+}
+
+.home-latest-publication__summary p {
+  margin: 0;
+  color: #637184;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.75;
+  overflow-wrap: break-word;
 }
 
 .home-story {
@@ -1296,6 +1341,7 @@ html[lang='ko'] .home-visual h1 {
 
 .home-focus__heading h2,
 .home-capabilities__heading h2,
+.home-latest-publication__summary h2,
 .home-story__content h2,
 .home-contact__heading h2 {
   opacity: 0;
@@ -1306,6 +1352,7 @@ html[lang='ko'] .home-visual h1 {
 
 .home-focus__heading.is-visible h2,
 .home-capabilities__heading.is-visible h2,
+.home-latest-publication__summary.is-visible h2,
 .home-story__content.is-visible h2,
 .home-contact__heading.is-visible h2 {
   opacity: 1;
@@ -1411,7 +1458,7 @@ html[lang='ko'] .home-visual h1 {
   }
 
   .site-primary-nav {
-    grid-template-columns: repeat(4, 74px);
+    grid-template-columns: repeat(5, 82px);
   }
 
   .home-hero {
@@ -1565,20 +1612,22 @@ html[lang='ko'] .home-visual h1 {
     right: 0;
     bottom: 8px;
     left: 0;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, max-content);
+    justify-content: space-between;
     width: 100%;
     height: 40px;
   }
 
   .site-primary-nav a {
     height: 40px;
-    font-size: 11px;
-    letter-spacing: 0.2px;
+    min-width: 0;
+    font-size: clamp(8px, 2.4vw, 10px);
+    letter-spacing: 0;
   }
 
   .site-primary-nav a::after {
-    right: 8px;
-    left: 8px;
+    right: 0;
+    left: 0;
   }
 
   .language-selector {
@@ -1663,6 +1712,7 @@ html[lang='ko'] .home-visual h1 {
   .home-focus,
   .home-capabilities,
   .home-product-preview,
+  .home-latest-publication,
   .home-contact {
     padding-right: 1.25rem;
     padding-left: 1.25rem;
@@ -1735,6 +1785,22 @@ html[lang='ko'] .home-visual h1 {
     display: grid;
     gap: 1.4rem;
     align-items: start;
+  }
+
+  .home-latest-publication {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding-top: 5.25rem;
+    padding-bottom: 5.25rem;
+  }
+
+  .home-latest-publication h2 {
+    font-size: clamp(1.45rem, 7.4vw, 2rem);
+    line-height: 1.28;
+  }
+
+  .home-latest-publication__summary {
+    gap: 1.35rem;
   }
 
   .capability-card,
@@ -1839,6 +1905,11 @@ html[lang='ko'] .home-visual h1 {
     font-size: clamp(2.1rem, 9.5vw, 3.15rem);
   }
 
+  html[lang='ko'] .home-latest-publication h2 {
+    max-width: none;
+    font-size: clamp(1.45rem, 7.4vw, 2rem);
+  }
+
   html[lang='ko'] .home-contact h2 {
     max-width: 16ch;
     font-size: clamp(2.4rem, 11vw, 3.8rem);
@@ -1869,6 +1940,11 @@ html[lang='ko'] .home-visual h1 {
   html[lang='ko'] .home-product-preview h2 {
     max-width: 19ch;
     font-size: clamp(2.25rem, 3.8vw, 4.65rem);
+  }
+
+  html[lang='ko'] .home-latest-publication h2 {
+    max-width: none;
+    font-size: clamp(1.75rem, 3vw, 3.2rem);
   }
 
   html[lang='ko'] .home-contact h2 {

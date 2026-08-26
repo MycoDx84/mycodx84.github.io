@@ -19,6 +19,7 @@
       "product": "Produits",
       "gallery": "Galerie",
       "news": "Actualités",
+      "publications": "Publications",
       "contact": "Contact"
     }
   },
@@ -149,9 +150,13 @@
     "researchers": "Équipe de recherche"
   },
   "publication": {
-    "kicker": "Publications",
-    "title": "Travaux de recherche",
-    "description": "Découvrez les publications scientifiques et brevets de MycoDx.",
+    "kicker": "PUBLICATIONS",
+    "title": "Recherche & publications",
+    "description": "Recherches scientifiques menées en collaboration avec les chercheurs de MycoDx.",
+    "yearNavigation": "Années des publications",
+    "mycodxAuthors": "Auteurs MycoDx",
+    "publicationInfo": "{{year}} · Volume {{volume}} · Article {{article}}",
+    "viewPublication": "Voir la publication",
     "sectionNavigation": "Sections des publications",
     "total": "Total.",
     "yearUnknown": "Année non spécifiée",
@@ -260,6 +265,9 @@
       "description": "MycoDx développe un flux modulaire allant des milieux à l'inoculation automatisée, à l'incubation et à l'interprétation par IA.",
       "note": "La page d'accueil présente le pipeline de manière concise ; la page produit fournit uniquement un aperçu public de chaque module.",
       "link": "Voir les détails du produit"
+    },
+    "latestPublication": {
+      "kicker": "DERNIÈRE PUBLICATION"
     },
     "story": {
       "kicker": "L'Histoire du Camélia",

@@ -17,6 +17,10 @@ export const homeNavigation: HomeNavigationItem[] = [
     path: '/news',
   },
   {
+    titleKey: 'header.navigation.publications',
+    path: '/publications',
+  },
+  {
     titleKey: 'header.navigation.contact',
     path: '/#contact',
   },

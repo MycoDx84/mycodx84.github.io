@@ -1,6 +1,8 @@
 export interface LocalizedText {
   ko: string
   en: string
+  fr?: string
+  ja?: string
 }
 
 export interface ProductContent {
@@ -43,7 +45,9 @@ export interface GalleryContent {
 }
 
 export function localize(value: LocalizedText, language: string) {
-  return language.startsWith('en') ? value.en || value.ko : value.ko || value.en
+  const languageCode = language.split('-')[0] as keyof LocalizedText
+
+  return value[languageCode] || value.en || value.ko
 }
 
 export function sortByOrder<T extends { order?: number }>(items: T[]) {

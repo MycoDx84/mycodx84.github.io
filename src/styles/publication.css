@@ -1,293 +1,211 @@
 .publication-page {
   display: grid;
-  gap: clamp(5rem, 9vw, 9rem);
+  gap: clamp(4rem, 7vw, 6.5rem);
 }
 
 .publication-header {
   display: grid;
   gap: 1rem;
+  padding-bottom: clamp(2.4rem, 5vw, 3.8rem);
+  border-bottom: 1px solid rgba(20, 35, 58, 0.18);
 }
 
 .publication-header > p {
   margin: 0;
   color: #a52d39;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 750;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .publication-header h1 {
+  max-width: 54rem;
   margin: 0;
-  font-size: clamp(3rem, 6vw, 6.5rem);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  color: #111c2d;
+  font-size: clamp(2.6rem, 4.8vw, 4.8rem);
+  font-weight: 620;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
 }
 
 .publication-header > span {
   max-width: 44rem;
-  color: #64748b;
-  font-size: 1.05rem;
+  color: #687587;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
-.publication-header nav {
+.publication-year-list {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.7rem 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(20, 35, 58, 0.18);
+  border-bottom: 1px solid rgba(20, 35, 58, 0.18);
 }
 
-.publication-header nav a {
-  min-width: 7rem;
-  padding: 0.8rem 1.2rem;
-  color: #14233a;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-align: center;
-  border: 1px solid rgba(20, 35, 58, 0.22);
-  border-radius: 999px;
-  transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease;
+.publication-year-list a {
+  color: #a52d39;
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 200ms ease;
 }
 
-.publication-header nav a:hover {
-  color: #fff;
-  background: #14233a;
-  border-color: #14233a;
+.publication-year-list a:hover,
+.publication-year-list a:focus-visible {
+  color: #17243a;
 }
 
-.publication-section {
+.publication-groups {
+  display: grid;
+  gap: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.publication-year-group {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 0.18fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
   scroll-margin-top: 8rem;
 }
 
-.publication-section__heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-bottom: 1.5rem;
-}
-
-.publication-section__heading > div {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-}
-
-.publication-section__heading span {
-  color: #a52d39;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-}
-
-.publication-section__heading h2 {
+.publication-year-group h2 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  letter-spacing: -0.04em;
-}
-
-.publication-section__heading p {
-  margin: 0;
-  color: #64748b;
-  font-size: 0.9rem;
-}
-
-.publication-section__heading strong {
-  color: #14233a;
-}
-
-.paper-list {
-  display: grid;
-  border-top: 1px solid rgba(20, 35, 58, 0.18);
-}
-
-.paper-card {
-  display: block;
-  padding: clamp(2rem, 4vw, 3.3rem) 0;
-  background: transparent;
-  border-bottom: 1px solid rgba(20, 35, 58, 0.16);
-  transition: transform 240ms ease;
-}
-
-a.paper-card:hover {
-  transform: translateX(0.4rem);
-}
-
-.publication-year {
-  display: inline-flex;
-  padding: 0.35rem 0.9rem;
-  margin-bottom: 1rem;
   color: #a52d39;
-  font-size: 0.76rem;
-  font-weight: 700;
-  border: 1px solid #a52d39;
-  border-radius: 999px;
-}
-
-.paper-card h3 {
-  margin: 0;
-  color: #17243a;
-  font-family: var(--font-primary);
-  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
-  font-weight: 600;
-  line-height: 1.55;
-  letter-spacing: -0.025em;
-}
-
-.paper-card h3 em,
-.paper-type {
-  margin-left: 0.45rem;
-  color: #a52d39;
-  font-style: italic;
-  font-weight: 700;
-}
-
-.paper-status {
-  margin-left: 0.35rem;
-  font-weight: 500;
-}
-
-.paper-authors {
-  margin: 0.9rem 0 0;
-  color: #788394;
-  font-size: 0.88rem;
-  line-height: 1.7;
-}
-
-.paper-authors .is-highlighted {
-  color: #17243a;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-
-.patent-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(2rem, 5vw, 5rem);
-  border-top: 1px solid rgba(20, 35, 58, 0.18);
-}
-
-.patent-card {
-  display: flex;
-  min-height: 15rem;
-  flex-direction: column;
-  padding: clamp(2rem, 4vw, 3rem) 0;
-  background: transparent;
-  border-bottom: 1px solid rgba(20, 35, 58, 0.16);
-  transition: transform 240ms ease;
-}
-
-a.patent-card:hover {
-  transform: translateX(0.4rem);
-}
-
-.patent-inventors {
-  display: flex;
-  gap: 0.55rem;
-  align-items: center;
-  color: #748092;
-  font-size: 0.9rem;
-}
-
-.patent-inventors span {
-  color: #a52d39;
-}
-
-.patent-card h3 {
-  margin: 0.8rem 0 1.5rem;
-  color: #17243a;
-  font-family: var(--font-primary);
-  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-  font-weight: 650;
-  line-height: 1.45;
+  font-size: clamp(1.75rem, 3vw, 2.8rem);
+  font-weight: 620;
+  line-height: 1;
   letter-spacing: -0.035em;
 }
 
-.patent-card dl {
+.publication-list {
   display: grid;
-  gap: 0.45rem;
-  margin: auto 0 0;
+  border-top: 1px solid rgba(20, 35, 58, 0.2);
 }
 
-.patent-card dl div {
-  display: flex;
-  gap: 0.45rem;
+.publication-item {
+  min-width: 0;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  border-bottom: 1px solid rgba(20, 35, 58, 0.16);
 }
 
-.patent-card dt {
+.publication-item h3 {
+  max-width: 64rem;
+  margin: 0;
   color: #17243a;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-size: clamp(1.35rem, 2.15vw, 2.15rem);
+  font-weight: 650;
+  line-height: 1.34;
+  letter-spacing: -0.035em;
+  overflow-wrap: break-word;
 }
 
-.patent-card dd {
-  margin: 0;
-  color: #748092;
-  font-size: 0.85rem;
+.publication-authors {
+  margin: 1rem 0 0;
+  color: #6d798a;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
-.publication-empty {
+.publication-mycodx-authors {
   display: grid;
-  min-height: 14rem;
-  place-items: center;
-  align-content: center;
-  gap: 0.8rem;
-  color: #8490a0;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.52);
-  border: 1px dashed rgba(20, 35, 58, 0.22);
+  gap: 0.35rem;
+  margin-top: 1.2rem;
 }
 
-.publication-empty span {
-  display: grid;
-  width: 2.6rem;
-  height: 2.6rem;
-  place-items: center;
+.publication-mycodx-authors span {
   color: #a52d39;
-  font-size: 1.5rem;
-  border: 1px solid rgba(165, 45, 57, 0.45);
-  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.publication-empty p {
-  max-width: 28rem;
-  margin: 0;
-  font-size: 0.9rem;
+.publication-mycodx-authors strong {
+  color: #17243a;
+  font-size: 0.98rem;
+  font-weight: 760;
+  line-height: 1.6;
+}
+
+.publication-meta {
+  margin: 1.15rem 0 0;
+  color: #536174;
+  font-size: 0.86rem;
+  font-weight: 650;
   line-height: 1.7;
+}
+
+.publication-description {
+  max-width: 46rem;
+  margin: 1rem 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  margin-top: 1.55rem;
+  padding-bottom: 0.42rem;
+  color: #17243a;
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+  transition: gap 220ms ease, color 220ms ease;
+}
+
+.publication-link:hover,
+.publication-link:focus-visible {
+  gap: 1rem;
+  color: #a52d39;
 }
 
 @media (min-width: 768px) {
   html[lang='ko'] .publication-header h1 {
-    font-size: clamp(2.35rem, 4.1vw, 4.2rem);
-  }
-
-  html[lang='ko'] .publication-section__heading h2 {
-    font-size: clamp(1.7rem, 3vw, 2.9rem);
+    font-size: clamp(2.3rem, 4vw, 4.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
   }
 }
 
 @media (max-width: 720px) {
-  .publication-header nav {
-    width: 100%;
+  .publication-page {
+    gap: 3.5rem;
   }
 
-  .publication-header nav a {
-    flex: 1;
-    min-width: 0;
+  .publication-header h1 {
+    font-size: clamp(2.25rem, 11vw, 3.4rem);
   }
 
-  .publication-section__heading {
-    align-items: start;
-  }
-
-  .patent-grid {
+  .publication-year-group {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
-  .paper-card,
-  .patent-card {
-    padding: 1.5rem;
+  .publication-list {
+    border-top-color: rgba(20, 35, 58, 0.24);
+  }
+
+  .publication-item {
+    padding: 1.65rem 0;
+  }
+
+  .publication-item h3 {
+    font-size: clamp(1.25rem, 6.2vw, 1.65rem);
+    line-height: 1.4;
+  }
+
+  .publication-meta {
+    overflow-wrap: break-word;
   }
 }

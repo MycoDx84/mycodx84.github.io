@@ -19,6 +19,7 @@
       "product": "Products",
       "gallery": "Gallery",
       "news": "News",
+      "publications": "Publications",
       "contact": "Contact"
     }
   },
@@ -149,9 +150,13 @@
     "researchers": "Research Team"
   },
   "publication": {
-    "kicker": "Publication",
-    "title": "Research Output",
-    "description": "Explore peer-reviewed papers and patents from MycoDx.",
+    "kicker": "PUBLICATIONS",
+    "title": "Research & Publications",
+    "description": "Scientific research conducted in collaboration with MycoDx researchers.",
+    "yearNavigation": "Publication years",
+    "mycodxAuthors": "MycoDx Authors",
+    "publicationInfo": "{{year}} · Volume {{volume}} · Article {{article}}",
+    "viewPublication": "View Publication",
     "sectionNavigation": "Publication sections",
     "total": "Total.",
     "yearUnknown": "Year not provided",
@@ -260,6 +265,9 @@
       "description": "MycoDx is developing a modular flow from media to automated inoculation, incubation, and AI interpretation.",
       "note": "The homepage keeps the pipeline brief; the product page provides only a public overview of each module.",
       "link": "View product details"
+    },
+    "latestPublication": {
+      "kicker": "LATEST PUBLICATION"
     },
     "story": {
       "kicker": "The Camellia Story",
