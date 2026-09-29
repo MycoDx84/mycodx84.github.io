@@ -109,6 +109,5 @@ export const publicationsByYear: PublicationYearGroup[] = Array.from(
   ([year, items]) => ({ year, items }),
 ).sort((a, b) => b.year - a.year)
 
-export const latestPublication = sortedResearchPublications[0]
 export const papers: PaperPublication[] = paperRecords
 export const patents: PatentPublication[] = patentRecords

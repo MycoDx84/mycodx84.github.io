@@ -266,9 +266,6 @@
       "note": "ホームではパイプラインの概要を簡潔に示し、製品ページでは各モジュールの公開可能な概要のみを掲載しています。",
       "link": "製品詳細を見る"
     },
-    "latestPublication": {
-      "kicker": "最新論文"
-    },
     "story": {
       "kicker": "The Camellia Story",
       "title": "見えないシグナルを明確な診断根拠へ",

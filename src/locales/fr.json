@@ -266,9 +266,6 @@
       "note": "La page d'accueil présente le pipeline de manière concise ; la page produit fournit uniquement un aperçu public de chaque module.",
       "link": "Voir les détails du produit"
     },
-    "latestPublication": {
-      "kicker": "DERNIÈRE PUBLICATION"
-    },
     "story": {
       "kicker": "L'Histoire du Camélia",
       "title": "Transformer des signaux invisibles en preuves diagnostiques claires",
