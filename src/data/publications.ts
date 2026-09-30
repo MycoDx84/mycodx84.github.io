@@ -86,7 +86,7 @@ export const researchPublications: ResearchPublication[] = [
       ja: '褐色脂肪組織におけるmetformin誘導性の抗酸化およびferroptosis関連経路の変化に関する研究です。',
     },
     doi: '10.3390/ijms27177625',
-    url: 'https://www.mdpi.com/1422-0067/27/17/7625',
+    url: '/papers/metformin-ferroptosis-brown-adipose-tissue.pdf',
   },
 ]
 
