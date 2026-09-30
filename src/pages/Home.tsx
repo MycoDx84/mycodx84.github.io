@@ -529,6 +529,13 @@ export default function Home() {
                   />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="table" />
+                  <label className="home-contact__privacy-consent">
+                    <input type="checkbox" name="privacy_consent" value="agreed" required />
+                    <span>
+                      {t('home.contact.form.privacyConsent')}{' '}
+                      <Link to="/privacy">{t('home.contact.form.privacyLink')}</Link>
+                    </span>
+                  </label>
                   <div className="home-contact__form-footer">
                     <button type="submit" disabled={contactStatus === 'sending'}>
                       {contactStatus === 'sending'

@@ -300,6 +300,8 @@
         "email": "이메일",
         "message": "문의 내용",
         "messagePlaceholder": "궁금한 점이나 논의하고 싶은 내용을 편하게 적어 주세요.",
+        "privacyConsent": "개인정보 수집·이용 안내를 확인했으며 이에 동의합니다. (필수)",
+        "privacyLink": "자세히 보기",
         "submit": "문의 보내기",
         "sending": "전송 중...",
         "sent": "문의가 전송되었습니다.",
@@ -366,6 +368,7 @@
     "sub": "감염성 질환 진단 전 과정을 연결하는 통합 진단 플랫폼을 개발합니다."
   },
   "footer": {
+    "privacy": "개인정보처리방침",
     "rights": "© 2026 MycoDx. All rights reserved.",
     "address": "경상남도 창원시 의창구 용동로83번안길 7 미래드림빌딩 202호 206호",
     "email": "info@mycodx.com",

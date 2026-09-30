@@ -616,6 +616,109 @@ html[lang='ko'] .product-placeholder__copy h2 {
   font-size: 0.82rem;
 }
 
+.legal-page__content {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(20, 35, 58, 0.2);
+}
+
+.legal-page__content section {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(20, 35, 58, 0.16);
+}
+
+.legal-page__content h2,
+.legal-page__content p {
+  margin: 0;
+}
+
+.not-found-page {
+  display: grid;
+  min-height: min(42rem, 75vh);
+  align-content: center;
+  justify-items: start;
+  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 8vw, 9rem);
+  color: #17243a;
+}
+
+.not-found-page > p {
+  margin: 0 0 1.5rem;
+  color: #a52d39;
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.not-found-page h1 {
+  max-width: 48rem;
+  margin: 0;
+  font-size: clamp(2.4rem, 5.5vw, 5.8rem);
+  font-weight: 620;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+
+.not-found-page > span {
+  max-width: 42rem;
+  margin-top: 1.75rem;
+  color: #637184;
+  line-height: 1.8;
+}
+
+.not-found-page > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.not-found-page a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  padding: 0.75rem 1.35rem;
+  border: 1px solid #a52d39;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 720;
+  background: #a52d39;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.not-found-page a + a {
+  color: #a52d39;
+  background: transparent;
+}
+
+.not-found-page a:hover,
+.not-found-page a:focus-visible {
+  color: #a52d39;
+  background: transparent;
+}
+
+.not-found-page a + a:hover,
+.not-found-page a + a:focus-visible {
+  color: #fff;
+  background: #a52d39;
+}
+
+.legal-page__content h2 {
+  color: #17243a;
+  font-size: 1rem;
+  font-weight: 720;
+}
+
+.legal-page__content p {
+  max-width: 52rem;
+  color: #637184;
+  line-height: 1.85;
+}
+
 @media (min-width: 768px) {
   html[lang='ko'] .editorial-page__header h1 {
     font-size: clamp(2.3rem, 4vw, 4.1rem);
@@ -688,5 +791,10 @@ html[lang='ko'] .product-placeholder__copy h2 {
     grid-template-columns: 1fr;
     gap: 3rem;
     min-height: 26rem;
+  }
+
+  .legal-page__content section {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }

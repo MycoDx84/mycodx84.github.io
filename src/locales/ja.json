@@ -300,6 +300,8 @@
         "email": "メールアドレス",
         "message": "お問い合わせ内容",
         "messagePlaceholder": "お問い合わせ内容をご入力ください。",
+        "privacyConsent": "個人情報の取扱いを確認し、同意します。（必須）",
+        "privacyLink": "詳細を見る",
         "submit": "送信する",
         "sending": "送信中...",
         "sent": "お問い合わせを送信しました。",
@@ -366,6 +368,7 @@
     "sub": "感染症診断の全工程をつなぐ統合診断プラットフォームを開発しています。"
   },
   "footer": {
+    "privacy": "個人情報保護方針",
     "rights": "© 2026 MycoDx. All rights reserved.",
     "address": "51139 慶尚南道 昌原市 義昌区 龍洞路83番安吉 7 ミレドリームビル 202号・206号",
     "email": "info@mycodx.com",

@@ -300,6 +300,8 @@
         "email": "Email",
         "message": "Message",
         "messagePlaceholder": "Tell us what you would like to discuss.",
+        "privacyConsent": "I have read and agree to the privacy notice. (Required)",
+        "privacyLink": "View details",
         "submit": "Send inquiry",
         "sending": "Sending...",
         "sent": "Your inquiry has been sent.",
@@ -366,6 +368,7 @@
     "sub": "Developing an integrated diagnostic platform that connects the full infectious disease diagnostic process."
   },
   "footer": {
+    "privacy": "Privacy",
     "rights": "© 2026 MycoDx. All rights reserved.",
     "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139 Republic of Korea",
     "email": "info@mycodx.com",

@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import productData from '../content/products.json'
 import { localize, type ProductContent } from '../content/types'
+import NotFound from './NotFound'
 
 const productItems = productData as ProductContent[]
 
@@ -13,17 +14,7 @@ export default function ProductDetail() {
   const detailFeatures = product?.detailFeatures ?? product?.specs
 
   if (!product) {
-    return (
-      <div className="editorial-page product-detail-page">
-        <header className="editorial-page__header">
-          <p>{t('product.kicker')}</p>
-          <h1>{t('product.title')}</h1>
-        </header>
-        <section className="product-detail__empty">
-          <p>{t('product.placeholderTitle')}</p>
-        </section>
-      </div>
-    )
+    return <NotFound />
   }
 
   return (

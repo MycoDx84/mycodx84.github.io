@@ -1198,7 +1198,7 @@ html[lang='ko'] .home-visual h1 {
   outline-offset: 2px;
 }
 
-.home-contact__form input:not([type='radio']),
+.home-contact__form input:not([type='radio']):not([type='checkbox']),
 .home-contact__form textarea {
   width: 100%;
   border: 1px solid rgba(23, 36, 58, 0.16);
@@ -1210,7 +1210,7 @@ html[lang='ko'] .home-visual h1 {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.home-contact__form input:not([type='radio']) {
+.home-contact__form input:not([type='radio']):not([type='checkbox']) {
   height: 3.15rem;
   padding: 0 1rem;
 }
@@ -1221,12 +1221,12 @@ html[lang='ko'] .home-visual h1 {
   resize: vertical;
 }
 
-.home-contact__form input:not([type='radio'])::placeholder,
+.home-contact__form input:not([type='radio']):not([type='checkbox'])::placeholder,
 .home-contact__form textarea::placeholder {
   color: rgba(67, 86, 95, 0.5);
 }
 
-.home-contact__form input:not([type='radio']):focus,
+.home-contact__form input:not([type='radio']):not([type='checkbox']):focus,
 .home-contact__form textarea:focus {
   border-color: rgba(165, 45, 57, 0.55);
   box-shadow: 0 0 0 3px rgba(165, 45, 57, 0.12);
@@ -1238,6 +1238,30 @@ html[lang='ko'] .home-visual h1 {
   gap: 1rem 1.5rem;
   flex-wrap: wrap;
   padding-top: 0.15rem;
+}
+
+.home-contact__form > .home-contact__privacy-consent {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  color: #526f70;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.home-contact__privacy-consent input {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  accent-color: #a52d39;
+}
+
+.home-contact__privacy-consent a {
+  color: #a52d39;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .home-contact__form button {

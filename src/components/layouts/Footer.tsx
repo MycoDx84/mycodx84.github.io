@@ -44,6 +44,11 @@ const Footer = () => {
                   News
                 </Link>
               </li>
+              <li>
+                <Link to="/privacy" className="text-sm text-gray-500 hover:text-blue-900 transition-colors">
+                  {t('footer.privacy')}
+                </Link>
+              </li>
             </ul>
           </div>
 

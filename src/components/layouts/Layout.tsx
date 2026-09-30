@@ -1,6 +1,7 @@
 import { useEffect, type ReactNode } from 'react'
 import { useLocation } from 'react-router-dom'
 import BackToTopButton from '../common/BackToTopButton'
+import PageMeta from '../common/PageMeta'
 import Footer from './Footer'
 import Header from './Header'
 
@@ -19,6 +20,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className={isHome ? 'site-shell site-shell--home' : 'site-shell'}>
+      <PageMeta />
       <Header />
       <div
         key={location.pathname}
