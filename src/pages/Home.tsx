@@ -533,7 +533,9 @@ export default function Home() {
                     <input type="checkbox" name="privacy_consent" value="agreed" required />
                     <span>
                       {t('home.contact.form.privacyConsent')}{' '}
-                      <Link to="/privacy">{t('home.contact.form.privacyLink')}</Link>
+                      <Link to="/privacy" state={{ fromContact: true }}>
+                        {t('home.contact.form.privacyLink')}
+                      </Link>
                     </span>
                   </label>
                   <div className="home-contact__form-footer">

@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const privacyContent = {
   ko: {
     kicker: 'Privacy',
     title: '개인정보 수집·이용 안내',
     intro: '주식회사 마이코디엑스는 홈페이지 문의에 답변하기 위해 필요한 최소한의 개인정보를 처리합니다.',
+    close: '닫기',
     sections: [
       ['수집 항목', '필수: 성명, 이메일, 문의 유형, 문의 내용 · 선택: 소속'],
       ['이용 목적', '문의 내용 확인, 담당자 배정, 답변 및 후속 연락'],
@@ -18,6 +20,7 @@ const privacyContent = {
     kicker: 'Privacy',
     title: 'Privacy notice for website inquiries',
     intro: 'MycoDx Co., Ltd. processes only the personal information needed to respond to website inquiries.',
+    close: 'Close',
     sections: [
       ['Information collected', 'Required: name, email, inquiry type, and message · Optional: organization'],
       ['Purpose of use', 'Reviewing inquiries, assigning the appropriate contact, responding, and following up'],
@@ -31,6 +34,7 @@ const privacyContent = {
     kicker: 'Confidentialité',
     title: 'Avis de confidentialité pour les demandes en ligne',
     intro: 'MycoDx Co., Ltd. traite uniquement les données personnelles nécessaires pour répondre aux demandes envoyées depuis le site.',
+    close: 'Fermer',
     sections: [
       ['Données collectées', "Obligatoires : nom, e-mail, type de demande et message · Facultative : organisation"],
       ["Finalité", "Examen de la demande, attribution au bon interlocuteur, réponse et suivi"],
@@ -44,6 +48,7 @@ const privacyContent = {
     kicker: 'Privacy',
     title: 'お問い合わせに関する個人情報の取扱い',
     intro: '株式会社MycoDxは、ウェブサイトからのお問い合わせに回答するために必要な最小限の個人情報を取り扱います。',
+    close: '閉じる',
     sections: [
       ['収集項目', '必須：氏名、メールアドレス、お問い合わせ種別、お問い合わせ内容 · 任意：所属'],
       ['利用目的', 'お問い合わせ内容の確認、担当者の割り当て、回答および必要なご連絡'],
@@ -57,8 +62,20 @@ const privacyContent = {
 
 export default function Privacy() {
   const { i18n } = useTranslation()
+  const location = useLocation()
+  const navigate = useNavigate()
   const language = i18n.resolvedLanguage?.split('-')[0] ?? i18n.language.split('-')[0]
   const content = privacyContent[language as keyof typeof privacyContent] ?? privacyContent.ko
+  const openedFromContact = Boolean((location.state as { fromContact?: boolean } | null)?.fromContact)
+
+  const closePrivacy = () => {
+    if (openedFromContact) {
+      navigate(-1)
+      return
+    }
+
+    navigate('/#contact')
+  }
 
   return (
     <div className="editorial-page legal-page">
@@ -75,6 +92,10 @@ export default function Privacy() {
             <p>{description}</p>
           </section>
         ))}
+        <button type="button" className="legal-page__close" onClick={closePrivacy}>
+          <span aria-hidden="true">←</span>
+          {content.close}
+        </button>
       </div>
     </div>
   )
