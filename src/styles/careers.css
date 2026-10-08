@@ -81,9 +81,10 @@
 .careers-documents h3 { color: #17243a; font-size: 1rem; }
 .careers-documents ul { padding: 0; margin: 1rem 0 0; color: #687587; font-size: .88rem; line-height: 1.9; list-style: none; }
 .careers-documents li::before { content: '·'; margin-right: .5rem; color: #a52d39; }
-.careers-download { display: grid; gap: .2rem; min-width: 14rem; padding: .8rem 1rem; text-align: left; color: #7b8490; background: #e8e6df; border: 0; border-radius: 4px; cursor: not-allowed; }
+.careers-download { display: grid; gap: .2rem; min-width: 14rem; padding: .8rem 1rem; text-align: left; color: #fff; background: #17243a; border: 0; border-radius: 4px; transition: background-color 180ms ease, transform 180ms ease; }
+.careers-download:hover { background: #a52d39; transform: translateY(-1px); }
 .careers-download span { font-weight: 720; }
-.careers-download small { font-size: .68rem; }
+.careers-download small { color: rgba(255,255,255,.68); font-size: .68rem; }
 .careers-form { display: grid; gap: 2rem; min-width: 0; padding: clamp(1.5rem,3vw,3rem); color: #17243a; background: #f4f2ec; }
 .careers-form__success { display: grid; gap: .35rem; padding: 1.1rem 1.25rem; color: #315c50; background: #e3eee9; border-left: 3px solid #47796a; }
 .careers-form__success strong { font-size: .92rem; }

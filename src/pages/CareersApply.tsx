@@ -49,7 +49,14 @@ export default function CareersApply() {
           <div className="careers-form__files">
             <div className="careers-form__files-heading">
               <div><h3>서류 첨부 <i>*</i></h3><p>PDF 또는 DOCX 형식으로 첨부해 주세요. 전체 파일 용량은 10MB 이하여야 하며, 민감정보가 포함된 불필요한 서류는 제출하지 마세요.</p></div>
-              <button className="careers-download" type="button" disabled><span>자사 입사지원서 다운로드</span><small>지원서 파일 등록 후 활성화</small></button>
+              <a
+                className="careers-download"
+                href="/forms/MycoDx_상시채용지원서_동의서포함.docx"
+                download="MycoDx_상시채용지원서_동의서포함.docx"
+              >
+                <span>자사 입사지원서 다운로드</span>
+                <small>DOCX · 개인정보 동의서 포함</small>
+              </a>
             </div>
             <label><span>자사 입사지원서 <i>*</i></span><input name="자사 입사지원서" type="file" accept=".pdf,.doc,.docx" required /></label>
             <label><span>학위 증명서 <i>*</i></span><input name="학위 증명서" type="file" accept=".pdf,.zip" multiple required /></label>
