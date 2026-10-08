@@ -374,6 +374,17 @@
     "applyTitle": "応募フォーム",
     "applyDescription": "応募案内を確認し、MycoDxへ応募書類を提出します。"
   },
+  "careersApply": {
+    "back": "タレントプール案内", "title": "応募書類の作成", "lead": "応募案内をご確認のうえ、応募書類と証明書類をご提出ください。",
+    "successTitle": "応募書類を受け付けました。", "successBody": "MycoDxのタレントプールへご応募いただき、ありがとうございます。",
+    "formTitle": "応募者情報", "required": "* は必須項目です。提出情報は採用検討のため、応募日から1年間保管・利用されます。",
+    "area": "応募分野", "areas": ["バイオ・体外診断研究開発", "生産・品質", "ヘルスケア融合技術", "その他事業"],
+    "name": "氏名", "email": "メールアドレス", "phone": "電話番号", "education": "最終学歴", "select": "選択してください", "degrees": ["学士", "修士", "博士", "その他"],
+    "experience": "経歴区分", "experiences": ["新卒", "経験者"], "message": "主な経歴・応募内容", "messagePlaceholder": "主な経歴、研究経験、関心のある職務を簡潔にご記入ください。", "chars": "文字",
+    "files": "書類添付", "fileHelp": "PDFまたはDOCX形式で添付してください。合計ファイルサイズは10MB以下とし、不要な機微情報を含む書類は提出しないでください。",
+    "download": "MycoDx応募書類をダウンロード", "downloadMeta": "DOCX · 個人情報同意書を含む韓国語書式", "application": "MycoDx応募書類", "degree": "学位証明書", "transcript": "成績証明書", "papers": "論文・その他資料",
+    "consent": "個人情報の収集・利用およびタレントプールへの登録に同意します。提出情報は採用検討のため、応募日から1年間保管・利用されます。", "submit": "応募書類を提出"
+  },
   "footer": {
     "privacy": "個人情報保護方針",
     "rights": "© 2026 MycoDx. All rights reserved.",

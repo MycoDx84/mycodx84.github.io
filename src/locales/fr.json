@@ -374,6 +374,17 @@
     "applyTitle": "Candidature",
     "applyDescription": "Consultez les informations et envoyez votre candidature à MycoDx."
   },
+  "careersApply": {
+    "back": "Présentation du vivier de talents", "title": "Candidature", "lead": "Consultez les informations, puis envoyez le formulaire de candidature et les justificatifs demandés.",
+    "successTitle": "Votre candidature a été reçue.", "successBody": "Merci d’avoir rejoint le vivier de talents MycoDx.",
+    "formTitle": "Informations du candidat", "required": "* indique un champ obligatoire. Les informations seront conservées et utilisées pendant un an à compter de la date de candidature.",
+    "area": "Domaine de candidature", "areas": ["R&D en biotechnologie et diagnostic in vitro", "Production & Qualité", "Technologies convergentes en santé", "Autres fonctions"],
+    "name": "Nom complet", "email": "E-mail", "phone": "Téléphone", "education": "Niveau d’études", "select": "Veuillez sélectionner", "degrees": ["Licence", "Master", "Doctorat", "Autre"],
+    "experience": "Niveau d’expérience", "experiences": ["Débutant", "Expérimenté"], "message": "Expérience principale et motivation", "messagePlaceholder": "Décrivez brièvement votre expérience, vos travaux de recherche et les fonctions qui vous intéressent.", "chars": "caractères",
+    "files": "Pièces jointes", "fileHelp": "Joignez des fichiers PDF ou DOCX. La taille totale ne doit pas dépasser 10 Mo. N’envoyez pas de documents inutiles contenant des données sensibles.",
+    "download": "Télécharger le formulaire MycoDx", "downloadMeta": "DOCX · formulaire coréen avec consentement", "application": "Formulaire de candidature MycoDx", "degree": "Diplôme", "transcript": "Relevé de notes", "papers": "Publications et autres documents",
+    "consent": "J’accepte la collecte et l’utilisation de mes données personnelles ainsi que mon inscription au vivier de talents. Les informations seront conservées et utilisées pendant un an à compter de la date de candidature.", "submit": "Envoyer la candidature"
+  },
   "footer": {
     "privacy": "Confidentialité",
     "rights": "© 2026 MycoDx. Tous droits réservés.",
