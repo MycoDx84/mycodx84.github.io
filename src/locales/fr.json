@@ -20,7 +20,8 @@
       "gallery": "Galerie",
       "news": "Actualités",
       "publications": "Publications",
-      "contact": "Contact"
+      "contact": "Contact",
+      "careers": "Carrières"
     }
   },
   "researchNavigation": {
@@ -366,6 +367,12 @@
   "slogan": {
     "main": "MycoDx",
     "sub": "Développement d'une plateforme de diagnostic intégré couvrant l'ensemble du processus diagnostique des maladies infectieuses."
+  },
+  "careersMeta": {
+    "title": "Vivier de talents",
+    "description": "Rejoignez le vivier de talents MycoDx et contribuez au diagnostic des maladies infectieuses de demain.",
+    "applyTitle": "Candidature",
+    "applyDescription": "Consultez les informations et envoyez votre candidature à MycoDx."
   },
   "footer": {
     "privacy": "Confidentialité",

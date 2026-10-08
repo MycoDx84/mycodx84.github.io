@@ -12,6 +12,8 @@ const routeMeta = [
   { path: '/product', titleKey: 'product.title', descriptionKey: 'product.description' },
   { path: '/news', titleKey: 'newsPage.title', descriptionKey: 'newsPage.description' },
   { path: '/publications', titleKey: 'publication.title', descriptionKey: 'publication.description' },
+  { path: '/careers', titleKey: 'careersMeta.title', descriptionKey: 'careersMeta.description' },
+  { path: '/careers/apply', titleKey: 'careersMeta.applyTitle', descriptionKey: 'careersMeta.applyDescription' },
 ] as const
 
 function setMeta(name: string, content: string, property = false) {

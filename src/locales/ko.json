@@ -20,7 +20,8 @@
       "gallery": "갤러리",
       "news": "소식",
       "publications": "논문",
-      "contact": "문의"
+      "contact": "문의",
+      "careers": "채용"
     }
   },
   "researchNavigation": {
@@ -366,6 +367,12 @@
   "slogan": {
     "main": "마이코디엑스",
     "sub": "감염성 질환 진단 전 과정을 연결하는 통합 진단 플랫폼을 개발합니다."
+  },
+  "careersMeta": {
+    "title": "상시 인재풀",
+    "description": "MycoDx와 함께 감염성 질환 진단의 미래를 만들어 갈 인재를 기다립니다.",
+    "applyTitle": "지원서 작성",
+    "applyDescription": "MycoDx 채용 지원 안내를 확인하고 지원서를 제출합니다."
   },
   "footer": {
     "privacy": "개인정보처리방침",

@@ -20,7 +20,8 @@
       "gallery": "ギャラリー",
       "news": "お知らせ",
       "publications": "論文",
-      "contact": "お問い合わせ"
+      "contact": "お問い合わせ",
+      "careers": "採用"
     }
   },
   "researchNavigation": {
@@ -366,6 +367,12 @@
   "slogan": {
     "main": "マイコディエックス",
     "sub": "感染症診断の全工程をつなぐ統合診断プラットフォームを開発しています。"
+  },
+  "careersMeta": {
+    "title": "タレントプール",
+    "description": "MycoDxとともに感染症診断の未来をつくる仲間を募集しています。",
+    "applyTitle": "応募フォーム",
+    "applyDescription": "応募案内を確認し、MycoDxへ応募書類を提出します。"
   },
   "footer": {
     "privacy": "個人情報保護方針",

@@ -61,7 +61,7 @@
 
 .site-primary-nav {
   display: grid;
-  grid-template-columns: repeat(5, 108px);
+  grid-template-columns: repeat(6, 100px);
   align-items: center;
   height: 44px;
 }
@@ -1435,7 +1435,7 @@ html[lang='ko'] .home-visual h1 {
   }
 
   .site-primary-nav {
-    grid-template-columns: repeat(5, 82px);
+    grid-template-columns: repeat(6, 70px);
   }
 
   .home-hero {
@@ -1589,7 +1589,7 @@ html[lang='ko'] .home-visual h1 {
     right: 0;
     bottom: 8px;
     left: 0;
-    grid-template-columns: repeat(5, max-content);
+    grid-template-columns: repeat(6, max-content);
     justify-content: space-between;
     width: 100%;
     height: 40px;

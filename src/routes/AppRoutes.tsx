@@ -6,6 +6,8 @@ import Product from '../pages/Product'
 import ProductDetail from '../pages/ProductDetail'
 import Publication from '../pages/Publication'
 import Privacy from '../pages/Privacy'
+import Careers from '../pages/Careers'
+import CareersApply from '../pages/CareersApply'
 import NotFound from '../pages/NotFound'
 
 export default function AppRoutes() {
@@ -19,6 +21,8 @@ export default function AppRoutes() {
       <Route path="/news" element={<News />} />
       <Route path="/publications" element={<Publication />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/careers/apply" element={<CareersApply />} />
       <Route path="/research" element={<Navigate to="/about" replace />} />
       <Route path="/research/introduction" element={<Navigate to="/about" replace />} />
       <Route path="/research/areas" element={<Navigate to="/" replace />} />

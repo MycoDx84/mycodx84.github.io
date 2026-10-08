@@ -20,7 +20,8 @@
       "gallery": "Gallery",
       "news": "News",
       "publications": "Publications",
-      "contact": "Contact"
+      "contact": "Contact",
+      "careers": "Careers"
     }
   },
   "researchNavigation": {
@@ -366,6 +367,12 @@
   "slogan": {
     "main": "MycoDx",
     "sub": "Developing an integrated diagnostic platform that connects the full infectious disease diagnostic process."
+  },
+  "careersMeta": {
+    "title": "Talent Pool",
+    "description": "Join the MycoDx talent pool and help shape the future of infectious-disease diagnostics.",
+    "applyTitle": "Job Application",
+    "applyDescription": "Review the application guide and submit your application to MycoDx."
   },
   "footer": {
     "privacy": "Privacy",
