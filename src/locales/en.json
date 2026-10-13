@@ -376,14 +376,14 @@
   },
   "careersApply": {
     "back": "Talent pool overview", "title": "Job application", "lead": "Review the application guide, then submit your application form and supporting documents.",
-    "successTitle": "Your application has been received.", "successBody": "Thank you for applying to the MycoDx talent pool.",
+    "successConfirm": "Done", "successTitle": "Your application has been received.", "successBody": "Thank you for applying to the MycoDx talent pool.",
     "formTitle": "Applicant information", "required": "* indicates a required field. Submitted information will be retained and used for recruitment review for one year from the application date.",
     "area": "Application area", "areas": ["Bio & IVD R&D", "Manufacturing & Quality", "Healthcare Convergence Technology", "Other Business Functions"],
     "name": "Full name", "email": "Email", "phone": "Phone number", "education": "Highest education", "select": "Please select", "degrees": ["Bachelor’s", "Master’s", "Doctorate", "Other"],
     "experience": "Experience level", "experiences": ["Entry level", "Experienced"], "message": "Key experience and application details", "messagePlaceholder": "Briefly describe your key experience, research background, and roles of interest.", "chars": "characters",
     "files": "Attachments", "fileHelp": "Upload files in the formats available for each field. The combined file size must not exceed 10 MB. Do not submit unnecessary documents containing sensitive information.", "fileSizeError": "The combined size of all attachments cannot exceed 10 MB. Reduce the file size and try again.",
     "download": "Download MycoDx application form", "downloadMeta": "DOCX · Korean form with privacy consent", "application": "MycoDx application form", "degree": "Degree certificate", "transcript": "Academic transcript", "papers": "Papers and other materials",
-    "consent": "I consent to the collection and use of my personal information and registration in the talent pool. The submitted information will be retained and used for recruitment review for one year from the application date.", "submit": "Submit application"
+    "consent": "I consent to the collection and use of my personal information and registration in the talent pool. The submitted information will be retained and used for recruitment review for one year from the application date.", "submit": "Submit application", "sending": "Submitting...", "failed": "We could not confirm submission. Your entries and files have been kept. Please check with jakim@mycodx.com before retrying to avoid a duplicate application."
   },
   "footer": {
     "privacy": "Privacy",

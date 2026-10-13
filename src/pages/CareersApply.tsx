@@ -1,9 +1,10 @@
-import { type ChangeEvent, type FormEvent, useRef, useState } from 'react'
+import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import ApplicationSuccessDialog from '../components/common/ApplicationSuccessDialog'
+import { CAREERS_ENDPOINT, prepareApplicationData, isApplicationReceipt } from '../services/careersApplication'
 
-const CAREERS_ENDPOINT = 'https://formsubmit.co/hyemlee@mycodx.com'
-const CAREERS_SUCCESS_URL = 'https://mycodx.com/careers/apply?submitted=true'
+const CAREERS_FORM_URL = 'https://mycodx.com/careers/apply'
 const MAX_TOTAL_FILE_SIZE = 10 * 1024 * 1024
 const APPLICATION_FILE_TYPES = '.pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
@@ -15,11 +16,41 @@ function getTotalFileSize(form: HTMLFormElement) {
 
 export default function CareersApply() {
   const { t } = useTranslation()
-  const [searchParams] = useSearchParams()
+  const formRef = useRef<HTMLFormElement>(null)
+  const frameRef = useRef<HTMLIFrameElement>(null)
+  const submissionPending = useRef<string | null>(null)
+  const submissionTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+
   const [messageLength, setMessageLength] = useState(0)
   const [fileError, setFileError] = useState('')
-  const [localSubmissionComplete, setLocalSubmissionComplete] = useState(false)
-  const localSubmissionPending = useRef(false)
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle')
+
+  useEffect(() => {
+    const form = formRef.current
+    const prepare = (event: FormDataEvent) => {
+      if (submissionPending.current) {
+        prepareApplicationData(event.formData, window.location.origin, submissionPending.current)
+      }
+    }
+    const receive = (event: MessageEvent) => {
+      if (!submissionPending.current || !isApplicationReceipt(
+        event, window.location.origin, frameRef.current?.contentWindow, submissionPending.current,
+      )) return
+      clearTimeout(submissionTimer.current)
+      submissionPending.current = null
+      form?.reset()
+      setMessageLength(0)
+      setFileError('')
+      setSubmissionStatus('sent')
+    }
+    form?.addEventListener('formdata', prepare)
+    window.addEventListener('message', receive)
+    return () => {
+      form?.removeEventListener('formdata', prepare)
+      window.removeEventListener('message', receive)
+      clearTimeout(submissionTimer.current)
+    }
+  }, [])
   const content = {
     back: t('careersApply.back'), title: t('careersApply.title'), lead: t('careersApply.lead'),
     successTitle: t('careersApply.successTitle'), successBody: t('careersApply.successBody'), formTitle: t('careersApply.formTitle'), required: t('careersApply.required'),
@@ -27,9 +58,8 @@ export default function CareersApply() {
     name: t('careersApply.name'), email: t('careersApply.email'), phone: t('careersApply.phone'), education: t('careersApply.education'), select: t('careersApply.select'), degrees: t('careersApply.degrees', { returnObjects: true }) as string[],
     experience: t('careersApply.experience'), experiences: t('careersApply.experiences', { returnObjects: true }) as string[], message: t('careersApply.message'), messagePlaceholder: t('careersApply.messagePlaceholder'), chars: t('careersApply.chars'),
     files: t('careersApply.files'), fileHelp: t('careersApply.fileHelp'), download: t('careersApply.download'), downloadMeta: t('careersApply.downloadMeta'), application: t('careersApply.application'), degree: t('careersApply.degree'), transcript: t('careersApply.transcript'), papers: t('careersApply.papers'),
-    consent: t('careersApply.consent'), submit: t('careersApply.submit'), fileSizeError: t('careersApply.fileSizeError'),
+    consent: t('careersApply.consent'), submit: t('careersApply.submit'), sending: t('careersApply.sending'), failed: t('careersApply.failed'), fileSizeError: t('careersApply.fileSizeError'),
   }
-  const submitted = searchParams.get('submitted') === 'true'
 
   const validateFileSize = (form: HTMLFormElement) => {
     const isTooLarge = getTotalFileSize(form) > MAX_TOTAL_FILE_SIZE
@@ -42,17 +72,25 @@ export default function CareersApply() {
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    if (!validateFileSize(event.currentTarget)) {
-      event.preventDefault()
-      return
-    }
-    if (import.meta.env.DEV) localSubmissionPending.current = true
-  }
+    event.preventDefault()
+    const form = event.currentTarget
+    if (submissionPending.current || !validateFileSize(form)) return
 
-  const handleLocalSubmitResponse = () => {
-    if (!localSubmissionPending.current) return
-    localSubmissionPending.current = false
-    setLocalSubmissionComplete(true)
+    submissionPending.current = crypto.randomUUID()
+    setSubmissionStatus('sending')
+    const fail = () => {
+      submissionPending.current = null
+      setSubmissionStatus('failed')
+    }
+    submissionTimer.current = setTimeout(fail, 90_000)
+    try {
+      // Native multipart POST supports attachments; AJAX did not deliver them.
+      // The formdata listener assigns every file its own upload field.
+      HTMLFormElement.prototype.submit.call(form)
+    } catch {
+      clearTimeout(submissionTimer.current)
+      fail()
+    }
   }
 
   return (
@@ -65,7 +103,7 @@ export default function CareersApply() {
       </header>
 
       <section className="careers-application">
-        <form className="careers-form" action={CAREERS_ENDPOINT} method="POST" encType="multipart/form-data" target={import.meta.env.DEV ? 'careers-submit-response' : undefined} onSubmit={handleSubmit}>
+        <form ref={formRef} action={CAREERS_ENDPOINT} method="POST" encType="multipart/form-data" target="careers-submit-response" className="careers-form" onSubmit={handleSubmit} aria-busy={submissionStatus === 'sending'}>
           <div className="careers-form__heading">
             <span>Application form</span>
             <h2>{content.formTitle}</h2>
@@ -113,19 +151,23 @@ export default function CareersApply() {
           <input type="hidden" name="_subject" value="[MycoDx 채용] 신규 지원서 접수" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="box" />
-          <input type="hidden" name="_next" value={CAREERS_SUCCESS_URL} />
-          <div className="careers-form__footer"><button type="submit" disabled={Boolean(fileError)}>{content.submit}</button></div>
+          <input type="hidden" name="_url" value={CAREERS_FORM_URL} />
+          <div className="careers-form__footer">
+            {submissionStatus === 'failed' && <p className="is-error" role="alert">{content.failed}</p>}
+            <button type="submit" disabled={Boolean(fileError) || submissionStatus === 'sending'}>
+              {submissionStatus === 'sending' ? content.sending : content.submit}
+            </button>
+          </div>
         </form>
       </section>
-      {import.meta.env.DEV && <iframe className="careers-submit-response" name="careers-submit-response" title="Application submission response" onLoad={handleLocalSubmitResponse} />}
-      {(submitted || localSubmissionComplete) && (
-        <div className="careers-success-dialog" role="dialog" aria-modal="true" aria-labelledby="careers-success-title">
-          <div className="careers-success-dialog__panel">
-            <strong id="careers-success-title">{content.successTitle}</strong>
-            <span>{content.successBody}</span>
-            <Link to="/careers">{content.back}</Link>
-          </div>
-        </div>
+      <iframe ref={frameRef} name="careers-submit-response" title="Application submission response" hidden />
+      {submissionStatus === 'sent' && (
+        <ApplicationSuccessDialog
+          title={content.successTitle}
+          description={content.successBody}
+          confirmLabel={t('careersApply.successConfirm')}
+          onClose={() => setSubmissionStatus('idle')}
+        />
       )}
     </div>
   )
