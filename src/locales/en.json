@@ -368,6 +368,66 @@
     "main": "MycoDx",
     "sub": "Developing an integrated diagnostic platform that connects the full infectious disease diagnostic process."
   },
+  "careers": {
+    "kicker": "Careers · Talent Pool",
+    "title": "<line>Join us in creating</line><line>new possibilities</line>",
+    "lead": "MycoDx researches biotechnology, in vitro diagnostics, and healthcare technologies centered on infectious-disease diagnostics. We aim to grow with people who bring expertise and fresh perspectives.",
+    "heroAlt": "The MycoDx team reviewing research results together",
+    "introLabel": "Why MycoDx",
+    "introTitle": "<line>Our talent pool is open</line><line>beyond specific hiring periods.</line>",
+    "introBody": "You are welcome to apply even when no position is currently open. When a hiring need arises, we review each applicant’s education, experience, research background, and role fit, then contact suitable candidates individually.",
+    "fieldsLabel": "Application Areas",
+    "fieldsTitle": "Areas of opportunity",
+    "fieldsDescription": "We welcome people with diverse expertise—from research and product development to manufacturing, quality, and the convergence of new technologies and industries.",
+    "fields": [
+      [
+        "Bio & IVD Research and Development",
+        "Research and product development in biotechnology and in vitro diagnostics, with a focus on infectious-disease diagnostics"
+      ],
+      [
+        "Manufacturing & Quality",
+        "Product manufacturing, quality management, and operations supporting a reliable product supply"
+      ],
+      [
+        "Healthcare Convergence Technology",
+        "Convergence of biotechnology with data, software, and other emerging technologies"
+      ],
+      [
+        "Other Business Functions",
+        "Business development, operations, and other functions supporting the growth of MycoDx"
+      ]
+    ],
+    "processLabel": "Talent Pool Journey",
+    "processTitle": "How the talent pool works",
+    "processDescription": "After registration, applications are reviewed according to hiring needs and suitability for relevant roles.",
+    "steps": [
+      [
+        "01",
+        "Share your profile",
+        "Tell us about your experience and interests."
+      ],
+      [
+        "02",
+        "Profile review",
+        "We review the information you provide."
+      ],
+      [
+        "03",
+        "Opportunity match",
+        "We contact you when a relevant role opens."
+      ],
+      [
+        "04",
+        "Hiring process",
+        "We guide you through the process for that role."
+      ]
+    ],
+    "notice": "Joining the talent pool does not guarantee an open position or a hiring process.",
+    "ctaEyebrow": "Stay connected",
+    "ctaTitle": "Let’s explore what comes next\nwith MycoDx.",
+    "ctaBody": "Prepare your application documents and submit them through our online form.",
+    "ctaButton": "Apply now"
+  },
   "careersMeta": {
     "title": "Talent Pool",
     "description": "Join the MycoDx talent pool and help shape the future of infectious-disease diagnostics.",

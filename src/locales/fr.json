@@ -368,6 +368,66 @@
     "main": "MycoDx",
     "sub": "Développement d'une plateforme de diagnostic intégré couvrant l'ensemble du processus diagnostique des maladies infectieuses."
   },
+  "careers": {
+    "kicker": "Carrières · Vivier de talents",
+    "title": "<line>Créons ensemble</line><line>de nouvelles possibilités</line>",
+    "lead": "MycoDx mène des recherches en biotechnologie, diagnostic in vitro et technologies de santé, centrées sur le diagnostic des maladies infectieuses. Nous souhaitons évoluer avec des talents qui apportent expertise et regard neuf.",
+    "heroAlt": "L’équipe MycoDx examine ensemble des résultats de recherche",
+    "introLabel": "Pourquoi MycoDx",
+    "introTitle": "<line>Notre vivier de talents reste ouvert</line><line>au-delà des périodes de recrutement.</line>",
+    "introBody": "Vous pouvez postuler même lorsqu’aucun poste n’est actuellement ouvert. Lorsqu’un besoin apparaît, nous examinons la formation, l’expérience, le parcours de recherche et l’adéquation au poste, puis contactons individuellement les profils correspondants.",
+    "fieldsLabel": "Domaines de candidature",
+    "fieldsTitle": "Domaines d’opportunité",
+    "fieldsDescription": "Nous recherchons des profils variés, de la R&D et l’industrialisation à la production, la qualité et la convergence de nouvelles technologies.",
+    "fields": [
+      [
+        "R&D en biotechnologie et diagnostic in vitro",
+        "Recherche et développement de produits en biotechnologie et diagnostic in vitro, centrés sur les maladies infectieuses"
+      ],
+      [
+        "Production & Qualité",
+        "Fabrication, gestion de la qualité et opérations assurant un approvisionnement fiable"
+      ],
+      [
+        "Technologies convergentes en santé",
+        "Convergence de la biotechnologie avec les données, les logiciels et les technologies émergentes"
+      ],
+      [
+        "Autres fonctions",
+        "Développement commercial, opérations et autres fonctions contribuant à la croissance de MycoDx"
+      ]
+    ],
+    "processLabel": "Parcours du vivier",
+    "processTitle": "Comment fonctionne le vivier",
+    "processDescription": "Après l’enregistrement, les candidatures sont examinées selon les besoins de recrutement et l’adéquation aux postes concernés.",
+    "steps": [
+      [
+        "01",
+        "Dépôt du profil",
+        "Présentez-nous votre expérience et vos intérêts."
+      ],
+      [
+        "02",
+        "Étude du profil",
+        "Nous examinons les informations transmises."
+      ],
+      [
+        "03",
+        "Mise en relation",
+        "Nous vous contactons lorsqu’une opportunité correspond."
+      ],
+      [
+        "04",
+        "Processus de recrutement",
+        "Nous vous présentons les prochaines étapes."
+      ]
+    ],
+    "notice": "L’inscription au vivier ne garantit ni un poste ouvert ni le lancement d’un recrutement.",
+    "ctaEyebrow": "Restons en contact",
+    "ctaTitle": "Imaginons la suite\navec MycoDx.",
+    "ctaBody": "Préparez vos documents et envoyez votre candidature via notre formulaire en ligne.",
+    "ctaButton": "Postuler"
+  },
   "careersMeta": {
     "title": "Vivier de talents",
     "description": "Rejoignez le vivier de talents MycoDx et contribuez au diagnostic des maladies infectieuses de demain.",
