@@ -278,10 +278,16 @@
       "link": "À propos de MycoDx"
     },
     "contact": {
+      "emailNotice": {
+        "title": "Envoyez vos demandes par e-mail",
+        "description": "L’envoi en ligne est temporairement suspendu en raison d’une panne du service de transmission. Écrivez à l’adresse ci-dessous ; notre équipe vous répondra après examen.",
+        "detailsTitle": "Informations à inclure",
+        "details": "Indiquez le type de demande, votre nom, votre organisation (facultatif), vos coordonnées et votre message."
+      },
       "kicker": "Travailler avec MycoDx",
       "title": "Contact",
       "description": "Nous sommes ouverts aux opportunités de recherche conjointe, de validation clinique, d'intégration de plateforme et de partenariats commerciaux.",
-      "prompt": "Choisissez un sujet et envoyez un court message. Le contact MycoDx approprié vous répondra.",
+      "prompt": "Envoyez le type de demande et votre message par e-mail. La personne concernée vous contactera après examen.",
       "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139 République de Corée",
       "direct": {
         "email": "E-mail",
@@ -372,6 +378,15 @@
     "main": "MycoDx",
     "sub": "Développement d'une plateforme de diagnostic intégré couvrant l'ensemble du processus diagnostique des maladies infectieuses."
   },
+  "emailSubmission": {
+    "notice": "Envois en ligne temporairement suspendus",
+    "compose": "Rédiger un e-mail",
+    "copy": "Copier l’adresse",
+    "copied": "Adresse e-mail copiée.",
+    "failed": "Veuillez sélectionner et copier l’adresse manuellement.",
+    "help": "Le bouton ouvre votre messagerie. Vous devez envoyer vous-même l’e-mail pour le soumettre. Si aucune application ne s’ouvre, copiez l’adresse et utilisez votre messagerie habituelle.",
+    "optional": "facultatif"
+  },
   "careers": {
     "kicker": "Carrières · Vivier de talents",
     "title": "<line>Créons ensemble</line><line>de nouvelles possibilités</line>",
@@ -429,16 +444,29 @@
     "notice": "L’inscription au vivier ne garantit ni un poste ouvert ni le lancement d’un recrutement.",
     "ctaEyebrow": "Restons en contact",
     "ctaTitle": "Imaginons la suite\navec MycoDx.",
-    "ctaBody": "Préparez vos documents et envoyez votre candidature via notre formulaire en ligne.",
-    "ctaButton": "Postuler"
+    "ctaBody": "Les candidatures en ligne sont temporairement suspendues. Consultez le guide pour postuler par e-mail.",
+    "ctaButton": "Guide de candidature par e-mail"
   },
   "careersMeta": {
     "title": "Vivier de talents",
     "description": "Rejoignez le vivier de talents MycoDx et contribuez au diagnostic des maladies infectieuses de demain.",
-    "applyTitle": "Candidature",
-    "applyDescription": "Consultez les informations et envoyez votre candidature à MycoDx."
+    "applyTitle": "Postuler par e-mail",
+    "applyDescription": "Découvrez comment envoyer votre candidature MycoDx et vos justificatifs par e-mail."
   },
   "careersApply": {
+    "emailNotice": {
+      "title": "Postuler par e-mail",
+      "lead": "Préparez votre candidature et les justificatifs, puis envoyez-les à notre adresse de recrutement.",
+      "noticeTitle": "Les candidatures sont reçues par e-mail",
+      "description": "Les candidatures en ligne sont temporairement suspendues en raison d’une panne du service de transmission. Envoyez directement votre candidature et vos documents à l’adresse de recrutement ci-dessous.",
+      "bodyTitle": "Informations à inclure dans votre e-mail",
+      "body": "Indiquez le domaine souhaité, votre nom, vos coordonnées, votre diplôme le plus élevé, votre niveau d’expérience et un résumé de votre parcours et de vos motivations.",
+      "documentsTitle": "Documents à joindre",
+      "application": "Formulaire de candidature de l’entreprise et consentement relatif aux données personnelles",
+      "attachmentsHelp": "Joignez vous-même votre candidature et les justificatifs à l’e-mail. La taille totale des pièces jointes doit rester inférieure ou égale à 10 Mo.",
+      "receiptHelp": "Si vous avez déjà tenté un envoi en ligne, vérifiez d’abord sa réception à cette même adresse pour éviter un doublon.",
+      "downloadHelp": "Téléchargez et remplissez le formulaire de candidature et de consentement, puis joignez-le à votre e-mail avec les justificatifs."
+    },
     "back": "Présentation du vivier de talents", "title": "Candidature", "lead": "Consultez les informations, puis envoyez le formulaire de candidature et les justificatifs demandés.",
     "successConfirm": "Terminer", "successTitle": "Votre candidature a été reçue.", "successBody": "Merci d’avoir rejoint le vivier de talents MycoDx.",
     "formTitle": "Informations du candidat", "required": "* indique un champ obligatoire. Les informations seront conservées et utilisées pendant un an à compter de la date de candidature.",

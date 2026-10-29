@@ -1,0 +1,25 @@
+.email-submission { min-width: 0; padding: clamp(1.5rem, 3.5vw, 3rem); color: #17243a; background: #fff; border: 1px solid #e2e0db; border-radius: 8px; }
+.email-submission__notice { width: fit-content; margin: 0 0 1.1rem; padding: .4rem .7rem; color: #8d2430; background: #f8eef0; border-radius: 4px; font-size: .75rem; font-weight: 700; }
+.email-submission .email-submission__title { margin: 0; color: #17243a; font-size: clamp(1.35rem, 2.3vw, 1.85rem); font-weight: 700; line-height: 1.45; letter-spacing: -.025em; }
+.email-submission__description { margin: 1rem 0; color: #526173; font-size: .95rem; line-height: 1.85; }
+.email-submission__address { display: inline-block; max-width: 100%; color: #a52d39; font-size: clamp(1.2rem, 3vw, 1.7rem); font-weight: 750; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .25em; user-select: all; }
+.email-submission__details { display: grid; gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e2e0db; font-size: .9rem; line-height: 1.85; }
+.email-submission__details h3, .email-submission__details h4 { margin: 0 0 .4rem; color: #17243a; font-size: .95rem; font-weight: 700; }
+.email-submission__details p { margin: 0; color: #526173; }
+.email-submission__details ul { margin: .5rem 0 0; padding-left: 1.3rem; list-style: disc; color: #526173; }
+.email-submission__details a { color: #a52d39; text-decoration: underline; text-underline-offset: .2em; }
+.email-submission__actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1.75rem; }
+.email-submission__compose, .email-submission__actions button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .7rem 1.15rem; border: 1px solid #a52d39; border-radius: 6px; font-size: .9rem; font-weight: 700; cursor: pointer; }
+.email-submission__compose { color: #fff; background: #a52d39; }
+.email-submission__compose:hover { color: #fff; background: #86242e; }
+.email-submission__actions button { color: #a52d39; background: #fff; }
+.email-submission__actions button:hover { background: #f8eef0; }
+.email-submission__actions [role='status'] { flex-basis: 100%; color: #526173; font-size: .8rem; }
+.email-submission__actions [role='status']:empty { display: none; }
+.email-submission__help { margin: 1rem 0 0; color: #687587; font-size: .8rem; line-height: 1.8; }
+.email-submission a:focus-visible, .email-submission button:focus-visible { outline: 3px solid #a52d39; outline-offset: 4px; }
+.home-contact__form-wrap .email-submission { min-height: 100%; border: 0; border-radius: 0; }
+.careers-email-guide { width: min(calc(100% - 2rem), 80rem); margin: 0 auto; padding-top: clamp(2rem, 4vw, 3rem); }
+.careers-email-download { display: grid; gap: 1rem; justify-items: start; margin-top: 2rem; padding: clamp(1.5rem, 3.5vw, 3rem); border: 1px solid #dedbd4; border-radius: 8px; }
+.careers-email-download h2 { margin: 0; color: #17243a; font-size: 1.25rem; font-weight: 700; }
+.careers-email-download p { margin: 0; color: #526173; line-height: 1.85; }

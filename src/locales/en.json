@@ -278,10 +278,16 @@
       "link": "About MycoDx"
     },
     "contact": {
+      "emailNotice": {
+        "title": "Please send inquiries by email",
+        "description": "Online inquiries are temporarily paused due to an outage of the submission service. Please email the address below and our team will get back to you.",
+        "detailsTitle": "What to include",
+        "details": "Include the inquiry type, your name, organization (optional), contact details and message."
+      },
       "kicker": "Work with MycoDx",
       "title": "Contact",
       "description": "Leave a note about research, products, clinical validation, or partnership opportunities.",
-      "prompt": "Choose a topic and send a short message. The right MycoDx contact will follow up.",
+      "prompt": "Email us your inquiry type and message. The appropriate team member will contact you after reviewing it.",
       "address": "Room 202, Mirae Building, 7 Yongdong-ro 83beonan-gil, Uichang-gu, Changwon-si, Gyeongsangnam-do 51139 Republic of Korea",
       "direct": {
         "email": "Email",
@@ -372,6 +378,15 @@
     "main": "MycoDx",
     "sub": "Developing an integrated diagnostic platform that connects the full infectious disease diagnostic process."
   },
+  "emailSubmission": {
+    "notice": "Online submissions temporarily paused",
+    "compose": "Write an email",
+    "copy": "Copy address",
+    "copied": "Email address copied.",
+    "failed": "Please select and copy the address manually.",
+    "help": "The button opens your email app. You must send the email yourself to submit it. If no app opens, copy the address and use your preferred email service.",
+    "optional": "optional"
+  },
   "careers": {
     "kicker": "Careers · Talent Pool",
     "title": "<line>Join us in creating</line><line>new possibilities</line>",
@@ -429,16 +444,29 @@
     "notice": "Joining the talent pool does not guarantee an open position or a hiring process.",
     "ctaEyebrow": "Stay connected",
     "ctaTitle": "Let’s explore what comes next\nwith MycoDx.",
-    "ctaBody": "Prepare your application documents and submit them through our online form.",
-    "ctaButton": "Apply now"
+    "ctaBody": "Online applications are temporarily paused. Please follow the guide to apply by email.",
+    "ctaButton": "Email application guide"
   },
   "careersMeta": {
     "title": "Talent Pool",
     "description": "Join the MycoDx talent pool and help shape the future of infectious-disease diagnostics.",
-    "applyTitle": "Job Application",
-    "applyDescription": "Review the application guide and submit your application to MycoDx."
+    "applyTitle": "Apply by email",
+    "applyDescription": "Find out how to send your MycoDx application and supporting documents by email."
   },
   "careersApply": {
+    "emailNotice": {
+      "title": "Apply by email",
+      "lead": "Prepare your application and supporting documents and send them to our recruitment email address.",
+      "noticeTitle": "Applications are being accepted by email",
+      "description": "Online applications are temporarily paused due to an outage of the submission service. Please send your application and documents directly to the recruitment address below.",
+      "bodyTitle": "What to include in your email",
+      "body": "Include your application area, name, contact details, highest degree, experience level and a summary of your background and interests.",
+      "documentsTitle": "Documents to attach",
+      "application": "Company application form and personal information consent form",
+      "attachmentsHelp": "Attach your application and supporting documents yourself. Keep the total attachment size within 10 MB.",
+      "receiptHelp": "If you have already tried submitting online, check receipt with this address first to avoid a duplicate application.",
+      "downloadHelp": "Download and complete the application and personal information consent form, then attach it to your email with your supporting documents."
+    },
     "back": "Talent pool overview", "title": "Job application", "lead": "Review the application guide, then submit your application form and supporting documents.",
     "successConfirm": "Done", "successTitle": "Your application has been received.", "successBody": "Thank you for applying to the MycoDx talent pool.",
     "formTitle": "Applicant information", "required": "* indicates a required field. Submitted information will be retained and used for recruitment review for one year from the application date.",

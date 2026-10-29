@@ -3,7 +3,6 @@ import {
   useRef,
   useState,
   type CSSProperties,
-  type FormEvent,
   type ReactNode,
   type TouchEvent,
 } from 'react'
@@ -14,6 +13,7 @@ import heroAssayImage from '../assets/mycodx-hero-assay.jpg'
 import heroCollaborationImage from '../assets/mycodx-hero-collaboration.jpg'
 import heroCultureImage from '../assets/mycodx-hero-culture.jpg'
 import productData from '../content/products.json'
+import EmailSubmissionNotice from '../components/common/EmailSubmissionNotice'
 import { localize, sortByOrder, type ProductContent } from '../content/types'
 
 interface RevealProps {
@@ -23,7 +23,6 @@ interface RevealProps {
 }
 
 const SLIDE_DURATION = 6000
-const CONTACT_ENDPOINT = 'https://formsubmit.co/info@mycodx.com'
 const productItems = productData as ProductContent[]
 
 function Reveal({ children, className = '', delay = 0 }: RevealProps) {
@@ -76,13 +75,9 @@ export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [heroPaused, setHeroPaused] = useState(false)
   const [reduceMotion, setReduceMotion] = useState(false)
-  const [contactStatus, setContactStatus] = useState<
-    'idle' | 'sending' | 'sent' | 'failed'
-  >('idle')
 
   const heroKeywordKeys = ['culture', 'integrated', 'intelligent'] as const
   const capabilityKeys = ['culture', 'detection', 'resistance', 'imaging'] as const
-  const inquiryTypeKeys = ['research', 'product', 'validation', 'partnership', 'other'] as const
   const heroSlides = [
     {
       src: heroCultureImage,
@@ -203,28 +198,6 @@ export default function Home() {
       showPreviousSlide()
     } else {
       showNextSlide()
-    }
-  }
-
-  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const form = event.currentTarget
-
-    setContactStatus('sending')
-
-    try {
-      const response = await fetch(CONTACT_ENDPOINT, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' },
-      })
-
-      if (!response.ok) throw new Error(`HTTP ${response.status}`)
-
-      form.reset()
-      setContactStatus('sent')
-    } catch {
-      setContactStatus('failed')
     }
   }
 
@@ -463,98 +436,20 @@ export default function Home() {
               </Reveal>
 
               <Reveal className="home-contact__form-wrap" delay={140}>
-                <form className="home-contact__form" onSubmit={handleContactSubmit}>
-                  <fieldset className="home-contact__topics">
-                    <legend>{t('home.contact.form.inquiryType')}</legend>
-                    <div>
-                      {inquiryTypeKeys.map((key, index) => (
-                        <label key={key}>
-                          <input
-                            type="radio"
-                            name="inquiry_type"
-                            value={t(`home.contact.form.inquiryTypes.${key}`)}
-                            defaultChecked={index === 0}
-                          />
-                          <span>{t(`home.contact.form.inquiryTypes.${key}`)}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-
-                  <div className="home-contact__fields">
-                    <label>
-                      <span>{t('home.contact.form.name')}</span>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder={t('home.contact.form.namePlaceholder')}
-                        autoComplete="name"
-                        required
-                      />
-                    </label>
-                    <label>
-                      <span>{t('home.contact.form.email')}</span>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="email@example.com"
-                        autoComplete="email"
-                        required
-                      />
-                    </label>
-                    <label>
-                      <span>{t('home.contact.form.organization')}</span>
-                      <input
-                        type="text"
-                        name="organization"
-                        placeholder={t('home.contact.form.organizationPlaceholder')}
-                        autoComplete="organization"
-                      />
-                    </label>
+                <EmailSubmissionNotice
+                  email="info@mycodx.com"
+                  subject="[MycoDx] Website inquiry"
+                  title={t('home.contact.emailNotice.title')}
+                  description={t('home.contact.emailNotice.description')}
+                >
+                  <div>
+                    <h4>{t('home.contact.emailNotice.detailsTitle')}</h4>
+                    <p>{t('home.contact.emailNotice.details')}</p>
                   </div>
-
-                  <label>
-                    <span>{t('home.contact.form.message')}</span>
-                    <textarea
-                      name="message"
-                      rows={5}
-                      placeholder={t('home.contact.form.messagePlaceholder')}
-                      required
-                    />
-                  </label>
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="[MycoDx] Website inquiry"
-                  />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_template" value="table" />
-                  <label className="home-contact__privacy-consent">
-                    <input type="checkbox" name="privacy_consent" value="agreed" required />
-                    <span>
-                      {t('home.contact.form.privacyConsent')}{' '}
-                      <Link to="/privacy" state={{ fromContact: true }}>
-                        {t('home.contact.form.privacyLink')}
-                      </Link>
-                    </span>
-                  </label>
-                  <div className="home-contact__form-footer">
-                    <button type="submit" disabled={contactStatus === 'sending'}>
-                      {contactStatus === 'sending'
-                        ? t('home.contact.form.sending')
-                        : t('home.contact.form.submit')}
-                    </button>
-                    <p
-                      className={`home-contact__status ${
-                        contactStatus === 'failed' ? 'is-error' : ''
-                      }`}
-                      aria-live="polite"
-                    >
-                      {contactStatus === 'sent' && t('home.contact.form.sent')}
-                      {contactStatus === 'failed' && t('home.contact.form.failed')}
-                    </p>
-                  </div>
-                </form>
+                  <Link to="/privacy" state={{ fromContact: true }}>
+                    {t('footer.privacy')}
+                  </Link>
+                </EmailSubmissionNotice>
               </Reveal>
             </div>
           </div>
