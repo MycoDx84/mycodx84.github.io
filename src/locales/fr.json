@@ -180,6 +180,10 @@
     "placeholderDescription": "Nous n'affichons pas d'informations non vérifiées. Des détails précis seront publiés sur cette page dès leur validation."
   },
   "newsPage": {
+    "readMore": "En savoir plus",
+    "backToList": "Retour aux actualités",
+    "relatedLink": "Lien associé (nouvel onglet)",
+    "photos": "Photos",
     "kicker": "Actualités",
     "title": "Actualités MycoDx",
     "description": "Communiqués officiels et informations de MycoDx.",

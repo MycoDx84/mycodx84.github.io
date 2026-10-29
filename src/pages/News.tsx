@@ -48,8 +48,7 @@ export default function News() {
               title={localize(item.title, i18n.language)}
               summary={localize(item.summary, i18n.language)}
               category={item.category}
-              image={item.image}
-              url={item.url || undefined}
+              id={item.id}
             />
           ))}
         </div>

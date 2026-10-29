@@ -180,6 +180,10 @@
     "placeholderDescription": "未確認の製品情報を無造作に表示することはありません。公開可能な製品情報が準備でき次第、本ページにて正確にご案内いたします。"
   },
   "newsPage": {
+    "readMore": "詳しく見る",
+    "backToList": "ニュース一覧へ",
+    "relatedLink": "関連リンク（新しいタブ）",
+    "photos": "写真",
     "kicker": "News",
     "title": "MycoDxニュース",
     "description": "MycoDxの公式ニュースとお知らせをお届けします。",

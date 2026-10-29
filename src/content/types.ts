@@ -24,6 +24,12 @@ export interface ProductContent {
   tags?: string[]
 }
 
+export interface NewsPhoto {
+  image: string
+  alt: LocalizedText
+  caption?: LocalizedText
+}
+
 export interface NewsContent {
   id: string
   visible?: boolean
@@ -33,6 +39,9 @@ export interface NewsContent {
   title: LocalizedText
   summary: LocalizedText
   url?: string
+  imageAlt?: LocalizedText
+  body?: LocalizedText
+  photos?: NewsPhoto[]
 }
 
 export interface GalleryContent {

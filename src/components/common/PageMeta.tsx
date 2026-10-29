@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import productData from '../../content/products.json'
-import { localize, type ProductContent } from '../../content/types'
+import newsData from '../../content/news.json'
+import { localize, type ProductContent, type NewsContent } from '../../content/types'
 
 const SITE_URL = 'https://mycodx.com'
 const SITE_NAME = 'MycoDx'
@@ -38,6 +39,9 @@ export default function PageMeta() {
     const language = i18n.resolvedLanguage ?? i18n.language
     const productId = path.startsWith('/product/') ? path.slice('/product/'.length) : ''
     const product = (productData as ProductContent[]).find((item) => item.id === productId)
+    const news = (newsData as NewsContent[]).find((item) =>
+      item.visible !== false && path === `/news/${encodeURIComponent(item.id)}`
+    )
     const route = routeMeta.find((item) => item.path === path)
 
     let pageTitle = `${SITE_NAME} | ${t('home.titleLine1')} ${t('home.titleLine2')}`
@@ -47,6 +51,9 @@ export default function PageMeta() {
     if (product) {
       pageTitle = `${localize(product.title, language)} | ${SITE_NAME}`
       description = localize(product.listSummary ?? product.summary, language)
+    } else if (news) {
+      pageTitle = `${localize(news.title, language)} | ${SITE_NAME}`
+      description = localize(news.summary, language)
     } else if (route) {
       pageTitle = `${t(route.titleKey)} | ${SITE_NAME}`
       description = t(route.descriptionKey)

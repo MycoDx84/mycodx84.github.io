@@ -2,6 +2,7 @@ import { Navigate, Routes, Route } from 'react-router-dom'
 import About from '../pages/About'
 import Home from '../pages/Home'
 import News from '../pages/News'
+import NewsDetail from '../pages/NewsDetail'
 import Product from '../pages/Product'
 import ProductDetail from '../pages/ProductDetail'
 import Publication from '../pages/Publication'
@@ -19,6 +20,7 @@ export default function AppRoutes() {
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/gallery" element={<Navigate to="/" replace />} />
       <Route path="/news" element={<News />} />
+      <Route path="/news/:id" element={<NewsDetail />} />
       <Route path="/publications" element={<Publication />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/careers" element={<Careers />} />

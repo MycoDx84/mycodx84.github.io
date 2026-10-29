@@ -63,15 +63,20 @@
 - `ID`: 소식 고유 ID
 - `Show on site`: 홈페이지 노출 여부
 - `Date`: 게시 날짜
-- `Category`: `News`, `Notice`, `Press` 중 선택
+- `Category`: `News`, `Notice`, `Press`, `Exhibition` 중 선택
 - `Featured image`: 대표 이미지
 - `Title / Korean`: 한국어 제목
 - `Title / English`: 영어 제목
 - `Summary / Korean`: 한국어 요약
 - `Summary / English`: 영어 요약
-- `Link URL`: 외부 기사나 상세 페이지가 있을 때만 입력
+- `Featured image alt text`: 대표 사진 설명 (한국어·영어)
+- `Body`: 상세 본문 (한국어·영어). 빈 줄로 문단을 구분합니다. HTML이나 Markdown 대신 일반 텍스트를 입력합니다.
+- `Photos`: 사진을 여러 장 추가할 수 있습니다. 각 사진의 `Photo`, `Alt text`(대체 텍스트), `Caption`(선택 설명)을 입력합니다. 입력한 순서대로 표시됩니다.
+- `Link URL`: 관련 외부 기사 주소 (`https://` 또는 `http://`)
 
-`Link URL`을 입력하면 소식 카드 클릭 시 해당 링크가 새 창으로 열립니다. 링크가 없으면 일반 카드로 표시됩니다.
+모든 소식 카드는 `/news/ID` 상세 페이지로 연결됩니다. `ID`는 고유해야 하며, 게시 후 변경하면 기존 상세 주소가 바뀝니다. `Link URL`은 상세 페이지의 관련 링크로 표시되며 새 창으로 열립니다.
+
+본문이나 사진이 없으면 해당 영역은 표시되지 않습니다. `Show on site`를 끄면 목록과 상세 페이지 모두 숨겨집니다. 행사 소식은 요약에 행사 개요를, 본문에 참가 내용과 후기를 적고 `Photos`에 현장 사진과 캡션을 추가하세요.
 
 ## Gallery 업로드
 

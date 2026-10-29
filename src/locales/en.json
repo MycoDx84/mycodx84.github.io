@@ -180,6 +180,10 @@
     "placeholderDescription": "We do not display unverified product information. Accurate product details will be added here when they are ready for publication."
   },
   "newsPage": {
+    "readMore": "Read more",
+    "backToList": "Back to news",
+    "relatedLink": "Related link (opens in a new tab)",
+    "photos": "Photos",
     "kicker": "News",
     "title": "MycoDx News",
     "description": "Official news and announcements from MycoDx.",

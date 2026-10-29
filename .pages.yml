@@ -105,6 +105,8 @@ content:
             type: select
             options:
               values:
+                - name: Exhibition
+                  label: Exhibition
                 - name: News
                   label: News
                 - name: Notice
@@ -142,6 +144,60 @@ content:
                 label: English
                 type: text
                 required: true
+          - name: imageAlt
+            label: Featured image alt text
+            type: object
+            fields:
+              - name: ko
+                label: Korean
+                type: string
+              - name: en
+                label: English
+                type: string
+          - name: body
+            label: Body (blank line between paragraphs)
+            type: object
+            fields:
+              - name: ko
+                label: Korean
+                type: text
+              - name: en
+                label: English
+                type: text
+          - name: photos
+            label: Photos
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: Photo
+                type: image
+                required: true
+                options:
+                  media: news-images
+              - name: alt
+                label: Alt text
+                type: object
+                required: true
+                fields:
+                  - name: ko
+                    label: Korean
+                    type: string
+                    required: true
+                  - name: en
+                    label: English
+                    type: string
+                    required: true
+              - name: caption
+                label: Caption
+                type: object
+                fields:
+                  - name: ko
+                    label: Korean
+                    type: text
+                  - name: en
+                    label: English
+                    type: text
           - name: url
             label: Link URL
             type: string
